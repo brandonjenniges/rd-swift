@@ -2,20 +2,22 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "fireball3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fireball3.png",
+      "filename" : "fireball3@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "fireball3@3x.png",
       "scale" : "3x"
     },
     {
       "idiom" : "tv",
-      "filename" : "fireball3.png",
+      "filename" : "fireball3@3x.png",
       "scale" : "1x"
     }
   ],

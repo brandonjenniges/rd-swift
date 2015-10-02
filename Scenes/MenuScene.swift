@@ -21,9 +21,9 @@ class MenuScene: SKScene {
     var player:Player!
     
     override func didMoveToView(view: SKView) {
-        print("moved")
-      //  setupPlayer()
-        viewController.controllerUserInteractionEnabled = true
+        #if os(tvOS)
+            viewController.controllerUserInteractionEnabled = true
+        #endif
         setupDragons()
     }
     

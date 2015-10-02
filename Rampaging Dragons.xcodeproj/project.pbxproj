@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C5DE514B1BB9811B0049C321 /* GameOver.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB871BB782FD004D455D /* GameOver.xcassets */; };
+		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAE1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */; };
 		FB0BBBAF1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */; };
@@ -43,11 +44,9 @@
 		FBEBAB841BB77FA6004D455D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB831BB77FA6004D455D /* GameState.swift */; };
 		FBEBAB851BB7800E004D455D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB831BB77FA6004D455D /* GameState.swift */; };
 		FBEBAB8A1BB782FD004D455D /* GameOver.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB871BB782FD004D455D /* GameOver.xcassets */; };
-		FBEBAB8B1BB782FD004D455D /* Menu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB891BB782FD004D455D /* Menu.xcassets */; };
 		FBEBAB8E1BB78350004D455D /* Intro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB8D1BB78350004D455D /* Intro.xcassets */; };
 		FBEBAB921BB784C7004D455D /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
 		FBEBAB931BB784CA004D455D /* Intro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB8D1BB78350004D455D /* Intro.xcassets */; };
-		FBEBAB941BB784CD004D455D /* Menu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB891BB782FD004D455D /* Menu.xcassets */; };
 		FBEBAB961BB78572004D455D /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB951BB78572004D455D /* MenuScene.swift */; };
 		FBEBAB971BB78572004D455D /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB951BB78572004D455D /* MenuScene.swift */; };
 		FBEBAB991BB78598004D455D /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB981BB78598004D455D /* MenuScene.sks */; };
@@ -94,7 +93,7 @@
 		FB8D26EE1BB71773000B548E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB8D26F01BB71773000B548E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB8D26F21BB71773000B548E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB8D26FA1BB717A1000B548E /* iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8D26FA1BB717A1000B548E /* RampagingDragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RampagingDragons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8D26FC1BB717A1000B548E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8D27021BB717A1000B548E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FB8D27051BB717A1000B548E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,7 +111,6 @@
 		FBEBAB7F1BB765B6004D455D /* Dragon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
 		FBEBAB831BB77FA6004D455D /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		FBEBAB871BB782FD004D455D /* GameOver.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GameOver.xcassets; sourceTree = "<group>"; };
-		FBEBAB891BB782FD004D455D /* Menu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Menu.xcassets; sourceTree = "<group>"; };
 		FBEBAB8D1BB78350004D455D /* Intro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Intro.xcassets; sourceTree = "<group>"; };
 		FBEBAB901BB783FB004D455D /* Fire.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Fire.xcassets; sourceTree = "<group>"; };
 		FBEBAB951BB78572004D455D /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -145,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,14 +153,14 @@
 		FB8D268B1BB71620000B548E = {
 			isa = PBXGroup;
 			children = (
-				FBFC272C1BBE244B0012C1AA /* Util */,
-				FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */,
-				FBEBAB7C1BB7658C004D455D /* GameElements */,
 				FBA743D61BB7212B00AC4B44 /* Assets */,
-				FBA743CF1BB71DE000AC4B44 /* Scenes */,
-				FB8D26E21BB71773000B548E /* tvOS */,
+				FBEBAB7C1BB7658C004D455D /* GameElements */,
+				FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */,
 				FB8D26FB1BB717A1000B548E /* iOS */,
 				FB8D26951BB71620000B548E /* Products */,
+				FBA743CF1BB71DE000AC4B44 /* Scenes */,
+				FB8D26E21BB71773000B548E /* tvOS */,
+				FBFC272C1BBE244B0012C1AA /* Util */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FB8D26E11BB71772000B548E /* RampagingDragons.app */,
-				FB8D26FA1BB717A1000B548E /* iOS.app */,
+				FB8D26FA1BB717A1000B548E /* RampagingDragons.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,7 +220,6 @@
 				FBEBAB8C1BB78350004D455D /* Intro */,
 				FBA743D71BB7212B00AC4B44 /* Dragons */,
 				FBEBAB861BB782FD004D455D /* GameOver */,
-				FBEBAB881BB782FD004D455D /* Menu */,
 				FBEBAB781BB763FF004D455D /* Player */,
 			);
 			path = Assets;
@@ -272,14 +270,6 @@
 				FBEBAB871BB782FD004D455D /* GameOver.xcassets */,
 			);
 			path = GameOver;
-			sourceTree = "<group>";
-		};
-		FBEBAB881BB782FD004D455D /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				FBEBAB891BB782FD004D455D /* Menu.xcassets */,
-			);
-			path = Menu;
 			sourceTree = "<group>";
 		};
 		FBEBAB8C1BB78350004D455D /* Intro */ = {
@@ -359,7 +349,7 @@
 			);
 			name = iOS;
 			productName = iOS;
-			productReference = FB8D26FA1BB717A1000B548E /* iOS.app */;
+			productReference = FB8D26FA1BB717A1000B548E /* RampagingDragons.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -432,7 +422,6 @@
 				FBEBAB931BB784CA004D455D /* Intro.xcassets in Resources */,
 				FBEBAB921BB784C7004D455D /* Fire.xcassets in Resources */,
 				C5DE514B1BB9811B0049C321 /* GameOver.xcassets in Resources */,
-				FBEBAB941BB784CD004D455D /* Menu.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +438,6 @@
 				FB4910DC1BBB92520094EC7E /* titlesong.wav in Resources */,
 				FBEBAB7A1BB763FF004D455D /* Player.xcassets in Resources */,
 				FBCD329F1BBA19B000FAB2D1 /* pop.wav in Resources */,
-				FBEBAB8B1BB782FD004D455D /* Menu.xcassets in Resources */,
 				FBCD32A31BBA3B9D00FAB2D1 /* spark.png in Resources */,
 				FB8D27061BB717A1000B548E /* Main.storyboard in Resources */,
 				FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */,
@@ -680,8 +668,8 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.brandonjenniges.LaunchyDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
+				PRODUCT_NAME = RampagingDragons;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -696,8 +684,8 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.brandonjenniges.LaunchyDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
+				PRODUCT_NAME = RampagingDragons;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
