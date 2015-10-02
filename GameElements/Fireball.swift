@@ -45,22 +45,7 @@ class Fireball: SKSpriteNode {
     }
     
     func setupPhysicsBody() {
-        let path = CGPathCreateMutable()
-        
-        let offsetX = self.frame.size.width * self.anchorPoint.x
-        let offsetY = self.frame.size.height * self.anchorPoint.y
-        
-        
-        CGPathMoveToPoint(path, nil, 6 - offsetX, 15 - offsetY)
-        CGPathAddLineToPoint(path, nil, 1 - offsetX, 8 - offsetY)
-        CGPathAddLineToPoint(path, nil, 1 - offsetX, 3 - offsetY)
-        CGPathAddLineToPoint(path, nil, 6 - offsetX, 0 - offsetY)
-        CGPathAddLineToPoint(path, nil, 12 - offsetX, 3 - offsetY)
-        CGPathAddLineToPoint(path, nil, 11 - offsetX, 10 - offsetY)
-        
-        CGPathCloseSubpath(path)
-        
-        self.physicsBody = SKPhysicsBody(polygonFromPath: path)
+        self.physicsBody = SKPhysicsBody(circleOfRadius: self.frame.width / 2)
         self.physicsBody?.categoryBitMask = GameScene.fireballCategory
         self.physicsBody?.contactTestBitMask = GameScene.playerCategory
         self.physicsBody?.collisionBitMask = 0

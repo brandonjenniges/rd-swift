@@ -121,22 +121,16 @@ class Player: SKSpriteNode {
         self.runAction(SKAction.repeatActionForever(sequence),withKey: "runningAnimation")
     }
     
+    func attachDebugFrameFromPath(bodyPath:CGPathRef) {
+        let shape = SKShapeNode()
+        shape.path = bodyPath
+        shape.strokeColor = UIColor.redColor()
+        shape.lineWidth = 1
+        self.addChild(shape)
+    }
+    
     func setupPhysicsBody() {
-        let path = CGPathCreateMutable()
-        
-        let offsetX = self.frame.size.width * self.anchorPoint.x
-        let offsetY = self.frame.size.height * self.anchorPoint.y
-        
-        CGPathMoveToPoint(path, nil, 20 - offsetX, 59 - offsetY)
-        CGPathAddLineToPoint(path, nil, 6 - offsetX, 49 - offsetY)
-        CGPathAddLineToPoint(path, nil, 3 - offsetX, 1 - offsetY)
-        CGPathAddLineToPoint(path, nil, 43 - offsetX, 0 - offsetY)
-        CGPathAddLineToPoint(path, nil, 43 - offsetX, 48 - offsetY)
-        CGPathAddLineToPoint(path, nil, 31 - offsetX, 58 - offsetY)
-        
-        CGPathCloseSubpath(path)
-        
-        self.physicsBody = SKPhysicsBody(polygonFromPath: path)
+        self.physicsBody = SKPhysicsBody(circleOfRadius: self.frame.width / 2)
         self.physicsBody?.categoryBitMask = GameScene.playerCategory
         self.physicsBody?.contactTestBitMask = GameScene.fireballCategory
         self.physicsBody?.collisionBitMask = 0
@@ -145,7 +139,6 @@ class Player: SKSpriteNode {
         self.physicsBody?.restitution = 0
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.affectedByGravity = false
-        
         
     
     }

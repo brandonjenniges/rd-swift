@@ -55,7 +55,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVectorMake(0, 0)
-        
+        self.view!.showsPhysics = true
         viewController.controllerUserInteractionEnabled = false
         ground = childNodeWithName("ground") as! SKSpriteNode
        // self.addChild(myLabel)
