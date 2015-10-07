@@ -33,11 +33,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var viewController:GameViewController!
     
-    var dragon0:Dragon!
-    var dragon1:Dragon!
-    var dragon2:Dragon!
-    var dragon3:Dragon!
-    
     var player:Player!
     var ground:SKSpriteNode!
     var scoreLabel:SKLabelNode!
@@ -84,7 +79,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case .ShowingScore:
             break
         case .GameOver:
-            switchToIntro()
+            startNewGame()
             break
         }
     }
@@ -102,7 +97,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         if gameState == .Play {
-            player.removeAllActions()
+            player.stopRunning()
             player.movement = .Neutral
         }
     }
@@ -176,6 +171,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.player.die()
     }
     
+    func startNewGame() {
+        if let scene = SKScene(fileNamed: "GameScene") as? GameScene {
+            /* Set the scale mode to scale to fit the window */
+            scene.viewController = viewController
+            self.view!.presentScene(scene, transition: SKTransition.crossFadeWithDuration(1.0))
+        }
+    }
+    
     //MARK: Elements
     func setupPlayer() {
         player = childNodeWithName("player") as! Player
@@ -187,10 +190,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupDragons() {
-        dragon0 = childNodeWithName("dragon0") as! Dragon
-        dragon1 = childNodeWithName("dragon1") as! Dragon
-        dragon2 = childNodeWithName("dragon2") as! Dragon
-        dragon3 = childNodeWithName("dragon3") as! Dragon
+        let dragon0 = childNodeWithName("dragon0") as! Dragon
+        let dragon1 = childNodeWithName("dragon1") as! Dragon
+        let dragon2 = childNodeWithName("dragon2") as! Dragon
+        let dragon3 = childNodeWithName("dragon3") as! Dragon
         Dragon.dragonArray = [dragon0, dragon1, dragon2, dragon3]
         
         var index = 0

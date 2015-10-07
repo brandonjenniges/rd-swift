@@ -11,6 +11,9 @@ import SpriteKit
 class Player: SKSpriteNode {
     
     static let playerAtlas = SKTextureAtlas(named: "Player")
+    let lookingAction = "lookingAction"
+    let runningAnimation = "runningAnimation"
+    let moveAction = "moveAction"
     
     enum PlayerMovement {
         case Neutral
@@ -58,7 +61,7 @@ class Player: SKSpriteNode {
             let lookAction = SKAction.animateWithTextures(self.setupLookingFrames(), timePerFrame: 1.0, resize: false, restore: true)
             let sequence = SKAction.sequence([lookAction])
             sequence.timingMode = .EaseInEaseOut
-            self.runAction(SKAction.repeatActionForever(sequence),withKey: "lookingAnimation")
+            self.runAction(SKAction.repeatActionForever(sequence), withKey: self.lookingAction)
         }
     }
     
@@ -97,7 +100,7 @@ class Player: SKSpriteNode {
             let moveAction = SKAction.moveToX(moveTo, duration: self.getSpeed(moveTo))
             movement = .Left
             self.removeAllActions()
-            self.runAction(moveAction)
+            self.runAction(moveAction, withKey: self.moveAction)
             self.xScale = abs(self.xScale)
             self.performRunAnimation()
         }
@@ -108,7 +111,7 @@ class Player: SKSpriteNode {
             let moveAction = SKAction.moveToX(moveTo, duration: self.getSpeed(moveTo))
             movement = .Right
             self.removeAllActions()
-            self.runAction(moveAction)
+            self.runAction(moveAction, withKey: self.moveAction)
             self.xScale = -abs(self.xScale)
             self.performRunAnimation()
         }
@@ -118,15 +121,7 @@ class Player: SKSpriteNode {
         let runAction = SKAction.animateWithTextures(self.setupRunningFrames(), timePerFrame: 0.1, resize: false, restore: true)
         let sequence = SKAction.sequence([runAction])
         sequence.timingMode = .EaseInEaseOut
-        self.runAction(SKAction.repeatActionForever(sequence),withKey: "runningAnimation")
-    }
-    
-    func attachDebugFrameFromPath(bodyPath:CGPathRef) {
-        let shape = SKShapeNode()
-        shape.path = bodyPath
-        shape.strokeColor = UIColor.redColor()
-        shape.lineWidth = 1
-        self.addChild(shape)
+        self.runAction(SKAction.repeatActionForever(sequence),withKey: runningAnimation)
     }
     
     func setupPhysicsBody() {
@@ -143,8 +138,15 @@ class Player: SKSpriteNode {
     
     }
     
+    func stopRunning() {
+        self.removeActionForKey(self.runningAnimation)
+        self.removeActionForKey(self.moveAction)
+        self.texture = SKTexture(imageNamed: "player0")
+        self.runPlayerLookingAnimation()
+    }
+    
     func die() {
-        self.removeAllActions()
+        stopRunning()
     }
     
 }
