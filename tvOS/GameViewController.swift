@@ -46,7 +46,18 @@ class GameViewController: GCEventViewController {
                 if scene!.isKindOfClass(MenuScene)  {
                     super.pressesEnded(presses, withEvent: event)
                 } else {
-                    scene?.view?.paused = !scene!.view!.paused
+                
+                    if scene!.isKindOfClass(GameScene) {
+                        scene?.view?.paused = true
+                        if let scene = SKScene(fileNamed: "PauseScene") {
+                            // Configure the view.
+                            let skView = self.view as! SKView
+                            skView.presentScene(scene)
+                        }
+                    } else {
+                        
+                    }
+                    
                 }
             }
         }
