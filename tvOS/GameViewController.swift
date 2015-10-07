@@ -48,11 +48,28 @@ class GameViewController: GCEventViewController {
                 } else {
                 
                     if scene!.isKindOfClass(GameScene) {
-                        scene?.view?.paused = true
-                        if let scene = SKScene(fileNamed: "PauseScene") {
-                            // Configure the view.
-                            let skView = self.view as! SKView
-                            skView.presentScene(scene)
+                        //scene?.view?.paused = true
+                        //Get some type of content node and pause only that, leaving pause scene un paused
+                        if let overlayScene = SKScene(fileNamed: "PauseScene") {
+                            let contentTemplateNode = overlayScene.childNodeWithName("Overlay") as! SKSpriteNode
+                            
+                            // Create a background node with the same color as the template.
+                            let backgroundNode = SKSpriteNode(color: contentTemplateNode.color, size: contentTemplateNode.size)
+                            backgroundNode.zPosition = 10
+                            backgroundNode.position = CGPointMake(backgroundNode.frame.size.width / 2, backgroundNode.frame.size.height / 2)
+                            
+                            // Copy the template node into the background node.
+                            let contentNode = contentTemplateNode.copy() as! SKSpriteNode
+                            backgroundNode.addChild(contentNode)
+                            
+                            // Set the content node to a clear color to allow the background node to be seen through it.
+                            contentNode.color = .clearColor()
+                            contentNode.position = .zero
+                            
+                            // Store the current size of the content to allow it to be scaled correctly.
+                            let nativeContentSize = contentNode.size
+                            scene?.addChild(backgroundNode)
+                            
                         }
                     } else {
                         
