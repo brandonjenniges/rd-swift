@@ -25,13 +25,13 @@ class Fireball: SKSpriteNode {
         return array
     }
     
-    func send() {
+    func send(toYPos:CGFloat) {
         let minDuration = 3.0
         let maxDuration = 7.0
         let rangeDuration = UInt32(maxDuration - minDuration)
         let actualDruation = Double(arc4random_uniform(rangeDuration)) + minDuration
         
-        let actionMove = SKAction.moveTo(CGPointMake(self.position.x, -self.size.height), duration: actualDruation)
+        let actionMove = SKAction.moveTo(CGPointMake(self.position.x, toYPos - self.size.height), duration: actualDruation)
         let scoreAction = SKAction.runBlock { () -> Void in
             if let scene = self.scene as? GameScene {
                 if scene.gameState == .Play {
