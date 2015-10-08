@@ -186,7 +186,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.movement = .Neutral
         player.setPlayerRightMovementMax((self.ground.position.x + self.ground.frame.width / 2) - player.frame.width / 2, min: (self.ground.position.x - self.ground.frame.size.width / 2) + player.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
-        player.setupPhysicsBody()
+        player.setupPhysics()
     }
     
     func setupDragons() {

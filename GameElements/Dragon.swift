@@ -13,6 +13,18 @@ class Dragon: SKSpriteNode {
     static let dragonAtlas = SKTextureAtlas(named: "Dragons")
     static var dragonArray:[Dragon]!
     
+    let DragonCategoryName = "dragon"
+    
+    init(imageName: String) {
+        let texture = SKTexture(imageNamed: imageName)
+        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        self.name = DragonCategoryName
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func setUpDragonAnimations(index: Int) {
         self.runAction(setupDragonWobbleAnimation(), withKey: "wobble")
         self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(setUpDragonAnimationsMovementAnimation(index), timePerFrame: 0.10)))

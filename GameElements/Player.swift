@@ -11,9 +11,11 @@ import SpriteKit
 class Player: SKSpriteNode {
     
     static let playerAtlas = SKTextureAtlas(named: "Player")
+    
     let lookingAction = "lookingAction"
     let runningAnimation = "runningAnimation"
     let moveAction = "moveAction"
+    let PlayerCategoryName = "player"
     
     enum PlayerMovement {
         case Neutral
@@ -25,6 +27,17 @@ class Player: SKSpriteNode {
     var maxRight:CGFloat?
     var maxLeft:CGFloat?
     var previousPlayerTouch:CGFloat?
+    
+    init() {
+        let texture = SKTexture(imageNamed: "player0")
+        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        setupPhysics()
+        self.name = PlayerCategoryName
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private func setupLookingFrames() -> [SKTexture] {
         var array = [SKTexture]()
@@ -124,7 +137,7 @@ class Player: SKSpriteNode {
         self.runAction(SKAction.repeatActionForever(sequence),withKey: runningAnimation)
     }
     
-    func setupPhysicsBody() {
+    func setupPhysics() {
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.frame.width / 2)
         self.physicsBody?.categoryBitMask = GameScene.playerCategory
         self.physicsBody?.contactTestBitMask = GameScene.fireballCategory

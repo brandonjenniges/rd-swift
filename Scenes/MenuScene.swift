@@ -40,21 +40,39 @@ class MenuScene: SKScene {
     
     //MARK: Elements
     func setupPlayer() {
-        player = childNodeWithName("player") as! Player
+        //player = childNodeWithName("player") as! Player
+        player = Player()
         player.runPlayerLookingAnimation()
     }
     
     func setupDragons() {
-        dragon0 = childNodeWithName("dragon0") as! Dragon
-        dragon1 = childNodeWithName("dragon1") as! Dragon
-        dragon2 = childNodeWithName("dragon2") as! Dragon
-        dragon3 = childNodeWithName("dragon3") as! Dragon
-        dragonArray = [dragon0, dragon1, dragon2, dragon3]
+        //dragon0 = childNodeWithName("dragon0") as! Dragon
+        //dragon1 = childNodeWithName("dragon1") as! Dragon
+        //dragon2 = childNodeWithName("dragon2") as! Dragon
+        //dragon3 = childNodeWithName("dragon3") as! Dragon
+        
+        dragon0 = Dragon(imageName: "dragon0_0")
+        dragon1 = Dragon(imageName: "dragon1_0")
+        dragon2 = Dragon(imageName: "dragon2_0")
+        dragon3 = Dragon(imageName: "dragon3_0")
+        
+        #if os(tvOS)
+            dragonArray = [dragon0, dragon1, dragon2, dragon3]
+        #else
+            dragonArray = [dragon0, dragon1]
+        #endif
         
         
         var index = 0
+        let gapSize = view!.frame.width / 4
+        let yPos = view!.frame.size.height * 0.8
+        
         for dragon in dragonArray {
             dragon.setUpDragonAnimations(index)
+            let xPos = gapSize * CGFloat(index + 1) - dragon.texture!.size().width
+            print(xPos)
+            dragon.position = CGPointMake((gapSize / 2) * CGFloat(index + 1) + (dragon.texture!.size().width / 2), yPos - dragon.texture!.size().height / 2)
+            addChild(dragon)
             index++
         }
     }
