@@ -15,6 +15,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     static let playerCategory:UInt32 = 0x1 << 1
     static let floorCategory:UInt32 = 0x1 << 2
     
+    var scenePaused = false
+    
     enum GameState {
         case MainMenu
         case Intro
@@ -23,7 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case GameOver
     }
     
-    enum Layer: Int {
+    enum Layer: CGFloat {
         case Background = 0
         case Foreground = 1
         case Game = 2
@@ -46,25 +48,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastSpawnTimeInterval:NSTimeInterval = 0
     var score = 0
     
+    var worldNode: SKSpriteNode!
+    var pauseNode: SKSpriteNode!
+    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         self.view!.showsPhysics = true
         
+        worldNode = childNodeWithName("background") as! SKSpriteNode
+        
         #if os(tvOS)
             viewController.controllerUserInteractionEnabled = false
         #endif
         
-        ground = childNodeWithName("ground") as! SKSpriteNode
+        ground = worldNode.childNodeWithName("ground") as! SKSpriteNode
        // self.addChild(myLabel)
-        scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
+        scoreLabel = worldNode.childNodeWithName("scoreLabel") as! SKLabelNode
         setupGaps()
         switchToIntro()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
+        if scenePaused {
+            unPauseScene()
+        }
+        
         let state:GameState = gameState!
         switch state {
         case .MainMenu:
@@ -146,7 +157,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func switchToPlay() {
         self.gameState = .Play
-        let intro = childNodeWithName("intro")
+        let intro = worldNode.childNodeWithName("intro")
         let removeIntroAction = SKAction.fadeAlphaTo(0, duration: 2.0)
         intro?.runAction(removeIntroAction, completion: { () -> Void in
             
@@ -164,7 +175,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func switchToGameOver() {
         self.gameState = .GameOver
-        let scorecard = childNodeWithName("scorecard") as! ScoreBoard
+        let scorecard = worldNode.childNodeWithName("scorecard") as! ScoreBoard
         scorecard.setupWithGameScore(score)
         let moveAction = SKAction.moveToY((self.view?.frame.height)! / 2, duration: 0.4)
         scorecard.runAction(moveAction)
@@ -181,7 +192,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Elements
     func setupPlayer() {
-        player = childNodeWithName("player") as! Player
+        player = worldNode.childNodeWithName("player") as! Player
         player.runPlayerLookingAnimation()
         player.movement = .Neutral
         player.setPlayerRightMovementMax((self.ground.position.x + self.ground.frame.width / 2) - player.frame.width / 2, min: (self.ground.position.x - self.ground.frame.size.width / 2) + player.frame.width / 2)
@@ -190,10 +201,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupDragons() {
-        let dragon0 = childNodeWithName("dragon0") as! Dragon
-        let dragon1 = childNodeWithName("dragon1") as! Dragon
-        let dragon2 = childNodeWithName("dragon2") as! Dragon
-        let dragon3 = childNodeWithName("dragon3") as! Dragon
+        let dragon0 = worldNode.childNodeWithName("dragon0") as! Dragon
+        let dragon1 = worldNode.childNodeWithName("dragon1") as! Dragon
+        let dragon2 = worldNode.childNodeWithName("dragon2") as! Dragon
+        let dragon3 = worldNode.childNodeWithName("dragon3") as! Dragon
         Dragon.dragonArray = [dragon0, dragon1, dragon2, dragon3]
         
         var index = 0
@@ -221,9 +232,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let x = gapPositions[Int(arc4random_uniform(12))] + fire.size.width / 2
         fire.position = CGPointMake(x, frame.size.height + frame.size.height / 2.0)
         fire.setupPhysicsBody()
-        self.addChild(fire)
-        fire.send()
-        
+        fire.zPosition = Layer.Game.rawValue
+        worldNode.addChild(fire)
+        fire.send(-worldNode.frame.size.height / 2) //Needs this because of worldNode's anchor point
     }
     
     func increaseScore() {
@@ -234,6 +245,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBeginContact(contact: SKPhysicsContact) {
         switchToGameOver()
     }
+    
+    func pauseScene() {
+        scenePaused = true
+        worldNode.paused = true
+        if let overlayScene = SKScene(fileNamed: "PauseScene") {
+            let contentTemplateNode = overlayScene.childNodeWithName("Overlay") as! SKSpriteNode
+            
+            // Create a background node with the same color as the template.
+            pauseNode = SKSpriteNode(color: contentTemplateNode.color, size: contentTemplateNode.size)
+            pauseNode.zPosition = 10
+            pauseNode.position = CGPointMake(pauseNode.frame.size.width / 2, pauseNode.frame.size.height / 2)
+            
+            // Copy the template node into the background node.
+            let contentNode = contentTemplateNode.copy() as! SKSpriteNode
+            pauseNode.addChild(contentNode)
+            
+            // Set the content node to a clear color to allow the background node to be seen through it.
+            contentNode.color = .clearColor()
+            contentNode.position = .zero
+            
+            scene?.addChild(pauseNode)
+        }
+    }
 
+    func unPauseScene() {
+        scenePaused = false
+        worldNode.paused = false
+        if let pauseNode = pauseNode {
+            pauseNode.removeFromParent()
+        }
+    }
     
 }
