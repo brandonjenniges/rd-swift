@@ -10,9 +10,6 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
-    let introAtlas = SKTextureAtlas(named: "Intro")
-    let playerAtlas = SKTextureAtlas(named: "Player")
-    
     var viewController:GameViewController!
     
     var dragon0:Dragon!
@@ -46,13 +43,13 @@ class MenuScene: SKScene {
     
     //MARK: Elements
     func addBackground() {
-        let background = SKSpriteNode(texture:introAtlas.textureNamed("background"))
+        let background = SKSpriteNode(texture:TextureAtlasManager.introAtlas.textureNamed("background"))
         background.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 2)
         addChild(background)
     }
     
     func addLogo() {
-        let logo = SKSpriteNode(texture:introAtlas.textureNamed("logo"))
+        let logo = SKSpriteNode(texture:TextureAtlasManager.introAtlas.textureNamed("logo"))
         logo.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 2)
         logo.zPosition = 2
         addChild(logo)
@@ -68,7 +65,7 @@ class MenuScene: SKScene {
     }
     
     func addPlatform() {
-        let platform = SKSpriteNode(texture: playerAtlas.textureNamed("ground"))
+        let platform = SKSpriteNode(texture: TextureAtlasManager.playerAtlas.textureNamed("ground"))
         platform.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 4)
         print(platform.texture?.size())
         platform.zPosition = 1

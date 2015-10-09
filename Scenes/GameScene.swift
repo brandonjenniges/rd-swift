@@ -225,7 +225,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addFireball() {
-        let fire = Fireball(texture: Fireball.fireTextureAtlas.textureNamed("fireball1"))
+        let fire = Fireball(texture: TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
         fire.setupFireball()
         fire.zPosition = CGFloat(Layer.Game.rawValue)
         
