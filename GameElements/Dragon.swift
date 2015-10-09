@@ -16,9 +16,11 @@ class Dragon: SKSpriteNode {
     let DragonCategoryName = "dragon"
     
     init(imageName: String) {
-        let texture = SKTexture(imageNamed: imageName)
+        let texture = Dragon.dragonAtlas.textureNamed(imageName)
+        print(texture.size())
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         self.name = DragonCategoryName
+        self.zPosition = 1
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -29,7 +29,7 @@ class Player: SKSpriteNode {
     var previousPlayerTouch:CGFloat?
     
     init() {
-        let texture = SKTexture(imageNamed: "player0")
+        let texture = Player.playerAtlas.textureNamed("player0")
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         setupPhysics()
         self.name = PlayerCategoryName

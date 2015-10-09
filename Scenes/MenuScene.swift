@@ -10,6 +10,9 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
+    let introAtlas = SKTextureAtlas(named: "Intro")
+    let playerAtlas = SKTextureAtlas(named: "Player")
+    
     var viewController:GameViewController!
     
     var dragon0:Dragon!
@@ -24,6 +27,9 @@ class MenuScene: SKScene {
         #if os(tvOS)
             viewController.controllerUserInteractionEnabled = true
         #endif
+        addBackground()
+        addLogo()
+        addPlatform()
         setupDragons()
     }
     
@@ -39,6 +45,37 @@ class MenuScene: SKScene {
     }
     
     //MARK: Elements
+    func addBackground() {
+        let background = SKSpriteNode(texture:introAtlas.textureNamed("background"))
+        background.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 2)
+        addChild(background)
+    }
+    
+    func addLogo() {
+        let logo = SKSpriteNode(texture:introAtlas.textureNamed("logo"))
+        logo.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 2)
+        logo.zPosition = 2
+        addChild(logo)
+        
+        let growAction = SKAction.scaleTo(1.05, duration: 1)
+        growAction.timingMode = .EaseInEaseOut
+        let shrinkAction = SKAction.scaleTo(0.95, duration: 1)
+        shrinkAction.timingMode = .EaseInEaseOut
+        let sequence = SKAction.sequence([growAction, shrinkAction])
+        let repeatAction = SKAction.repeatActionForever(sequence)
+        
+        logo.runAction(repeatAction)
+    }
+    
+    func addPlatform() {
+        let platform = SKSpriteNode(texture: playerAtlas.textureNamed("ground"))
+        platform.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 4)
+        print(platform.texture?.size())
+        platform.zPosition = 1
+        addChild(platform)
+        
+    }
+    
     func setupPlayer() {
         //player = childNodeWithName("player") as! Player
         player = Player()
@@ -58,20 +95,23 @@ class MenuScene: SKScene {
         
         #if os(tvOS)
             dragonArray = [dragon0, dragon1, dragon2, dragon3]
+            dragon2.xScale = -1
+            dragon3.xScale = -1
         #else
             dragonArray = [dragon0, dragon1]
+            dragon1.xScale = -1
         #endif
         
         
         var index = 0
-        let gapSize = view!.frame.width / 4
-        let yPos = view!.frame.size.height * 0.8
+        let gapSize = view!.frame.width / CGFloat(dragonArray.count)
+        let yPos = view!.frame.size.height * 0.75
         
         for dragon in dragonArray {
+            print(dragon.texture!.size())
             dragon.setUpDragonAnimations(index)
-            let xPos = gapSize * CGFloat(index + 1) - dragon.texture!.size().width
-            print(xPos)
-            dragon.position = CGPointMake((gapSize / 2) * CGFloat(index + 1) + (dragon.texture!.size().width / 2), yPos - dragon.texture!.size().height / 2)
+           // print(xPos)
+            dragon.position = CGPointMake(gapSize * CGFloat(index) + gapSize / 2, yPos)
             addChild(dragon)
             index++
         }
