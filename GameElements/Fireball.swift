@@ -10,7 +10,6 @@ import SpriteKit
 
 class Fireball: SKSpriteNode {
     
-    static let fireTextureAtlas = SKTextureAtlas(named: "Fire")
     
     func setupFireball() {
         self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(setupFireballFrames(), timePerFrame: 0.10)))
@@ -18,10 +17,10 @@ class Fireball: SKSpriteNode {
     
     private func setupFireballFrames() -> [SKTexture] {
         var array = [SKTexture]()
-        array.append(Fireball.fireTextureAtlas.textureNamed("fireball1"))
-        array.append(Fireball.fireTextureAtlas.textureNamed("fireball2"))
-        array.append(Fireball.fireTextureAtlas.textureNamed("fireball3"))
-        array.append(Fireball.fireTextureAtlas.textureNamed("fireball2"))
+        array.append(TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
+        array.append(TextureAtlasManager.fireTextureAtlas.textureNamed("fireball2"))
+        array.append(TextureAtlasManager.fireTextureAtlas.textureNamed("fireball3"))
+        array.append(TextureAtlasManager.fireTextureAtlas.textureNamed("fireball2"))
         return array
     }
     

@@ -10,13 +10,12 @@ import SpriteKit
 
 class Dragon: SKSpriteNode {
     
-    static let dragonAtlas = SKTextureAtlas(named: "Dragons")
     static var dragonArray:[Dragon]!
     
     let DragonCategoryName = "dragon"
     
     init(imageName: String) {
-        let texture = Dragon.dragonAtlas.textureNamed(imageName)
+        let texture = TextureAtlasManager.dragonAtlas.textureNamed(imageName)
         print(texture.size())
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         self.name = DragonCategoryName
@@ -47,12 +46,12 @@ class Dragon: SKSpriteNode {
         
         for index in 0...3 {
             let textureName = "dragon\(dragon)_\(index)"
-            array.append(Dragon.dragonAtlas.textureNamed(textureName))
+            array.append(TextureAtlasManager.dragonAtlas.textureNamed(textureName))
         }
         
         for var index = 2; index > 0; index-- {
             let textureName = "dragon\(dragon)_\(index)"
-            array.append(Dragon.dragonAtlas.textureNamed(textureName))
+            array.append(TextureAtlasManager.dragonAtlas.textureNamed(textureName))
         }
         return array
     }

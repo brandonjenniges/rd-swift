@@ -10,8 +10,6 @@ import SpriteKit
 
 class Player: SKSpriteNode {
     
-    static let playerAtlas = SKTextureAtlas(named: "Player")
-    
     let lookingAction = "lookingAction"
     let runningAnimation = "runningAnimation"
     let moveAction = "moveAction"
@@ -29,7 +27,7 @@ class Player: SKSpriteNode {
     var previousPlayerTouch:CGFloat?
     
     init() {
-        let texture = Player.playerAtlas.textureNamed("player0")
+        let texture = TextureAtlasManager.playerAtlas.textureNamed("player0")
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         setupPhysics()
         self.name = PlayerCategoryName
@@ -41,25 +39,25 @@ class Player: SKSpriteNode {
     
     private func setupLookingFrames() -> [SKTexture] {
         var array = [SKTexture]()
-        array.append(Player.playerAtlas.textureNamed("looking_right"))
-        array.append(Player.playerAtlas.textureNamed("player0"))
-        array.append(Player.playerAtlas.textureNamed("looking_left"))
-        array.append(Player.playerAtlas.textureNamed("player0"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("looking_right"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player0"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("looking_left"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player0"))
         return array
     }
     
     private func setupRunningFrames() -> [SKTexture] {
         var array = [SKTexture]()
-        array.append(Player.playerAtlas.textureNamed("player1"))
-        array.append(Player.playerAtlas.textureNamed("player2"))
-        array.append(Player.playerAtlas.textureNamed("player3"))
-        array.append(Player.playerAtlas.textureNamed("player4"))
-        array.append(Player.playerAtlas.textureNamed("player5"))
-        array.append(Player.playerAtlas.textureNamed("player6"))
-        array.append(Player.playerAtlas.textureNamed("player5"))
-        array.append(Player.playerAtlas.textureNamed("player4"))
-        array.append(Player.playerAtlas.textureNamed("player3"))
-        array.append(Player.playerAtlas.textureNamed("player2"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player1"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player2"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player3"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player4"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player5"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player6"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player5"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player4"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player3"))
+        array.append(TextureAtlasManager.playerAtlas.textureNamed("player2"))
         return array
     }
     

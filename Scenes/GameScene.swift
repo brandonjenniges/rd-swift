@@ -36,7 +36,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var viewController:GameViewController!
     
     var player:Player!
-    var ground:SKSpriteNode!
+    var platform:SKSpriteNode!
+    var background:SKSpriteNode!
     var scoreLabel:SKLabelNode!
     
     var gameState:GameState?
@@ -48,7 +49,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastSpawnTimeInterval:NSTimeInterval = 0
     var score = 0
     
-    var worldNode: SKSpriteNode!
     var pauseNode: SKSpriteNode!
     
     override func didMoveToView(view: SKView) {
@@ -57,15 +57,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         self.view!.showsPhysics = true
         
-        worldNode = childNodeWithName("background") as! SKSpriteNode
-        
         #if os(tvOS)
             viewController.controllerUserInteractionEnabled = false
         #endif
         
-        ground = worldNode.childNodeWithName("ground") as! SKSpriteNode
-       // self.addChild(myLabel)
-        scoreLabel = worldNode.childNodeWithName("scoreLabel") as! SKLabelNode
+        addBackground()
+        addPlatform()
+        addScoreLabel()
         setupGaps()
         switchToIntro()
     }
@@ -145,6 +143,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    //MARK: Elements
+    func addBackground() {
+        background = SKSpriteNode(texture:TextureAtlasManager.introAtlas.textureNamed("background"))
+        background.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 2)
+        addChild(background)
+    }
+    
+    func addPlatform() {
+        platform = SKSpriteNode(texture: TextureAtlasManager.playerAtlas.textureNamed("ground"))
+        platform.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 4)
+        print(platform.texture?.size())
+        platform.zPosition = 1
+        addChild(platform)
+    }
+    
+    func addScoreLabel() {
+        scoreLabel = SKLabelNode(text: "0")
+        scoreLabel.zPosition = 1
+        scoreLabel.position = CGPointMake(view!.frame.width / 2, view!.frame.height * 0.75)
+    }
+    
     //MARK: States
     func switchToMainMenu() {
     }
@@ -157,14 +176,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func switchToPlay() {
         self.gameState = .Play
+        
+        /*
         let intro = worldNode.childNodeWithName("intro")
         let removeIntroAction = SKAction.fadeAlphaTo(0, duration: 2.0)
         intro?.runAction(removeIntroAction, completion: { () -> Void in
-            
-            
+
            // let moveRightAction = SKAction.moveToX(700, duration: 2.0)
            // self.player.runAction(moveRightAction)
         })
+        */
         
         
     }
@@ -175,10 +196,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func switchToGameOver() {
         self.gameState = .GameOver
+        /*
         let scorecard = worldNode.childNodeWithName("scorecard") as! ScoreBoard
         scorecard.setupWithGameScore(score)
         let moveAction = SKAction.moveToY((self.view?.frame.height)! / 2, duration: 0.4)
         scorecard.runAction(moveAction)
+        */
         self.player.die()
     }
     
@@ -192,19 +215,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: Elements
     func setupPlayer() {
-        player = worldNode.childNodeWithName("player") as! Player
+        player = Player()
         player.runPlayerLookingAnimation()
         player.movement = .Neutral
-        player.setPlayerRightMovementMax((self.ground.position.x + self.ground.frame.width / 2) - player.frame.width / 2, min: (self.ground.position.x - self.ground.frame.size.width / 2) + player.frame.width / 2)
+        player.setPlayerRightMovementMax((self.platform.position.x + self.platform.frame.width / 2) - player.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
         player.setupPhysics()
     }
     
     func setupDragons() {
-        let dragon0 = worldNode.childNodeWithName("dragon0") as! Dragon
-        let dragon1 = worldNode.childNodeWithName("dragon1") as! Dragon
-        let dragon2 = worldNode.childNodeWithName("dragon2") as! Dragon
-        let dragon3 = worldNode.childNodeWithName("dragon3") as! Dragon
+        let dragon0 = Dragon(imageName: "dragon0_0")
+        let dragon1 = Dragon(imageName: "dragon1_0")
+        let dragon2 = Dragon(imageName: "dragon2_0")
+        let dragon3 = Dragon(imageName: "dragon3_0")
+        
         Dragon.dragonArray = [dragon0, dragon1, dragon2, dragon3]
         
         var index = 0
@@ -217,15 +241,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setupGaps() {
         var tempArray = [CGFloat]()
         
-        let groundStart = ground.position.x - ground.frame.size.width / 2
+        let groundStart = platform.position.x - platform.frame.size.width / 2
         for index in 0...12 {
-            tempArray.append(groundStart + CGFloat((index * Int(ground.frame.size.width / 12))))
+            tempArray.append(groundStart + CGFloat((index * Int(platform.frame.size.width / 12))))
         }
         gapPositions = tempArray
     }
     
     func addFireball() {
-        let fire = Fireball(texture: Fireball.fireTextureAtlas.textureNamed("fireball1"))
+        let fire = Fireball(texture: TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
         fire.setupFireball()
         fire.zPosition = CGFloat(Layer.Game.rawValue)
         
@@ -233,8 +257,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fire.position = CGPointMake(x, frame.size.height + frame.size.height / 2.0)
         fire.setupPhysicsBody()
         fire.zPosition = Layer.Game.rawValue
-        worldNode.addChild(fire)
-        fire.send(-worldNode.frame.size.height / 2) //Needs this because of worldNode's anchor point
+        background.addChild(fire)
+        fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
     }
     
     func increaseScore() {
@@ -248,7 +272,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func pauseScene() {
         scenePaused = true
-        worldNode.paused = true
+        background.paused = true
         if let overlayScene = SKScene(fileNamed: "PauseScene") {
             let contentTemplateNode = overlayScene.childNodeWithName("Overlay") as! SKSpriteNode
             
@@ -271,7 +295,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     func unPauseScene() {
         scenePaused = false
-        worldNode.paused = false
+        background.paused = false
         if let pauseNode = pauseNode {
             pauseNode.removeFromParent()
         }
