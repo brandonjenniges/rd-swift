@@ -16,6 +16,8 @@
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAE1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */; };
 		FB0BBBAF1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */; };
+		FB21C4AD1BC8BC1100456EDF /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB21C4AC1BC8BC1100456EDF /* TextureAtlasManager.swift */; };
+		FB21C4AE1BC8BC1100456EDF /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB21C4AC1BC8BC1100456EDF /* TextureAtlasManager.swift */; };
 		FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
 		FB4910D71BBB88900094EC7E /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4910D61BBB88900094EC7E /* ScoreManager.swift */; };
 		FB4910D81BBB88900094EC7E /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4910D61BBB88900094EC7E /* ScoreManager.swift */; };
@@ -53,8 +55,6 @@
 		FBEBAB931BB784CA004D455D /* Intro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB8D1BB78350004D455D /* Intro.xcassets */; };
 		FBEBAB961BB78572004D455D /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB951BB78572004D455D /* MenuScene.swift */; };
 		FBEBAB971BB78572004D455D /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB951BB78572004D455D /* MenuScene.swift */; };
-		FBEBAB991BB78598004D455D /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB981BB78598004D455D /* MenuScene.sks */; };
-		FBEBAB9A1BB78598004D455D /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB981BB78598004D455D /* MenuScene.sks */; };
 		FBEBAB9C1BB89E6C004D455D /* Fireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB9B1BB89E6C004D455D /* Fireball.swift */; };
 		FBEBAB9D1BB89E6C004D455D /* Fireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB9B1BB89E6C004D455D /* Fireball.swift */; };
 		FBED7D021BBA3BCB001C73FE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCD32A21BBA3B9D00FAB2D1 /* spark.png */; };
@@ -89,6 +89,7 @@
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
+		FB21C4AC1BC8BC1100456EDF /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		FB4910D61BBB88900094EC7E /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		FB4910D91BBB8B6C0094EC7E /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOS.entitlements; sourceTree = "<group>"; };
 		FB4910DA1BBB8C1C0094EC7E /* RampagingDragons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RampagingDragons.entitlements; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		FBEBAB8D1BB78350004D455D /* Intro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Intro.xcassets; sourceTree = "<group>"; };
 		FBEBAB901BB783FB004D455D /* Fire.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Fire.xcassets; sourceTree = "<group>"; };
 		FBEBAB951BB78572004D455D /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
-		FBEBAB981BB78598004D455D /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
 		FBEBAB9B1BB89E6C004D455D /* Fireball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fireball.swift; sourceTree = "<group>"; };
 		FBFC27551BBE26360012C1AA /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		FBFC27561BBE26360012C1AA /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
@@ -212,7 +212,6 @@
 				FBA743D01BB71E5200AC4B44 /* GameScene.sks */,
 				FBA743D11BB71E5200AC4B44 /* GameScene.swift */,
 				FBEBAB951BB78572004D455D /* MenuScene.swift */,
-				FBEBAB981BB78598004D455D /* MenuScene.sks */,
 				FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */,
 			);
 			path = Scenes;
@@ -424,7 +423,6 @@
 				FB9FFD861BB72A73004D4119 /* Dragons.xcassets in Resources */,
 				FBA743D51BB71F1000AC4B44 /* GameScene.sks in Resources */,
 				FB8D26EF1BB71773000B548E /* Main.storyboard in Resources */,
-				FBEBAB9A1BB78598004D455D /* MenuScene.sks in Resources */,
 				FB8D26F11BB71773000B548E /* Assets.xcassets in Resources */,
 				FB4910DD1BBB92520094EC7E /* titlesong.wav in Resources */,
 				FBEBAB7B1BB764A8004D455D /* Player.xcassets in Resources */,
@@ -450,7 +448,6 @@
 				FBCD32A31BBA3B9D00FAB2D1 /* spark.png in Resources */,
 				FB8D27061BB717A1000B548E /* Main.storyboard in Resources */,
 				FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */,
-				FBEBAB991BB78598004D455D /* MenuScene.sks in Resources */,
 				FB7BDEF51BC4D33100CCAD52 /* PauseScene.sks in Resources */,
 				FBEBAB8E1BB78350004D455D /* Intro.xcassets in Resources */,
 			);
@@ -465,6 +462,7 @@
 			files = (
 				FBFC27781BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBFC276C1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
+				FB21C4AE1BC8BC1100456EDF /* TextureAtlasManager.swift in Sources */,
 				FBFC27741BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				FBFC27621BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				C59E3A4C1BC808020037F3B3 /* Logo.swift in Sources */,
@@ -495,6 +493,7 @@
 			files = (
 				FBFC27771BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBFC276B1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
+				FB21C4AD1BC8BC1100456EDF /* TextureAtlasManager.swift in Sources */,
 				FBFC27731BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				FBFC27611BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				C59E3A4B1BC808020037F3B3 /* Logo.swift in Sources */,
