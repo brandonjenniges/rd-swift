@@ -160,8 +160,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let intro = worldNode.childNodeWithName("intro")
         let removeIntroAction = SKAction.fadeAlphaTo(0, duration: 2.0)
         intro?.runAction(removeIntroAction, completion: { () -> Void in
-            
-            
            // let moveRightAction = SKAction.moveToX(700, duration: 2.0)
            // self.player.runAction(moveRightAction)
         })
@@ -201,15 +199,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func setupDragons() {
-        let dragon0 = worldNode.childNodeWithName("dragon0") as! Dragon
-        let dragon1 = worldNode.childNodeWithName("dragon1") as! Dragon
-        let dragon2 = worldNode.childNodeWithName("dragon2") as! Dragon
-        let dragon3 = worldNode.childNodeWithName("dragon3") as! Dragon
-        Dragon.dragonArray = [dragon0, dragon1, dragon2, dragon3]
+        let dragonArray = Dragon.getDragonArray()
         
+        //TODO: Need to position dragons
         var index = 0
-        for dragon in Dragon.dragonArray {
-            dragon.setUpDragonAnimations(index)
+        for dragon in dragonArray {
+            dragon.setUpDragonAnimations()
             index++
         }
     }

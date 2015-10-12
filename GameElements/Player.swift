@@ -31,6 +31,7 @@ class Player: SKSpriteNode {
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         setupPhysics()
         self.name = PlayerCategoryName
+        self.runPlayerLookingAnimation()
     }
     
     required init?(coder aDecoder: NSCoder) {

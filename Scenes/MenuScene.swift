@@ -7,18 +7,13 @@
 //
 
 import SpriteKit
+import GameKit
 
 class MenuScene: SKScene {
     
     var viewController:GameViewController!
     
-    var dragon0:Dragon!
-    var dragon1:Dragon!
-    var dragon2:Dragon!
-    var dragon3:Dragon!
     var dragonArray:[Dragon]!
-    
-    var player:Player!
     
     override func didMoveToView(view: SKView) {
         #if os(tvOS)
@@ -74,30 +69,13 @@ class MenuScene: SKScene {
     }
     
     func setupPlayer() {
-        //player = childNodeWithName("player") as! Player
-        player = Player()
-        player.runPlayerLookingAnimation()
+        let player = Player()
+        //TODO: Position player
     }
     
     func setupDragons() {
-        //dragon0 = childNodeWithName("dragon0") as! Dragon
-        //dragon1 = childNodeWithName("dragon1") as! Dragon
-        //dragon2 = childNodeWithName("dragon2") as! Dragon
-        //dragon3 = childNodeWithName("dragon3") as! Dragon
         
-        dragon0 = Dragon(imageName: "dragon0_0")
-        dragon1 = Dragon(imageName: "dragon1_0")
-        dragon2 = Dragon(imageName: "dragon2_0")
-        dragon3 = Dragon(imageName: "dragon3_0")
-        
-        #if os(tvOS)
-            dragonArray = [dragon0, dragon1, dragon2, dragon3]
-            dragon2.xScale = -1
-            dragon3.xScale = -1
-        #else
-            dragonArray = [dragon0, dragon1]
-            dragon1.xScale = -1
-        #endif
+        dragonArray = Dragon.getDragonArray()
         
         
         var index = 0
@@ -106,8 +84,7 @@ class MenuScene: SKScene {
         
         for dragon in dragonArray {
             print(dragon.texture!.size())
-            dragon.setUpDragonAnimations(index)
-           // print(xPos)
+            dragon.setUpDragonAnimations()
             dragon.position = CGPointMake(gapSize * CGFloat(index) + gapSize / 2, yPos)
             addChild(dragon)
             index++
