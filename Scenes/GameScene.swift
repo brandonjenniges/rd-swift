@@ -217,19 +217,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player = Player()
         player.setPlayerRightMovementMax((self.platform.position.x + self.platform.frame.width / 2) - player.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
-        player.setupPhysics()
         player.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.size.height / 2) - 10)
-        player.zPosition = Layer.Game.rawValue
         addChild(player)
     }
     
     func setupDragons() {
+        
         let dragonArray = Dragon.getDragonArray()
         
-        //TODO: Need to position dragons
         var index = 0
+        let gapSize = view!.frame.width / CGFloat(dragonArray.count)
+        let yPos = view!.frame.size.height * 0.75
+        
         for dragon in dragonArray {
+            print(dragon.texture!.size())
             dragon.setUpDragonAnimations()
+            // print(xPos)
+            dragon.position = CGPointMake(gapSize * CGFloat(index) + gapSize / 2, yPos)
+            addChild(dragon)
             index++
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */; };
+		C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */; };
 		C59E3A4B1BC808020037F3B3 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4A1BC808020037F3B3 /* Logo.swift */; };
 		C59E3A4C1BC808020037F3B3 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4A1BC808020037F3B3 /* Logo.swift */; };
 		C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
@@ -85,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 		C59E3A4A1BC808020037F3B3 /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -300,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				FBFC272D1BBE244B0012C1AA /* SKTUtils */,
+				C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -464,6 +468,7 @@
 				FBFC27781BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBFC276C1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
 				FBFC27741BBE26360012C1AA /* SKTEffects.swift in Sources */,
+				C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
 				FBFC27621BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				C59E3A4C1BC808020037F3B3 /* Logo.swift in Sources */,
 				FBA743D41BB71E7900AC4B44 /* GameScene.swift in Sources */,
@@ -495,6 +500,7 @@
 				FBFC27771BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBFC276B1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
 				FBFC27731BBE26360012C1AA /* SKTEffects.swift in Sources */,
+				C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
 				FBFC27611BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				C59E3A4B1BC808020037F3B3 /* Logo.swift in Sources */,
 				FBEBAB7E1BB765AB004D455D /* Player.swift in Sources */,
