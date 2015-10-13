@@ -38,7 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player:Player!
     var platform:SKSpriteNode!
     var background:SKSpriteNode!
-    var scoreLabel:SKLabelNode!
+    var scoreLabel:ScoreLabel!
     
     var gameState:GameState?
     var gapPositions = [CGFloat]()
@@ -159,9 +159,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addScoreLabel() {
-        scoreLabel = SKLabelNode(text: "0")
-        scoreLabel.zPosition = 1
+        scoreLabel = ScoreLabel()
         scoreLabel.position = CGPointMake(view!.frame.width / 2, view!.frame.height * 0.75)
+        addChild(scoreLabel)
     }
     
     //MARK: States
@@ -215,11 +215,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: Elements
     func setupPlayer() {
         player = Player()
-        player.runPlayerLookingAnimation()
-        player.movement = .Neutral
         player.setPlayerRightMovementMax((self.platform.position.x + self.platform.frame.width / 2) - player.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
         player.setupPhysics()
+        player.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.size.height / 2) - 10)
+        player.zPosition = Layer.Game.rawValue
+        addChild(player)
     }
     
     func setupDragons() {

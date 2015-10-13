@@ -30,7 +30,7 @@ class MenuScene: SKScene {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let scene = GameScene()
+        let scene = GameScene(size: self.view!.frame.size)
         scene.scaleMode = .AspectFill
         scene.viewController = viewController
         self.view!.presentScene(scene, transition: SKTransition.crossFadeWithDuration(1.0))
@@ -78,7 +78,7 @@ class MenuScene: SKScene {
         playButton.zPosition = 2
         addChild(playButton)
     }
-    /*
+    
     func setupPlayer() {
         let player = Player()
         //TODO: Position player
@@ -87,15 +87,6 @@ class MenuScene: SKScene {
     func setupDragons() {
         
         dragonArray = Dragon.getDragonArray()
-        
-        #if os(tvOS)
-            dragonArray = [dragon0, dragon1, dragon2, dragon3]
-            dragon1.xScale = -1
-            dragon3.xScale = -1
-        #else
-            dragonArray = [dragon0, dragon1]
-            dragon1.xScale = -1
-        #endif
         
         var index = 0
         let gapSize = view!.frame.width / CGFloat(dragonArray.count)
@@ -109,7 +100,7 @@ class MenuScene: SKScene {
         let xPositions = [leftXPos, rightXPos, leftXPos, rightXPos]
         for dragon in dragonArray {
             print(dragon.texture!.size())
-            dragon.setUpDragonAnimations(index)
+            dragon.setUpDragonAnimations()
            // print(xPos)
             dragon.position = CGPointMake(xPositions[index], yPositions[index])
             addChild(dragon)

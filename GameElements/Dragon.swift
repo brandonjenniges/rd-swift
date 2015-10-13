@@ -84,14 +84,16 @@ class Dragon: SKSpriteNode {
     static func getDragonArray() -> [Dragon] {
         let shuffedArray:[Dragon]
         if #available(iOS 9.0, *) {
-            shuffedArray = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(Dragon.dragons.map { $0.copy() as! Dragon }) as! [Dragon]
+            shuffedArray = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(Dragon.dragons.map { $0 }) as! [Dragon]
+            
+          //  shuffedArray = Dragon.dragons.map { $0 }
         } else {
-            shuffedArray = Dragon.dragons.map { $0.copy() as! Dragon }
+            shuffedArray = Dragon.dragons.map { $0 }
         }
         
         // Make right most dragons scale to face towards center of screen
         #if os(tvOS)
-            shuffedArray[2].xScale = -1
+            shuffedArray[1].xScale = -1
             shuffedArray[3].xScale = -1
         #else
             shuffedArray[1].xScale = -1

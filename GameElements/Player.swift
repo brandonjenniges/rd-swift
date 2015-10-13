@@ -32,6 +32,7 @@ class Player: SKSpriteNode {
         setupPhysics()
         self.name = PlayerCategoryName
         self.runPlayerLookingAnimation()
+        self.movement = .Neutral
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -146,8 +147,6 @@ class Player: SKSpriteNode {
         self.physicsBody?.restitution = 0
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.affectedByGravity = false
-        
-    
     }
     
     func stopRunning() {

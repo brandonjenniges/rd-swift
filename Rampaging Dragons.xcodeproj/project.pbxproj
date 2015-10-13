@@ -16,8 +16,6 @@
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAE1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */; };
 		FB0BBBAF1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */; };
-		FB21C4AD1BC8BC1100456EDF /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB21C4AC1BC8BC1100456EDF /* TextureAtlasManager.swift */; };
-		FB21C4AE1BC8BC1100456EDF /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB21C4AC1BC8BC1100456EDF /* TextureAtlasManager.swift */; };
 		FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
 		FB4910D71BBB88900094EC7E /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4910D61BBB88900094EC7E /* ScoreManager.swift */; };
 		FB4910D81BBB88900094EC7E /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4910D61BBB88900094EC7E /* ScoreManager.swift */; };
@@ -43,6 +41,8 @@
 		FBCD329F1BBA19B000FAB2D1 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329C1BBA19B000FAB2D1 /* pop.wav */; };
 		FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329D1BBA19B000FAB2D1 /* roar.wav */; };
 		FBCD32A31BBA3B9D00FAB2D1 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCD32A21BBA3B9D00FAB2D1 /* spark.png */; };
+		FBEAB7151BCCA4BE00054888 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */; };
+		FBEAB7161BCCA4BE00054888 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */; };
 		FBEBAB7A1BB763FF004D455D /* Player.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB791BB763FF004D455D /* Player.xcassets */; };
 		FBEBAB7B1BB764A8004D455D /* Player.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB791BB763FF004D455D /* Player.xcassets */; };
 		FBEBAB7E1BB765AB004D455D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB7D1BB765AB004D455D /* Player.swift */; };
@@ -89,7 +89,6 @@
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
-		FB21C4AC1BC8BC1100456EDF /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		FB4910D61BBB88900094EC7E /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		FB4910D91BBB8B6C0094EC7E /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOS.entitlements; sourceTree = "<group>"; };
 		FB4910DA1BBB8C1C0094EC7E /* RampagingDragons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RampagingDragons.entitlements; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		FBCD329C1BBA19B000FAB2D1 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		FBCD329D1BBA19B000FAB2D1 /* roar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = roar.wav; sourceTree = "<group>"; };
 		FBCD32A21BBA3B9D00FAB2D1 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		FBEBAB791BB763FF004D455D /* Player.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Player.xcassets; sourceTree = "<group>"; };
 		FBEBAB7D1BB765AB004D455D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FBEBAB7F1BB765B6004D455D /* Dragon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
@@ -267,6 +267,7 @@
 				FB4910D61BBB88900094EC7E /* ScoreManager.swift */,
 				FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */,
 				C59E3A4A1BC808020037F3B3 /* Logo.swift */,
+				FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */,
 			);
 			path = GameElements;
 			sourceTree = "<group>";
@@ -462,12 +463,12 @@
 			files = (
 				FBFC27781BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBFC276C1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
-				FB21C4AE1BC8BC1100456EDF /* TextureAtlasManager.swift in Sources */,
 				FBFC27741BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				FBFC27621BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				C59E3A4C1BC808020037F3B3 /* Logo.swift in Sources */,
 				FBA743D41BB71E7900AC4B44 /* GameScene.swift in Sources */,
 				C59E3A4F1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */,
+				FBEAB7161BCCA4BE00054888 /* ScoreLabel.swift in Sources */,
 				FB8D26EA1BB71773000B548E /* GameViewController.swift in Sources */,
 				FBEBAB9D1BB89E6C004D455D /* Fireball.swift in Sources */,
 				FB4910D81BBB88900094EC7E /* ScoreManager.swift in Sources */,
@@ -493,12 +494,12 @@
 			files = (
 				FBFC27771BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBFC276B1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
-				FB21C4AD1BC8BC1100456EDF /* TextureAtlasManager.swift in Sources */,
 				FBFC27731BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				FBFC27611BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				C59E3A4B1BC808020037F3B3 /* Logo.swift in Sources */,
 				FBEBAB7E1BB765AB004D455D /* Player.swift in Sources */,
 				C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */,
+				FBEAB7151BCCA4BE00054888 /* ScoreLabel.swift in Sources */,
 				FB8D27031BB717A1000B548E /* GameViewController.swift in Sources */,
 				FBEBAB9C1BB89E6C004D455D /* Fireball.swift in Sources */,
 				FB4910D71BBB88900094EC7E /* ScoreManager.swift in Sources */,

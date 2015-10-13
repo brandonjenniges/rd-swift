@@ -24,7 +24,7 @@ class GameViewController: GCEventViewController {
         /* Sprite Kit applies additional optimizations to improve rendering performance */
         skView.ignoresSiblingOrder = true
             
-        let scene = MenuScene(size: skView.frame.size)
+        let scene = GameScene(size: skView.frame.size)
         scene.viewController = self
         /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .AspectFill
