@@ -1,22 +1,35 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "dragon1_3.png",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
     },
     {
-      "idiom" : "tv",
-      "filename" : "dragon1_3.png",
+      "idiom" : "ipad",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "tv",
+      "filename" : "dragon-red-tv-4.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "dragon1_3.png",
+      "unassigned" : true,
+      "scale" : "2x"
     }
   ],
   "info" : {

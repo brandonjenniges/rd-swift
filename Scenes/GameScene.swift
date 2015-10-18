@@ -225,17 +225,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let dragonArray = Dragon.getDragonArray()
         
-        var index = 0
         let gapSize = view!.frame.width / CGFloat(dragonArray.count)
-        let yPos = view!.frame.size.height * 0.75
+        let topYPos = view!.frame.size.height * 0.75
         
-        for dragon in dragonArray {
-            print(dragon.texture!.size())
+        for index in 0...1 {
+            let xPos = gapSize * CGFloat(index * 3) + gapSize / 2
+            let dragon = dragonArray[index]
             dragon.setUpDragonAnimations()
-            // print(xPos)
-            dragon.position = CGPointMake(gapSize * CGFloat(index) + gapSize / 2, yPos)
+            dragon.position = CGPointMake(xPos, topYPos)
             addChild(dragon)
-            index++
         }
     }
     

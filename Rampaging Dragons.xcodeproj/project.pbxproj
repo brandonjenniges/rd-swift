@@ -34,7 +34,7 @@
 		FB8D27061BB717A1000B548E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8D27041BB717A1000B548E /* Main.storyboard */; };
 		FB8D27081BB717A1000B548E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8D27071BB717A1000B548E /* Assets.xcassets */; };
 		FB8D270B1BB717A1000B548E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8D27091BB717A1000B548E /* LaunchScreen.storyboard */; };
-		FB9FFD851BB726E0004D4119 /* Dragons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9FFD841BB726E0004D4119 /* Dragons.xcassets */; };
+		FB962BBC1BD404310049A6D9 /* Dragons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9FFD841BB726E0004D4119 /* Dragons.xcassets */; };
 		FB9FFD861BB72A73004D4119 /* Dragons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9FFD841BB726E0004D4119 /* Dragons.xcassets */; };
 		FBA743D21BB71E5200AC4B44 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBA743D01BB71E5200AC4B44 /* GameScene.sks */; };
 		FBA743D31BB71E5200AC4B44 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA743D11BB71E5200AC4B44 /* GameScene.swift */; };
@@ -443,7 +443,7 @@
 			files = (
 				FBEBAB8A1BB782FD004D455D /* GameOver.xcassets in Resources */,
 				FBA743D21BB71E5200AC4B44 /* GameScene.sks in Resources */,
-				FB9FFD851BB726E0004D4119 /* Dragons.xcassets in Resources */,
+				FB962BBC1BD404310049A6D9 /* Dragons.xcassets in Resources */,
 				FB8D270B1BB717A1000B548E /* LaunchScreen.storyboard in Resources */,
 				FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */,
 				FB8D27081BB717A1000B548E /* Assets.xcassets in Resources */,
