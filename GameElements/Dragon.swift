@@ -11,8 +11,6 @@ import GameKit
 
 class Dragon: SKSpriteNode {
     
-    static let dragons = [Dragon(dragonID: 0), Dragon(dragonID: 1), Dragon(dragonID: 2), Dragon(dragonID: 3)]
-    
     let DragonCategoryName = "dragon"
     let dragonID:Int
     
@@ -82,13 +80,14 @@ class Dragon: SKSpriteNode {
     
     //MARK: Utility
     static func getDragonArray() -> [Dragon] {
+        let dragons = [Dragon(dragonID: 0), Dragon(dragonID: 1), Dragon(dragonID: 2), Dragon(dragonID: 3)]
         let shuffledArray:[Dragon]
         if #available(iOS 9.0, *) {
-            shuffledArray = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(Dragon.dragons.map { $0 }) as! [Dragon]
+            shuffledArray = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(dragons.map { $0 }) as! [Dragon]
             
           //  shuffedArray = Dragon.dragons.map { $0 }
         } else {
-            shuffledArray = Dragon.dragons.map { $0 }
+            shuffledArray = dragons.map { $0 }
         }
         
         #if os(tvOS)

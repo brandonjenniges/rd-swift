@@ -81,6 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             break
         case .Intro:
             switchToPlay()
+            switchToGameOver()
             break
         case .Play:
             
@@ -216,21 +217,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func switchToGameOver() {
         self.gameState = .GameOver
-        /*
-        let scorecard = worldNode.childNodeWithName("scorecard") as! ScoreBoard
-        scorecard.setupWithGameScore(score)
-        let moveAction = SKAction.moveToY((self.view?.frame.height)! / 2, duration: 0.4)
+        
+        let overlay = SKSpriteNode(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5), size: view!.frame.size)
+        overlay.zPosition = Layer.GameOver.rawValue
+        background.addChild(overlay)
+        
+        let scorecard = ScoreBoard(score: score)
+        scorecard.position = CGPointMake(0, -view!.frame.size.height + -scorecard.frame.size.height)
+        overlay.addChild(scorecard)
+        let moveAction = SKAction.moveToY(0, duration: 0.4)
         scorecard.runAction(moveAction)
-        */
+        
+        let gameover = SKSpriteNode(texture: TextureAtlasManager.gameOverAtlas.textureNamed("gameover"))
+        gameover.position = CGPointMake(0, view!.frame.size.height / 4)
+        overlay.addChild(gameover)
+        
+        let playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
+        playButton.position = CGPointMake(0, -(view!.frame.size.height / 4))
+        overlay.addChild(playButton)
+        
         self.player.die()
     }
     
     func startNewGame() {
-        if let scene = SKScene(fileNamed: "GameScene") as? GameScene {
-            /* Set the scale mode to scale to fit the window */
-            scene.viewController = viewController
-            self.view!.presentScene(scene, transition: SKTransition.crossFadeWithDuration(1.0))
-        }
+        
     }
     
     //MARK: Elements
@@ -287,7 +297,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        switchToGameOver()
+        if self.gameState == .Play {
+            switchToGameOver()
+        }
     }
     
     func pauseScene() {
