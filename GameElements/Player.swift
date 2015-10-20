@@ -28,7 +28,7 @@ class Player: SKSpriteNode {
     
     init() {
         self.movement = .Neutral
-        let texture = TextureAtlasManager.playerAtlas.textureNamed("player0")
+        let texture = TextureAtlasManager.player_0
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         self.name = PlayerCategoryName
         self.zPosition = GameScene.Layer.Game.rawValue
@@ -44,25 +44,25 @@ class Player: SKSpriteNode {
     //MARK: Animation frames
     private func setupLookingFrames() -> [SKTexture] {
         var array = [SKTexture]()
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("looking_right"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player0"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("looking_left"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player0"))
+        array.append(TextureAtlasManager.player_looking_right)
+        array.append(TextureAtlasManager.player_0)
+        array.append(TextureAtlasManager.player_looking_left)
+        array.append(TextureAtlasManager.player_0)
         return array
     }
     
     private func setupRunningFrames() -> [SKTexture] {
         var array = [SKTexture]()
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player1"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player2"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player3"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player4"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player5"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player6"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player5"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player4"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player3"))
-        array.append(TextureAtlasManager.playerAtlas.textureNamed("player2"))
+        array.append(TextureAtlasManager.player_1)
+        array.append(TextureAtlasManager.player_2)
+        array.append(TextureAtlasManager.player_3)
+        array.append(TextureAtlasManager.player_4)
+        array.append(TextureAtlasManager.player_5)
+        array.append(TextureAtlasManager.player_6)
+        array.append(TextureAtlasManager.player_5)
+        array.append(TextureAtlasManager.player_4)
+        array.append(TextureAtlasManager.player_3)
+        array.append(TextureAtlasManager.player_2)
         return array
     }
     
@@ -87,7 +87,7 @@ class Player: SKSpriteNode {
     func stopRunning() {
         self.removeActionForKey(self.runningAnimation)
         self.removeActionForKey(self.moveAction)
-        self.texture = SKTexture(imageNamed: "player0")
+        self.texture = TextureAtlasManager.player_0
         self.runPlayerLookingAnimation()
     }
     

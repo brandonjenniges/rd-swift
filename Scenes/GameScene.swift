@@ -18,10 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scenePaused = false
     
     enum GameState {
-        case MainMenu
         case Intro
         case Play
-        case ShowingScore
         case GameOver
     }
     
@@ -69,24 +67,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        /* Called when a touch begins */
+        
         if scenePaused {
             unPauseScene()
         }
         
         let state:GameState = gameState!
         switch state {
-        case .MainMenu:
-            switchToIntro()
-            break
         case .Intro:
             switchToPlay()
+            //WARNING: End game quick
             switchToGameOver()
             break
         case .Play:
-            
-            break
-        case .ShowingScore:
+            #if os(iOS)
+                //TODO: Implement check for gamepad touch (iOS)
+            #endif
             break
         case .GameOver:
             startNewGame()
@@ -144,7 +140,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    //MARK: Elements
+    //MARK: Game elements
     func addBackground() {
         background = SKSpriteNode(color: UIColor(red: 126/255.0, green: 200/255.0, blue: 219/255.0, alpha: 1.0), size: view!.frame.size)
         
@@ -186,10 +182,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(scoreLabel)
     }
     
-    //MARK: States
-    func switchToMainMenu() {
-    }
-    
+    //MARK: Game states
     func switchToIntro() {
         self.gameState = .Intro
         setupPlayer()
@@ -211,12 +204,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    func switchToShowingScore() {
-        
-    }
-    
     func switchToGameOver() {
-        self.gameState = .GameOver
         
         let overlay = SKSpriteNode(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5), size: view!.frame.size)
         overlay.zPosition = Layer.GameOver.rawValue
@@ -226,7 +214,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scorecard.position = CGPointMake(0, -view!.frame.size.height + -scorecard.frame.size.height)
         overlay.addChild(scorecard)
         let moveAction = SKAction.moveToY(0, duration: 0.4)
-        scorecard.runAction(moveAction)
+        scorecard.runAction(moveAction) { () -> Void in
+            self.gameState = .GameOver
+        }
         
         let gameover = SKSpriteNode(texture: TextureAtlasManager.gameOverAtlas.textureNamed("gameover"))
         gameover.position = CGPointMake(0, view!.frame.size.height / 4)
@@ -240,7 +230,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func startNewGame() {
-        
+        resetScore()
+        resetPlayer()
+        self.gameState = .Intro
     }
     
     //MARK: Elements
@@ -250,6 +242,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
         player.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.size.height / 2) - 10)
         addChild(player)
+    }
+    
+    func resetPlayer() {
+        //TODO: Implement
     }
     
     func setupDragons() {
@@ -292,6 +288,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func increaseScore() {
+        score++
+        scoreLabel.text = "\(score)"
+    }
+    
+    func resetScore() {
         score++
         scoreLabel.text = "\(score)"
     }
