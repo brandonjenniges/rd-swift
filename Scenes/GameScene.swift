@@ -53,7 +53,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVectorMake(0, 0)
-        self.view!.showsPhysics = true
+        
+        #if DEBUG
+            self.view!.showsPhysics = true
+        #endif
         
         #if os(tvOS)
             viewController.controllerUserInteractionEnabled = false
