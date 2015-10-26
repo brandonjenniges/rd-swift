@@ -20,6 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     enum GameState {
         case Intro
         case Play
+        case ShowingScore
         case GameOver
     }
     
@@ -66,7 +67,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addPlatform()
         addScoreLabel()
         setupGaps()
-        switchToIntro()
+        setupPlayer()
+        setupDragons()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -79,13 +81,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         switch state {
         case .Intro:
             switchToPlay()
-            //WARNING: End game quick
-            switchToGameOver()
             break
         case .Play:
             #if os(iOS)
                 //TODO: Implement check for gamepad touch (iOS)
             #endif
+            break
+        case .ShowingScore:
             break
         case .GameOver:
             startNewGame()
@@ -188,8 +190,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: Game states
     func switchToIntro() {
         self.gameState = .Intro
-        setupPlayer()
-        setupDragons()
+        resetPlayer()
     }
     
     func switchToPlay() {
@@ -210,6 +211,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func switchToGameOver() {
         
         let overlay = SKSpriteNode(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5), size: view!.frame.size)
+        overlay.name = "GameOverOverlay"
         overlay.zPosition = Layer.GameOver.rawValue
         background.addChild(overlay)
         
@@ -233,9 +235,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func startNewGame() {
+        let gameOverNode = background.childNodeWithName("GameOverOverlay")
+        gameOverNode!.removeFromParent()
         resetScore()
-        resetPlayer()
-        self.gameState = .Intro
+        switchToIntro()
     }
     
     //MARK: Elements
@@ -243,12 +246,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player = Player()
         player.setPlayerRightMovementMax((self.platform.position.x + self.platform.frame.width / 2) - player.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
-        player.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.size.height / 2) - 10)
         addChild(player)
     }
     
     func resetPlayer() {
-        //TODO: Implement
+        player.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.size.height / 2) - 10)
     }
     
     func setupDragons() {
@@ -296,12 +298,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func resetScore() {
-        score++
+        score = 0
         scoreLabel.text = "\(score)"
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
         if self.gameState == .Play {
+            self.gameState = .ShowingScore
             switchToGameOver()
         }
     }
