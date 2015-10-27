@@ -63,6 +63,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             viewController.controllerUserInteractionEnabled = false
         #endif
         
+        gameState = .Intro
+        
         addBackground()
         addPlatform()
         addScoreLabel()
@@ -246,6 +248,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player = Player()
         player.setPlayerRightMovementMax((self.platform.position.x + self.platform.frame.width / 2) - player.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
+        resetPlayer()
         addChild(player)
     }
     
