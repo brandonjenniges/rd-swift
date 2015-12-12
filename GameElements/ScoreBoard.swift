@@ -1,8 +1,4 @@
 //
-//  ScoreBoard.swift
-//  Rampaging Dragons
-//
-//  Created by Brandon Jenniges on 9/30/15.
 //  Copyright © 2015 Brandon Jenniges. All rights reserved.
 //
 

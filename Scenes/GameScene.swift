@@ -1,8 +1,4 @@
 //
-//  GameScene.swift
-//  tvOS
-//
-//  Created by Brandon Jenniges on 9/26/15.
 //  Copyright (c) 2015 Brandon Jenniges. All rights reserved.
 //
 

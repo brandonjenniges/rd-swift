@@ -1,8 +1,4 @@
 //
-//  ScoreLabel.swift
-//  Rampaging Dragons
-//
-//  Created by Brandon Jenniges on 10/12/15.
 //  Copyright © 2015 Brandon Jenniges. All rights reserved.
 //
 

@@ -1,8 +1,4 @@
 //
-//  PulseAnimation.swift
-//  Rampaging Dragons
-//
-//  Created by Brandon Jenniges on 10/13/15.
 //  Copyright © 2015 Brandon Jenniges. All rights reserved.
 //
 
