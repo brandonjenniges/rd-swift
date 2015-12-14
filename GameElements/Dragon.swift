@@ -91,6 +91,7 @@ class Dragon: SKSpriteNode {
             shuffledArray[3].xScale = -1
         #else
             shuffledArray[1].xScale = -1
+            shuffledArray[3].xScale = -1
         #endif
         
         return shuffledArray
