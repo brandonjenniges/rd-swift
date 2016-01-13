@@ -697,6 +697,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
 				PRODUCT_NAME = RampagingDragons;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -714,6 +715,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
 				PRODUCT_NAME = RampagingDragons;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
