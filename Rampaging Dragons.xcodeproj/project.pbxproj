@@ -35,7 +35,6 @@
 		FB8D27031BB717A1000B548E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D27021BB717A1000B548E /* GameViewController.swift */; };
 		FB8D27061BB717A1000B548E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8D27041BB717A1000B548E /* Main.storyboard */; };
 		FB8D27081BB717A1000B548E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8D27071BB717A1000B548E /* Assets.xcassets */; };
-		FB8D270B1BB717A1000B548E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8D27091BB717A1000B548E /* LaunchScreen.storyboard */; };
 		FB962BBC1BD404310049A6D9 /* Dragons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9FFD841BB726E0004D4119 /* Dragons.xcassets */; };
 		FB9FFD861BB72A73004D4119 /* Dragons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9FFD841BB726E0004D4119 /* Dragons.xcassets */; };
 		FBA743D21BB71E5200AC4B44 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBA743D01BB71E5200AC4B44 /* GameScene.sks */; };
@@ -112,7 +111,6 @@
 		FB8D27021BB717A1000B548E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FB8D27051BB717A1000B548E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB8D27071BB717A1000B548E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FB8D270A1BB717A1000B548E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB8D270C1BB717A1000B548E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB9FFD841BB726E0004D4119 /* Dragons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Dragons.xcassets; sourceTree = "<group>"; };
 		FBA743D01BB71E5200AC4B44 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				FB8D27021BB717A1000B548E /* GameViewController.swift */,
 				FB8D27041BB717A1000B548E /* Main.storyboard */,
 				FB8D27071BB717A1000B548E /* Assets.xcassets */,
-				FB8D27091BB717A1000B548E /* LaunchScreen.storyboard */,
 				FB8D270C1BB717A1000B548E /* Info.plist */,
 			);
 			path = iOS;
@@ -458,7 +455,6 @@
 				FBEBAB8A1BB782FD004D455D /* GameOver.xcassets in Resources */,
 				FBA743D21BB71E5200AC4B44 /* GameScene.sks in Resources */,
 				FB962BBC1BD404310049A6D9 /* Dragons.xcassets in Resources */,
-				FB8D270B1BB717A1000B548E /* LaunchScreen.storyboard in Resources */,
 				FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */,
 				FB8D27081BB717A1000B548E /* Assets.xcassets in Resources */,
 				FB4910DC1BBB92520094EC7E /* titlesong.wav in Resources */,
@@ -558,14 +554,6 @@
 				FB8D27051BB717A1000B548E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FB8D27091BB717A1000B548E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB8D270A1BB717A1000B548E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
