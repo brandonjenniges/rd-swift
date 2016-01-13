@@ -20,6 +20,8 @@ class MenuScene: SKScene {
         setupDragons()
     }
     
+    // MARK: - Touches
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let scene = GameScene(size: self.view!.frame.size)
         scene.scaleMode = .AspectFill
@@ -27,7 +29,8 @@ class MenuScene: SKScene {
         self.view!.presentScene(scene, transition: SKTransition.crossFadeWithDuration(1.0))
     }
     
-    //MARK: Elements
+    // MARK: - Elements
+    
     func addBackground() {
         let background = SKSpriteNode(color: UIColor(red: 126/255.0, green: 200/255.0, blue: 219/255.0, alpha: 1.0), size: view!.frame.size)
         

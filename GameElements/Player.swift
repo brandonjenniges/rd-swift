@@ -11,11 +11,7 @@ class Player: SKSpriteNode {
     let moveAction = "moveAction"
     let PlayerCategoryName = "player"
     
-    enum PlayerMovement {
-        case Neutral
-        case Left
-        case Right
-    }
+    enum PlayerMovement { case Neutral; case Left; case Right }
     
     var movement:PlayerMovement
     var maxRight:CGFloat?
@@ -37,7 +33,8 @@ class Player: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: Animation frames
+    // MARK: - Animation frames
+    
     private func setupLookingFrames() -> [SKTexture] {
         let array = [
             TextureAtlasManager.player_looking_right,
@@ -64,7 +61,8 @@ class Player: SKSpriteNode {
         return array
     }
     
-    //MARK: Animations
+    // MARK: - Animations
+    
     func runPlayerLookingAnimation() {
         let delayAction = SKAction.waitForDuration(3.0)
         self.runAction(delayAction) { () -> Void in
@@ -89,7 +87,8 @@ class Player: SKSpriteNode {
         self.runPlayerLookingAnimation()
     }
     
-    //MARK: Physics
+    // MARK: - Physics
+    
     func setupPhysics() {
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.frame.width / 2)
         self.physicsBody?.categoryBitMask = GameScene.playerCategory
@@ -102,7 +101,8 @@ class Player: SKSpriteNode {
         self.physicsBody?.affectedByGravity = false
     }
     
-    //MARK: Movement
+    // MARK: - Movement
+    
     func movePlayer(touches: Set<UITouch>) {
         for touch in touches {
             let touchPoint = touch.locationInNode(self.scene!)
@@ -150,7 +150,8 @@ class Player: SKSpriteNode {
         }
     }
     
-    //MARK: Movement utilities
+    // MARK: - Movement utilities
+    
     func setPlayerRightMovementMax(max:CGFloat, min:CGFloat) {
         self.maxRight = max
         self.maxLeft = min

@@ -23,7 +23,8 @@ class Dragon: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: Animation
+    // MARK: - Animation
+    
     func setUpDragonAnimations() {
         self.runAction(getWobbleAnimation(), withKey: "wobble")
         self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(getFlyingAnimationTextures(), timePerFrame: 0.10)), withKey: "flying")
@@ -64,7 +65,8 @@ class Dragon: SKSpriteNode {
         return wobble
     }
     
-    //MARK: Texture getters
+    // MARK : Texture getters
+    
     func getBaseTextureForDragonID(dragonID:Int) -> SKTexture {
         return getTextureForDragonID(dragonID, frame: 0)
     }
@@ -74,7 +76,8 @@ class Dragon: SKSpriteNode {
         return TextureAtlasManager.dragonAtlas.textureNamed(textureName)
     }
     
-    //MARK: Utility
+    // MARK: - Utility
+    
     static func getDragonArray() -> [Dragon] {
         let dragons = [Dragon(dragonID: 0), Dragon(dragonID: 1), Dragon(dragonID: 2), Dragon(dragonID: 3)]
         let shuffledArray:[Dragon]

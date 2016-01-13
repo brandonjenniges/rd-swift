@@ -44,7 +44,6 @@ class ControlPad: SKSpriteNode {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        /* Called when a touch begins */
         
         for touch in touches {
             let location = touch.locationInNode(self)

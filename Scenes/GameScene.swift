@@ -62,6 +62,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         #endif
     }
     
+    // MARK: - Touches
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         
@@ -110,6 +112,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         }
     }
    
+    // MARK: - Game Logic
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if let lastUpdateTime = lastUpdateTime {
@@ -142,7 +146,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         }
     }
     
-    //MARK: Game elements
+    func addFireball() {
+        let fire = Fireball(texture: TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
+        fire.setupFireball()
+        fire.zPosition = CGFloat(Layer.Game.rawValue)
+        
+        let x = gapPositions[Int(arc4random_uniform(12))] + fire.size.width / 2
+        fire.position = CGPointMake(x - background.frame.size.width / 2, frame.size.height + frame.size.height / 2.0)
+        fire.setupPhysicsBody()
+        fire.zPosition = Layer.Game.rawValue
+        background.addChild(fire)
+        fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
+    }
+    
+    func increaseScore() {
+        score++
+        scoreLabel.text = "\(score)"
+    }
+    
+    func resetScore() {
+        score = 0
+        scoreLabel.text = "\(score)"
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        if self.gameState == .Play {
+            self.gameState = .ShowingScore
+            switchToGameOver()
+        }
+    }
+    
+    // MARK: - Game elements
+    
     func addBackground() {
         background = SKSpriteNode(color: UIColor(red: 126/255.0, green: 200/255.0, blue: 219/255.0, alpha: 1.0), size: view!.frame.size)
         
@@ -184,7 +219,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         addChild(scoreLabel)
     }
     
-    //MARK: Game states
+    // MARK: - Game states
+    
     func switchToIntro() {
         self.gameState = .Intro
         resetPlayer()
@@ -238,7 +274,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         switchToIntro()
     }
     
-    //MARK: Elements
+    // MARK: - Element setup
+    
     func setupPlayer() {
         player = Player()
         player.setPlayerRightMovementMax((self.platform.position.x + self.platform.frame.width / 2) - player.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.frame.width / 2)
@@ -285,35 +322,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         gapPositions = tempArray
     }
     
-    func addFireball() {
-        let fire = Fireball(texture: TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
-        fire.setupFireball()
-        fire.zPosition = CGFloat(Layer.Game.rawValue)
-        
-        let x = gapPositions[Int(arc4random_uniform(12))] + fire.size.width / 2
-        fire.position = CGPointMake(x - background.frame.size.width / 2, frame.size.height + frame.size.height / 2.0)
-        fire.setupPhysicsBody()
-        fire.zPosition = Layer.Game.rawValue
-        background.addChild(fire)
-        fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
-    }
-    
-    func increaseScore() {
-        score++
-        scoreLabel.text = "\(score)"
-    }
-    
-    func resetScore() {
-        score = 0
-        scoreLabel.text = "\(score)"
-    }
-    
-    func didBeginContact(contact: SKPhysicsContact) {
-        if self.gameState == .Play {
-            self.gameState = .ShowingScore
-            switchToGameOver()
-        }
-    }
+    // MARK: - Scene pausing
     
     func pauseScene() {
         scenePaused = true
@@ -337,7 +346,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
             scene?.addChild(pauseNode)
         }
     }
-
+    
     func unPauseScene() {
         scenePaused = false
         background.paused = false
