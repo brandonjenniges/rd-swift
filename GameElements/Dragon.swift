@@ -42,13 +42,8 @@ class Dragon: SKSpriteNode {
     func getFlyingAnimationTextures() -> [SKTexture] {
         var array = [SKTexture]()
         
-        for index in 0...3 {
-            let texture = getTextureForDragonID(dragonID, frame: index)
-            array.append(texture)
-        }
-        
-        for var index = 2; index > 0; index-- {
-            let texture = getTextureForDragonID(dragonID, frame: index)
+        [0, 1, 2, 3, 2, 1].forEach {
+            let texture = getTextureForDragonID(dragonID, frame: $0)
             array.append(texture)
         }
         

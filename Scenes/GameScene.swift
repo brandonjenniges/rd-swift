@@ -282,9 +282,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         let gapSize = view!.frame.width / CGFloat(2)
         let topYPos = view!.frame.size.height * 0.75
         
-        for index in 0...1 {
-            let xPos = gapSize * CGFloat(index * 1) + gapSize / 2
-            let dragon = dragonArray[index]
+        (0...1).forEach {
+            let xPos = gapSize * CGFloat($0 * 1) + gapSize / 2
+            let dragon = dragonArray[$0]
             dragon.setUpDragonAnimations()
             dragon.position = CGPointMake(xPos, topYPos)
             addChild(dragon)
@@ -303,8 +303,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         var tempArray = [CGFloat]()
         
         let groundStart = platform.position.x - platform.frame.size.width / 2
-        for index in 0...12 {
-            tempArray.append(groundStart + CGFloat((index * Int(platform.frame.size.width / 12))))
+        (0...12).forEach {
+            tempArray.append(groundStart + CGFloat(($0 * Int(platform.frame.size.width / 12))))
         }
         gapPositions = tempArray
     }
