@@ -15,6 +15,8 @@
 		C59E3A4F1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
 		C5D382C61C470454006E6394 /* ControlPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C41C470454006E6394 /* ControlPad.swift */; };
 		C5D382C71C470454006E6394 /* ControlPadPaintCodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */; };
+		C5D382C91C470B95006E6394 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C81C470B95006E6394 /* GameLogic.swift */; };
+		C5D382CA1C470B95006E6394 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C81C470B95006E6394 /* GameLogic.swift */; };
 		C5DE514B1BB9811B0049C321 /* GameOver.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB871BB782FD004D455D /* GameOver.xcassets */; };
 		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
@@ -93,6 +95,7 @@
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		C5D382C41C470454006E6394 /* ControlPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPad.swift; sourceTree = "<group>"; };
 		C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadPaintCodeImage.swift; sourceTree = "<group>"; };
+		C5D382C81C470B95006E6394 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		FB4910D61BBB88900094EC7E /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
@@ -226,6 +229,7 @@
 				FBA743D11BB71E5200AC4B44 /* GameScene.swift */,
 				FBEBAB951BB78572004D455D /* MenuScene.swift */,
 				FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */,
+				C5D382C81C470B95006E6394 /* GameLogic.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -485,6 +489,7 @@
 				C59E3A4F1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */,
 				FBEAB7161BCCA4BE00054888 /* ScoreLabel.swift in Sources */,
 				FB8D26EA1BB71773000B548E /* GameViewController.swift in Sources */,
+				C5D382CA1C470B95006E6394 /* GameLogic.swift in Sources */,
 				FBEBAB9D1BB89E6C004D455D /* Fireball.swift in Sources */,
 				FB4910D81BBB88900094EC7E /* ScoreManager.swift in Sources */,
 				FBEBAB811BB7660B004D455D /* Dragon.swift in Sources */,
@@ -513,6 +518,7 @@
 				FBFC27731BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
 				FBFC27611BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
+				C5D382C91C470B95006E6394 /* GameLogic.swift in Sources */,
 				C59E3A4B1BC808020037F3B3 /* Logo.swift in Sources */,
 				FBEBAB7E1BB765AB004D455D /* Player.swift in Sources */,
 				C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */,

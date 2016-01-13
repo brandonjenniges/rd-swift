@@ -5,7 +5,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
+class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogicProtocol {
     
     static let fireballCategory:UInt32 = 0x1 << 0
     static let playerCategory:UInt32 = 0x1 << 1
@@ -27,13 +27,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     var gameState:GameState?
     var gapPositions = [CGFloat]()
     
-    var lastUpdateTime:NSTimeInterval?
-    var dt:NSTimeInterval?
-    var lastUpdateTimeInterval:NSTimeInterval = 0
-    var lastSpawnTimeInterval:NSTimeInterval = 0
     var score = 0
     
     var pauseNode: SKSpriteNode!
+    
+    var gameHandler:GameLogic!
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+        gameHandler = GameLogic(scene: self)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func didMoveToView(view: SKView) {
         
@@ -115,35 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     // MARK: - Game Logic
     
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
-        if let lastUpdateTime = lastUpdateTime {
-            dt = currentTime - lastUpdateTime
-        } else {
-            dt = 0
-        }
-        
-        lastUpdateTime = currentTime
-        
-        var timeSinceLast = currentTime - lastUpdateTimeInterval
-        lastUpdateTimeInterval = currentTime
-        
-        if timeSinceLast > 1 {
-            timeSinceLast = 1.0 / 60.0
-            lastUpdateTimeInterval = currentTime
-        }
-        
-        updateWithTimeSinceLastUpdate(timeSinceLast)
-        
-    }
-    
-    func updateWithTimeSinceLastUpdate(timeSinceLast:CFTimeInterval) {
-        lastSpawnTimeInterval = timeSinceLast + lastSpawnTimeInterval
-        if lastSpawnTimeInterval > 1 {
-            lastSpawnTimeInterval = 0
-            if gameState == .Play {
-                addFireball()
-            }
-        }
+        gameHandler.update(currentTime)
     }
     
     func addFireball() {
@@ -173,6 +152,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         if self.gameState == .Play {
             self.gameState = .ShowingScore
             switchToGameOver()
+        }
+    }
+    
+    // MARK - Game Logic Protocol
+    
+    func gameEventShouldUpdate() {
+        if gameState == .Play {
+            addFireball()
         }
     }
     
