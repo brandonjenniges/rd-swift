@@ -19,12 +19,11 @@
       "scale" : "2x"
     },
     {
-      "extent" : "full-screen",
+      "orientation" : "portrait",
       "idiom" : "iphone",
       "filename" : "retina.png",
+      "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "orientation" : "portrait",
-      "unassigned" : true,
       "scale" : "2x"
     },
     {
@@ -34,7 +33,6 @@
       "filename" : "retina4.png",
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
-      "unassigned" : true,
       "scale" : "2x"
     }
   ],
