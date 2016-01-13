@@ -78,29 +78,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
             unPauseScene()
         }
         
-        let state:GameState = gameState!
-        switch state {
-        case .Intro:
-            switchToPlay()
-            break
-        case .Play:
-            #if os(iOS)
-            self.control.touchesBegan(touches, withEvent: event)
-            #endif
-            break
-        case .ShowingScore:
-            break
-        case .GameOver:
-            startNewGame()
-            break
+        if let gameState = gameState {
+            switch gameState {
+            case .Intro:
+                switchToPlay()
+                break
+            case .Play:
+                #if os(iOS)
+                    self.control.touchesBegan(touches, withEvent: event)
+                #endif
+                break
+            case .ShowingScore:
+                break
+            case .GameOver:
+                startNewGame()
+                break
+            }
         }
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        
-        let state:GameState = gameState!
-        if state == .Play {
+
+        if gameState == .Play {
             player.movePlayer(touches)
         }
         
@@ -149,8 +149,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        if self.gameState == .Play {
-            self.gameState = .ShowingScore
+        if gameState == .Play {
+            gameState = .ShowingScore
             switchToGameOver()
         }
     }
@@ -209,7 +209,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     // MARK: - Game states
     
     func switchToIntro() {
-        self.gameState = .Intro
+        gameState = .Intro
         resetPlayer()
     }
     
@@ -251,7 +251,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         playButton.position = CGPointMake(0, -(view!.frame.size.height / 4))
         overlay.addChild(playButton)
         
-        self.player.die()
+        player.die()
     }
     
     func startNewGame() {
