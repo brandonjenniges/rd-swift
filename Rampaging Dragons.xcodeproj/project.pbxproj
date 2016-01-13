@@ -13,6 +13,8 @@
 		C59E3A4C1BC808020037F3B3 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4A1BC808020037F3B3 /* Logo.swift */; };
 		C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
 		C59E3A4F1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
+		C5D382C61C470454006E6394 /* ControlPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C41C470454006E6394 /* ControlPad.swift */; };
+		C5D382C71C470454006E6394 /* ControlPadPaintCodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */; };
 		C5DE514B1BB9811B0049C321 /* GameOver.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB871BB782FD004D455D /* GameOver.xcassets */; };
 		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
@@ -90,6 +92,8 @@
 		C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 		C59E3A4A1BC808020037F3B3 /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
+		C5D382C41C470454006E6394 /* ControlPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPad.swift; sourceTree = "<group>"; };
+		C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadPaintCodeImage.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		FB4910D61BBB88900094EC7E /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
@@ -159,6 +163,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5D382C31C470454006E6394 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				C5D382C41C470454006E6394 /* ControlPad.swift */,
+				C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
 		FB8D268B1BB71620000B548E = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +277,7 @@
 		FBEBAB7C1BB7658C004D455D /* GameElements */ = {
 			isa = PBXGroup;
 			children = (
+				C5D382C31C470454006E6394 /* Control */,
 				FBEBAB7D1BB765AB004D455D /* Player.swift */,
 				FBEBAB7F1BB765B6004D455D /* Dragon.swift */,
 				FBEBAB9B1BB89E6C004D455D /* Fireball.swift */,
@@ -498,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFC27771BBE26360012C1AA /* Vector3.swift in Sources */,
+				C5D382C61C470454006E6394 /* ControlPad.swift in Sources */,
 				FBFC276B1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
 				FBFC27731BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
@@ -520,6 +535,7 @@
 				FBFC27751BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */,
 				FBFC27651BBE26360012C1AA /* CGVector+Extensions.swift in Sources */,
 				FBFC276D1BBE26360012C1AA /* SKColor+Extensions.swift in Sources */,
+				C5D382C71C470454006E6394 /* ControlPadPaintCodeImage.swift in Sources */,
 				FBFC27711BBE26360012C1AA /* SKTAudio.swift in Sources */,
 				FB8D26FD1BB717A1000B548E /* AppDelegate.swift in Sources */,
 			);

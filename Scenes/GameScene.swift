@@ -5,7 +5,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     static let fireballCategory:UInt32 = 0x1 << 0
     static let playerCategory:UInt32 = 0x1 << 1
@@ -13,20 +13,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var scenePaused = false
     
-    enum GameState {
-        case Intro
-        case Play
-        case ShowingScore
-        case GameOver
-    }
-    
-    enum Layer: CGFloat {
-        case Background = 0
-        case Foreground = 1
-        case Game = 2
-        case Hud = 3
-        case GameOver = 4
-    }
+    enum GameState { case Intro; case Play; case ShowingScore; case GameOver }
+    enum Layer: CGFloat { case Background = 0; case Foreground = 1; case Game = 2; case Hud = 3; case GameOver = 4 }
     
     var viewController:GameViewController!
     
@@ -34,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var platform:SKSpriteNode!
     var background:SKSpriteNode!
     var scoreLabel:ScoreLabel!
+    var control: ControlPad!
     
     var gameState:GameState?
     var gapPositions = [CGFloat]()
@@ -67,9 +56,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupGaps()
         setupPlayer()
         setupDragons()
+        
+        #if os(iOS)
+        setupControlPad()
+        #endif
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
         
         if scenePaused {
             unPauseScene()
@@ -82,7 +76,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             break
         case .Play:
             #if os(iOS)
-                //TODO: Implement check for gamepad touch (iOS)
+            self.control.touchesBegan(touches, withEvent: event)
             #endif
             break
         case .ShowingScore:
@@ -105,6 +99,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
+        
+        #if os(iOS)
+        self.control.touchesEnded(touches, withEvent: event)
+        #endif
+
         if gameState == .Play {
             player.stopRunning()
             player.movement = .Neutral
@@ -268,6 +267,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func setupControlPad() {
+        control = ControlPad(texture: nil, size: CGSizeMake(CGRectGetWidth(self.frame), 100.0))
+        control.delegate = self
+        control.anchorPoint = CGPointMake(0, 0)
+        control.position = CGPointMake(0, 0)
+        addChild(control)
+    }
+    
     func setupGaps() {
         var tempArray = [CGFloat]()
         
@@ -337,6 +344,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let pauseNode = pauseNode {
             pauseNode.removeFromParent()
         }
+    }
+    
+    // MARK: - Control Pad
+    
+    func controlPadDidBeginTouch(direction: ControlPadTouchDirection) {
+        print("Start \(direction)")
+    }
+    
+    func controlPadDidEndTouch() {
+        print("Done")
     }
     
 }
