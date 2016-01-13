@@ -26,11 +26,11 @@ class ControlPad: SKSpriteNode {
         let testTexture = SKTexture(image: testImage.getTestImage())
         
         left = SKSpriteNode(texture: testTexture)
-        left.anchorPoint = CGPointMake(0, 0)
-        left.position = CGPointMake(0, 0)
+        left.anchorPoint = .zero
+        left.position = .zero
         
         right = SKSpriteNode(texture: testTexture)
-        right.anchorPoint = CGPointMake(0, 0)
+        right.anchorPoint = .zero
         right.position = CGPointMake(size.width / 2, 0)
         
         super.init(texture: texture, color: .clearColor(), size: size)

@@ -159,7 +159,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
             c.position = CGPointMake((CGFloat(index - 1) * c.frame.size.width) - clouds.size.width / 2, 0)
             clouds.addChild(c)
         }
-        clouds.position = CGPointMake(0, 0)
+        clouds.position = .zero
         background.addChild(clouds)
         
         let bottomClouds = SKSpriteNode(color: UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.4), size: CGSizeMake(view!.frame.size.width, view!.frame.size.height / 2 - clouds.frame.origin.y))
@@ -270,8 +270,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     func setupControlPad() {
         control = ControlPad(texture: nil, size: CGSizeMake(CGRectGetWidth(self.frame), 100.0))
         control.delegate = self
-        control.anchorPoint = CGPointMake(0, 0)
-        control.position = CGPointMake(0, 0)
+        control.anchorPoint = .zero
+        control.position = .zero
         addChild(control)
     }
     

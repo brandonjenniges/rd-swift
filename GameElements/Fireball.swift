@@ -11,11 +11,12 @@ class Fireball: SKSpriteNode {
     }
     
     private func setupFireballFrames() -> [SKTexture] {
-        var array = [SKTexture]()
-        array.append(TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
-        array.append(TextureAtlasManager.fireTextureAtlas.textureNamed("fireball2"))
-        array.append(TextureAtlasManager.fireTextureAtlas.textureNamed("fireball3"))
-        array.append(TextureAtlasManager.fireTextureAtlas.textureNamed("fireball2"))
+        let array = [
+            TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"),
+            TextureAtlasManager.fireTextureAtlas.textureNamed("fireball2"),
+            TextureAtlasManager.fireTextureAtlas.textureNamed("fireball3"),
+            TextureAtlasManager.fireTextureAtlas.textureNamed("fireball2")
+        ]
         return array
     }
     

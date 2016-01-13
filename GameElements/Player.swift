@@ -39,26 +39,28 @@ class Player: SKSpriteNode {
     
     //MARK: Animation frames
     private func setupLookingFrames() -> [SKTexture] {
-        var array = [SKTexture]()
-        array.append(TextureAtlasManager.player_looking_right)
-        array.append(TextureAtlasManager.player_0)
-        array.append(TextureAtlasManager.player_looking_left)
-        array.append(TextureAtlasManager.player_0)
+        let array = [
+            TextureAtlasManager.player_looking_right,
+            TextureAtlasManager.player_0,
+            TextureAtlasManager.player_looking_left,
+            TextureAtlasManager.player_0
+        ]
         return array
     }
     
     private func setupRunningFrames() -> [SKTexture] {
-        var array = [SKTexture]()
-        array.append(TextureAtlasManager.player_1)
-        array.append(TextureAtlasManager.player_2)
-        array.append(TextureAtlasManager.player_3)
-        array.append(TextureAtlasManager.player_4)
-        array.append(TextureAtlasManager.player_5)
-        array.append(TextureAtlasManager.player_6)
-        array.append(TextureAtlasManager.player_5)
-        array.append(TextureAtlasManager.player_4)
-        array.append(TextureAtlasManager.player_3)
-        array.append(TextureAtlasManager.player_2)
+        let array = [
+            TextureAtlasManager.player_1,
+            TextureAtlasManager.player_2,
+            TextureAtlasManager.player_3,
+            TextureAtlasManager.player_4,
+            TextureAtlasManager.player_5,
+            TextureAtlasManager.player_6,
+            TextureAtlasManager.player_5,
+            TextureAtlasManager.player_4,
+            TextureAtlasManager.player_3,
+            TextureAtlasManager.player_2
+        ]
         return array
     }
     
