@@ -58,8 +58,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         
         gameState = .Intro
         
-        addBackground()
-        addPlatform()
+        createBackground()
+        createPlatform()
         addScoreLabel()
         setupGaps()
         setupPlayer()
@@ -174,39 +174,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     
     // MARK: - Game elements
     
-    func addBackground() {
-        background = SKSpriteNode(color: UIColor(red: 126/255.0, green: 200/255.0, blue: 219/255.0, alpha: 1.0), size: view!.frame.size)
-        
-        
-        let cloud = SKSpriteNode(texture:TextureAtlasManager.introAtlas.textureNamed("cloud"))
-        let numberOfClouds = Int(ceil(view!.frame.size.width / cloud.size.width))
-        
-        let clouds = SKSpriteNode()
-        clouds.anchorPoint = CGPointMake(0.5, 0.5)
-        clouds.size = CGSizeMake(CGFloat(numberOfClouds) * cloud.size.width, cloud.size.height)
-        for index in 1...numberOfClouds {
-            let c = cloud.copy() as! SKSpriteNode
-            c.anchorPoint = CGPointMake(0, 0.5)
-            c.position = CGPointMake((CGFloat(index - 1) * c.frame.size.width) - clouds.size.width / 2, 0)
-            clouds.addChild(c)
-        }
-        clouds.position = .zero
-        background.addChild(clouds)
-        
-        let bottomClouds = SKSpriteNode(color: UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.4), size: CGSizeMake(view!.frame.size.width, view!.frame.size.height / 2 - clouds.frame.origin.y))
-        bottomClouds.position = CGPointMake(0, -(clouds.frame.size.height / 2) - bottomClouds.frame.size.height / 2)
-        background.addChild(bottomClouds)
-        
-        background.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 2)
-        addChild(background)
+    func createBackground() {
+        background = Background.create(self)
     }
     
-    func addPlatform() {
-        platform = SKSpriteNode(texture: TextureAtlasManager.playerAtlas.textureNamed("ground"))
-        platform.position = CGPointMake(view!.frame.width / 2, view!.frame.height / 4)
-        print(platform.texture?.size())
-        platform.zPosition = 1
-        addChild(platform)
+    func createPlatform() {
+        platform = Platform.create(self)
     }
     
     func addScoreLabel() {
@@ -339,7 +312,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
             contentNode.color = .clearColor()
             contentNode.position = .zero
             
-            scene?.addChild(pauseNode)
+            addChild(pauseNode)
         }
     }
     
