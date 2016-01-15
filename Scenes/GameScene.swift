@@ -5,7 +5,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogicProtocol {
+class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogicProtocol, FireballDelegate {
     
     static let fireballCategory:UInt32 = 0x1 << 0
     static let playerCategory:UInt32 = 0x1 << 1
@@ -36,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     override init(size: CGSize) {
         super.init(size: size)
         gameHandler = GameLogic(scene: self)
+        gameHandler.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -125,18 +126,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         gameHandler.update(currentTime)
     }
     
+    // MARK: - Fireballs
+    
     func addFireball() {
         let fire = Fireball(texture: TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
-        fire.setupFireball()
-        fire.zPosition = CGFloat(Layer.Game.rawValue)
-        
-        let x = gapPositions[Int(arc4random_uniform(12))] + fire.size.width / 2
-        fire.position = CGPointMake(x - background.frame.size.width / 2, frame.size.height + frame.size.height / 2.0)
-        fire.setupPhysicsBody()
-        fire.zPosition = Layer.Game.rawValue
+        fire.setInitialPosition(gapPositions, background: background)
         background.addChild(fire)
         fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
     }
+    
+    // MARK: - Fireball Delegate
+    
+    func fireballDidReachDestination() {
+        if gameState == .Play {
+            increaseScore()
+        }
+    }
+    
+    // MARK: - Scoreing
     
     func increaseScore() {
         score++
@@ -147,6 +154,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         score = 0
         scoreLabel.text = "\(score)"
     }
+    
+    // MARK: - Collision
     
     func didBeginContact(contact: SKPhysicsContact) {
         if gameState == .Play {
