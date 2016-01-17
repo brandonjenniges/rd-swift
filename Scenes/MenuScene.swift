@@ -8,6 +8,7 @@ import GameKit
 class MenuScene: SKScene {
     
     var viewController:GameViewController!
+    var playButton: SKSpriteNode!
     
     override func didMoveToView(view: SKView) {
         
@@ -24,10 +25,41 @@ class MenuScene: SKScene {
     // MARK: - Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        #if os(tvOS)
+            playButton.alpha = 0.5
+        #elseif os(iOS)
+            for touch in touches {
+                let location = touch.locationInNode(self)
+                if playButton.containsPoint(location) {
+                    playButton.alpha = 0.5
+                }
+            }
+        #endif
+        
+        
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        playButton.alpha = 1.0
+        
+        #if os(tvOS)
+            handlePlayButtonPress()
+        #elseif os(iOS)
+            for touch in touches {
+                let location = touch.locationInNode(self)
+                if playButton.containsPoint(location) {
+                    handlePlayButtonPress()
+                }
+            }
+        #endif
+    }
+    
+    func handlePlayButtonPress() {
+        
         let scene = GameScene(size: self.view!.frame.size)
         scene.scaleMode = .AspectFill
         scene.viewController = viewController
-        self.view!.presentScene(scene, transition: SKTransition.crossFadeWithDuration(1.0))
+        self.view!.presentScene(scene, transition: SKTransition.fadeWithDuration(1.0))
     }
     
     // MARK: - Elements
@@ -41,7 +73,7 @@ class MenuScene: SKScene {
     }
     
     func addPlayButton() {
-        let playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
+        playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
         if let logoNode = Logo.getNode(self) {
             playButton.position = CGPointMake(logoNode.position.x, logoNode.position.y / 2)
             playButton.zPosition = 2
