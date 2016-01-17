@@ -91,6 +91,8 @@
 		FBFC27761BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC275F1BBE26360012C1AA /* SKTTimingFunctions.swift */; };
 		FBFC27771BBE26360012C1AA /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC27601BBE26360012C1AA /* Vector3.swift */; };
 		FBFC27781BBE26360012C1AA /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC27601BBE26360012C1AA /* Vector3.swift */; };
+		FBFEFA251C4B29F300E0B2AF /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFEFA241C4B29F300E0B2AF /* Mountain.swift */; };
+		FBFEFA261C4B29F300E0B2AF /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFEFA241C4B29F300E0B2AF /* Mountain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +150,7 @@
 		FBFC275E1BBE26360012C1AA /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		FBFC275F1BBE26360012C1AA /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		FBFC27601BBE26360012C1AA /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		FBFEFA241C4B29F300E0B2AF /* Mountain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +297,7 @@
 				FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */,
 				FB4910D61BBB88900094EC7E /* ScoreManager.swift */,
 				C545A0771C49A58A0008253C /* Platform.swift */,
+				FBFEFA241C4B29F300E0B2AF /* Mountain.swift */,
 			);
 			path = GameElements;
 			sourceTree = "<group>";
@@ -504,6 +508,7 @@
 				C545A0791C49A58A0008253C /* Platform.swift in Sources */,
 				FBFC276A1BBE26360012C1AA /* SKAction+Extensions.swift in Sources */,
 				FBEBAB971BB78572004D455D /* MenuScene.swift in Sources */,
+				FBFEFA261C4B29F300E0B2AF /* Mountain.swift in Sources */,
 				FB0BBBAF1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */,
 				FBFC27701BBE26360012C1AA /* SKNode+Extensions.swift in Sources */,
 				FBEBAB821BB7660D004D455D /* Player.swift in Sources */,
@@ -524,6 +529,7 @@
 			files = (
 				C545A0781C49A58A0008253C /* Platform.swift in Sources */,
 				FBFC27771BBE26360012C1AA /* Vector3.swift in Sources */,
+				FBFEFA251C4B29F300E0B2AF /* Mountain.swift in Sources */,
 				C5D382C61C470454006E6394 /* ControlPad.swift in Sources */,
 				FBFC276B1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
 				FBFC27731BBE26360012C1AA /* SKTEffects.swift in Sources */,
@@ -726,7 +732,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -16,6 +16,10 @@ struct Platform {
         
         scene.addChild(platform)
         
+        if let mountain = Mountain.create(scene, platform: platform) {
+            scene.addChild(mountain)
+        }
+        
         return platform
     }
 }
