@@ -31,7 +31,8 @@ class ControlPad: SKSpriteNode {
         
         right = SKSpriteNode(texture: testTexture)
         right.anchorPoint = .zero
-        right.position = CGPointMake(size.width / 2, 0)
+        right.xScale = -1
+        right.position = CGPointMake(size.width, 0)
         
         super.init(texture: texture, color: .clearColor(), size: size)
         

@@ -15,42 +15,61 @@ class ControlPadPaintCodeImage: UIImageView {
     }
     
     internal class func draw(frame: CGRect) {
-        
+        //// General Declarations
         let context = UIGraphicsGetCurrentContext()
         
         //// Color Declarations
         let color = UIColor(red: 0.000, green: 0.477, blue: 0.969, alpha: 1.000)
+        let color3 = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
         
-        //// Rectangle Drawing
-        let rectanglePath = UIBezierPath(rect: CGRectMake(frame.minX, frame.minY, frame.width, frame.height))
+        //// Shadow Declarations
+        let shadow = NSShadow()
+        shadow.shadowColor = UIColor.grayColor()
+        shadow.shadowOffset = CGSizeMake(0.1, 1.1)
+        shadow.shadowBlurRadius = 5
+        
+        
+        //// Subframes
+        let borderGroup: CGRect = CGRectMake(frame.minX + floor(frame.width * 0.00000 + 0.5), frame.minY, floor(frame.width * 1.00000 + 0.5) - floor(frame.width * 0.00000 + 0.5), frame.height)
+        let frame2 = CGRectMake(frame.minX + floor((frame.width - 48) * 0.53191 + 0.5), frame.minY + floor((frame.height - 33) * 0.50000 - 0.5) + 1, 48, 33)
+        
+        
+        //// Border Group
+        CGContextSaveGState(context)
+        CGContextSetShadowWithColor(context, shadow.shadowOffset, shadow.shadowBlurRadius, (shadow.shadowColor as! UIColor).CGColor)
+        CGContextBeginTransparencyLayer(context, nil)
+        
+        
+        //// Background Drawing
+        let backgroundPath = UIBezierPath(rect: CGRectMake(borderGroup.minX + floor(borderGroup.width * 0.00000 + 0.5), borderGroup.minY + floor(borderGroup.height * 0.00000 + 0.5), floor(borderGroup.width * 1.00000 + 0.5) - floor(borderGroup.width * 0.00000 + 0.5), floor(borderGroup.height * 1.00000 + 0.5) - floor(borderGroup.height * 0.00000 + 0.5)))
         color.setFill()
-        rectanglePath.fill()
+        backgroundPath.fill()
         
         
-        //// Rectangle 2 Drawing
-        let rectangle2Path = UIBezierPath(rect: CGRectMake(frame.minX, frame.minY, frame.width, frame.height))
+        //// Border Drawing
+        let borderPath = UIBezierPath(rect: CGRectMake(borderGroup.minX + floor(borderGroup.width * 0.00000 + 0.5), borderGroup.minY + floor(borderGroup.height * 0.00000 + 0.5), floor(borderGroup.width * 1.00000 + 0.5) - floor(borderGroup.width * 0.00000 + 0.5), floor(borderGroup.height * 1.00000 + 0.5) - floor(borderGroup.height * 0.00000 + 0.5)))
         UIColor.whiteColor().setStroke()
-        rectangle2Path.lineWidth = 4
-        rectangle2Path.stroke()
+        borderPath.lineWidth = 4
+        borderPath.stroke()
+        
+        
+        CGContextEndTransparencyLayer(context)
+        CGContextRestoreGState(context)
         
         
         //// Polygon Drawing
         CGContextSaveGState(context)
-        CGContextTranslateCTM(context, frame.minX + 0.37625 * frame.width, frame.minY + 0.83929 * frame.height)
+        CGContextTranslateCTM(context, frame2.minX + 0.16667 * frame2.width, frame2.minY + 0.93939 * frame2.height)
         CGContextRotateCTM(context, -90 * CGFloat(M_PI) / 180)
         
         let polygonPath = UIBezierPath()
-        polygonPath.moveToPoint(CGPointMake(12.38, 0))
-        polygonPath.addLineToPoint(CGPointMake(23.09, 18.56))
-        polygonPath.addLineToPoint(CGPointMake(1.66, 18.56))
+        polygonPath.moveToPoint(CGPointMake(15, 0))
+        polygonPath.addLineToPoint(CGPointMake(27.99, 22.5))
+        polygonPath.addLineToPoint(CGPointMake(2.01, 22.5))
         polygonPath.closePath()
-        UIColor.whiteColor().setFill()
+        color3.setFill()
         polygonPath.fill()
-        UIColor.whiteColor().setStroke()
-        polygonPath.lineWidth = 2
-        polygonPath.stroke()
         
         CGContextRestoreGState(context)
-
     }
 }

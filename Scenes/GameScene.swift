@@ -274,7 +274,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     }
     
     func setupControlPad() {
-        control = ControlPad(texture: nil, size: CGSizeMake(CGRectGetWidth(self.frame), 100.0))
+        control = ControlPad(texture: nil, size: CGSizeMake(CGRectGetWidth(self.frame), 80.0))
         control.delegate = self
         control.anchorPoint = .zero
         control.position = .zero
