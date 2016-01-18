@@ -13,6 +13,8 @@
 		C545A0761C49A2E50008253C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0741C49A2E50008253C /* Background.swift */; };
 		C545A0781C49A58A0008253C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0771C49A58A0008253C /* Platform.swift */; };
 		C545A0791C49A58A0008253C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0771C49A58A0008253C /* Platform.swift */; };
+		C58C08C21C4D9B13000E4A29 /* IntroGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */; };
+		C58C08C31C4D9B13000E4A29 /* IntroGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */; };
 		C59E3A4B1BC808020037F3B3 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4A1BC808020037F3B3 /* Logo.swift */; };
 		C59E3A4C1BC808020037F3B3 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4A1BC808020037F3B3 /* Logo.swift */; };
 		C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
@@ -99,6 +101,7 @@
 		C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 		C545A0741C49A2E50008253C /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		C545A0771C49A58A0008253C /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphic.swift; sourceTree = "<group>"; };
 		C59E3A4A1BC808020037F3B3 /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		C5D382C41C470454006E6394 /* ControlPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPad.swift; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 				FB4910D61BBB88900094EC7E /* ScoreManager.swift */,
 				C545A0771C49A58A0008253C /* Platform.swift */,
 				FBFEFA241C4B29F300E0B2AF /* Mountain.swift */,
+				C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */,
 			);
 			path = GameElements;
 			sourceTree = "<group>";
@@ -508,6 +512,7 @@
 				C545A0791C49A58A0008253C /* Platform.swift in Sources */,
 				FBFC276A1BBE26360012C1AA /* SKAction+Extensions.swift in Sources */,
 				FBEBAB971BB78572004D455D /* MenuScene.swift in Sources */,
+				C58C08C31C4D9B13000E4A29 /* IntroGraphic.swift in Sources */,
 				FBFEFA261C4B29F300E0B2AF /* Mountain.swift in Sources */,
 				FB0BBBAF1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */,
 				FBFC27701BBE26360012C1AA /* SKNode+Extensions.swift in Sources */,
@@ -550,6 +555,7 @@
 				FBFC276F1BBE26360012C1AA /* SKNode+Extensions.swift in Sources */,
 				FBEBAB801BB765B6004D455D /* Dragon.swift in Sources */,
 				C545A0751C49A2E50008253C /* Background.swift in Sources */,
+				C58C08C21C4D9B13000E4A29 /* IntroGraphic.swift in Sources */,
 				FBFC27631BBE26360012C1AA /* CGPoint+Extensions.swift in Sources */,
 				FBFC27671BBE26360012C1AA /* Int+Extensions.swift in Sources */,
 				FBFC27751BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */,

@@ -56,7 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
             viewController.controllerUserInteractionEnabled = false
         #endif
         
-        gameState = .Intro
+        switchToIntro()
         
         createBackground()
         createPlatform()
@@ -187,14 +187,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         addChild(scoreLabel)
     }
     
+    func addTapToStart() {
+        addChild(IntroGraphic.create(self)!)
+    }
+    
     // MARK: - Game states
     
     func switchToIntro() {
         gameState = .Intro
-        resetPlayer()
+        addTapToStart()
+        //resetPlayer()
     }
     
     func switchToPlay() {
+        
+        IntroGraphic.remove(self)
         
         addScoreLabel()
         setupDragons()
