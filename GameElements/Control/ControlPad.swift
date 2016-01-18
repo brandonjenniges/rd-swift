@@ -5,6 +5,7 @@
 import SpriteKit
 
 enum ControlPadTouchDirection {
+    case None
     case Left
     case Right
 }

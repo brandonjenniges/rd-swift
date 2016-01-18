@@ -128,12 +128,32 @@ class Player: SKSpriteNode {
         
     }
     
+    func movePlayer(direction: ControlPadTouchDirection) {
+        if movement == .Neutral {
+            if direction == .Left {
+                moveLeft()
+            } else if direction == .Right {
+                moveRight()
+            }
+        } else if movement == .Left {
+            if direction == .Right {
+                moveRight()
+            }
+        } else if movement == .Right {
+            if direction == .Left {
+                moveLeft()
+            }
+        }
+    }
+    
     func moveLeft() {
         if let moveTo = maxLeft {
             let moveAction = SKAction.moveToX(moveTo, duration: self.getSpeed(moveTo))
+            let completionAction = getRunningCompletionAction()
+            let sequenceAction = SKAction.sequence([moveAction, completionAction])
             movement = .Left
             self.removeAllActions()
-            self.runAction(moveAction, withKey: self.moveAction)
+            self.runAction(sequenceAction)
             self.xScale = abs(self.xScale)
             self.performRunAnimation()
         }
@@ -142,9 +162,11 @@ class Player: SKSpriteNode {
     func moveRight() {
         if let moveTo = maxRight {
             let moveAction = SKAction.moveToX(moveTo, duration: self.getSpeed(moveTo))
+            let completionAction = getRunningCompletionAction()
+            let sequenceAction = SKAction.sequence([moveAction, completionAction])
             movement = .Right
             self.removeAllActions()
-            self.runAction(moveAction, withKey: self.moveAction)
+            self.runAction(sequenceAction)
             self.xScale = -abs(self.xScale)
             self.performRunAnimation()
         }
@@ -164,6 +186,17 @@ class Player: SKSpriteNode {
     
     func die() {
         stopRunning()
+    }
+    
+    func getRunningCompletionAction() -> SKAction {
+        return SKAction.runBlock({ () -> Void in
+            #if os(iOS)
+                if (self.scene! as! GameScene).gameState == .Play {
+                    self.stopRunning()
+                    self.movement = .Neutral
+                }
+            #endif
+        })
     }
     
 }

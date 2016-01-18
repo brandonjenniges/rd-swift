@@ -95,10 +95,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-
+        
+        #if os(tvOS)
         if gameState == .Play {
             player.movePlayer(touches)
         }
+        #endif
         
     }
     
@@ -109,10 +111,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         self.control.touchesEnded(touches, withEvent: event)
         #endif
 
+        #if os(tvOS)
         if gameState == .Play {
             player.stopRunning()
             player.movement = .Neutral
         }
+        #endif
     }
    
     // MARK: - Game Logic
@@ -330,11 +334,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     // MARK: - Control Pad
     
     func controlPadDidBeginTouch(direction: ControlPadTouchDirection) {
-        print("Start \(direction)")
+        #if os(iOS)
+            if gameState == .Play {
+                player.movePlayer(direction)
+            }
+        #endif
     }
     
     func controlPadDidEndTouch() {
-        print("Done")
     }
     
 }
