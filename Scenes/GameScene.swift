@@ -21,7 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     var player:Player!
     var platform:SKSpriteNode!
     var background:SKSpriteNode!
-    var scoreLabel:ScoreLabel!
+    var scoreLabel:SKLabelNode!
     var control: ControlPad!
     
     var gameState:GameState?
@@ -182,9 +182,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     }
     
     func addScoreLabel() {
-        scoreLabel = ScoreLabel()
-        scoreLabel.position = CGPointMake(view!.frame.width / 2, view!.frame.height * 0.75)
-        addChild(scoreLabel)
+        scoreLabel = ScoreLabel.create(self)!
     }
     
     func addTapToStart() {

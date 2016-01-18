@@ -4,24 +4,28 @@
 
 import SpriteKit
 
-class ScoreLabel: SKLabelNode {
+struct ScoreLabel {
+    
     static let fontName = "SanFranciscoDisplay-Bold"
     
-    override init() {
-        super.init()
-        self.fontName = ScoreLabel.fontName
-        self.text = "0"
-        self.zPosition = GameScene.Layer.Game.rawValue
+    static func create(scene: SKScene) -> SKLabelNode? {
+        
+        guard let view = scene.view else { return nil }
+        
+        let label = SKLabelNode(fontNamed: fontName)
+        label.text = "0"
         
         #if os(tvOS)
-            self.fontSize = 55.0
+            label.fontSize = 55.0
         #else
-            self.fontSize = 30.0
+            label.fontSize = 30.0
         #endif
+        
+        label.position = CGPointMake(view.frame.width / 2, view.frame.height * 0.75)
+        label.zPosition = GameScene.Layer.Game.rawValue
+        scene.addChild(label)
+        
+        return label
+        
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
 }
