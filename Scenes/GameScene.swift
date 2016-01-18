@@ -60,14 +60,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         
         createBackground()
         createPlatform()
-        addScoreLabel()
         setupGaps()
         setupPlayer()
-        setupDragons()
         
-        #if os(iOS)
-        setupControlPad()
-        #endif
     }
     
     // MARK: - Touches
@@ -196,6 +191,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     }
     
     func switchToPlay() {
+        
+        addScoreLabel()
+        setupDragons()
+        
+        #if os(iOS)
+            setupControlPad()
+        #endif
+        
         self.gameState = .Play
         
         /*

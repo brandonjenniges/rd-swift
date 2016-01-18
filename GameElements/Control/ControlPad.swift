@@ -27,22 +27,27 @@ class ControlPad: SKSpriteNode {
         
         left = SKSpriteNode(texture: testTexture)
         left.anchorPoint = .zero
-        left.position = .zero
+        left.position = CGPointMake(-left.size.width, -size.height)
         
         right = SKSpriteNode(texture: testTexture)
         right.anchorPoint = .zero
         right.xScale = -1
-        right.position = CGPointMake(size.width, 0)
+        right.position = CGPointMake(size.width + right.size.width, -size.height)
         
         super.init(texture: texture, color: .clearColor(), size: size)
         
         self.addChild(left)
         self.addChild(right)
+        
+        animateInto(.zero, node: left)
+        animateInto(CGPointMake(size.width, 0), node: right)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
@@ -72,6 +77,13 @@ class ControlPad: SKSpriteNode {
         if let delegate = delegate {
             delegate.controlPadDidEndTouch()
         }
+    }
+    
+    // MARK: - Animation
+    
+    func animateInto(point: CGPoint, node: SKSpriteNode) {
+        let animationAction = SKAction.moveTo(point, duration: 0.8)
+        node.runAction(animationAction)
     }
     
 }
