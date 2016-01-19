@@ -37,8 +37,10 @@ class ControlPad: SKSpriteNode {
         
         super.init(texture: texture, color: .clearColor(), size: size)
         
-        self.addChild(left)
-        self.addChild(right)
+        addChild(left)
+        addChild(right)
+        
+        zPosition = GameScene.Layer.Hud.rawValue
         
         animateInto(.zero, node: left)
         animateInto(CGPointMake(size.width, 0), node: right)

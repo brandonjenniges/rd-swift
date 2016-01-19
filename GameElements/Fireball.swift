@@ -18,7 +18,7 @@ class Fireball: SKSpriteNode {
         super.init(texture: texture, color: color, size: size)
         setupFireball()
         setupPhysicsBody()
-        zPosition = CGFloat(GameScene.Layer.Game.rawValue)
+        zPosition = GameScene.Layer.Game.rawValue
     }
 
     required init?(coder aDecoder: NSCoder) {
