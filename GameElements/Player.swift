@@ -6,9 +6,6 @@ import SpriteKit
 
 class Player: SKSpriteNode {
     
-    let lookingAction = "lookingAction"
-    let runningAnimation = "runningAnimation"
-    let moveAction = "moveAction"
     let PlayerCategoryName = "player"
     
     enum PlayerMovement { case Neutral; case Left; case Right }
@@ -69,7 +66,7 @@ class Player: SKSpriteNode {
             let lookAction = SKAction.animateWithTextures(self.setupLookingFrames(), timePerFrame: 1.0, resize: false, restore: true)
             let sequence = SKAction.sequence([lookAction])
             sequence.timingMode = .EaseInEaseOut
-            self.runAction(SKAction.repeatActionForever(sequence), withKey: self.lookingAction)
+            self.runAction(SKAction.repeatActionForever(sequence))
         }
     }
     
@@ -77,12 +74,11 @@ class Player: SKSpriteNode {
         let runAction = SKAction.animateWithTextures(self.setupRunningFrames(), timePerFrame: 0.1, resize: false, restore: true)
         let sequence = SKAction.sequence([runAction])
         sequence.timingMode = .EaseInEaseOut
-        self.runAction(SKAction.repeatActionForever(sequence),withKey: runningAnimation)
+        self.runAction(SKAction.repeatActionForever(sequence))
     }
     
     func stopRunning() {
-        self.removeActionForKey(self.runningAnimation)
-        self.removeActionForKey(self.moveAction)
+        self.removeAllActions()
         self.texture = TextureAtlasManager.player_0
         self.runPlayerLookingAnimation()
     }
@@ -91,14 +87,14 @@ class Player: SKSpriteNode {
     
     func setupPhysics() {
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.frame.width / 2)
-        self.physicsBody?.categoryBitMask = GameScene.playerCategory
-        self.physicsBody?.contactTestBitMask = GameScene.fireballCategory
-        self.physicsBody?.collisionBitMask = 0
+        self.physicsBody!.categoryBitMask = GameScene.playerCategory
+        self.physicsBody!.contactTestBitMask = GameScene.fireballCategory
+        self.physicsBody!.collisionBitMask = 0
         
-        self.physicsBody?.angularVelocity = 0
-        self.physicsBody?.restitution = 0
-        self.physicsBody?.allowsRotation = false
-        self.physicsBody?.affectedByGravity = false
+        self.physicsBody!.angularVelocity = 0
+        self.physicsBody!.restitution = 0
+        self.physicsBody!.allowsRotation = false
+        self.physicsBody!.affectedByGravity = false
     }
     
     // MARK: - Movement
@@ -174,7 +170,7 @@ class Player: SKSpriteNode {
     
     // MARK: - Movement utilities
     
-    func setPlayerRightMovementMax(max:CGFloat, min:CGFloat) {
+    func setPlayerMovementXConstraints(max:CGFloat, min:CGFloat) {
         self.maxRight = max
         self.maxLeft = min
     }
