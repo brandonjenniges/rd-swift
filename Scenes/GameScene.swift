@@ -129,6 +129,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     
     func addFireball() {
         let fire = Fireball(texture: TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
+        fire.delegate = self
         fire.setInitialPosition(gapPositions, background: background)
         background.addChild(fire)
         fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
