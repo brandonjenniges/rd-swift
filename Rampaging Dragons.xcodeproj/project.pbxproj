@@ -10,6 +10,8 @@
 		C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */; };
 		C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */; };
 		C544CE761C4FD7CF00F24338 /* Scene.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C544CE751C4FD7CF00F24338 /* Scene.xcassets */; };
+		C544CE781C4FD9E800F24338 /* CreditsLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C544CE771C4FD9E800F24338 /* CreditsLogo.swift */; };
+		C544CE791C4FD9E800F24338 /* CreditsLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C544CE771C4FD9E800F24338 /* CreditsLogo.swift */; };
 		C545A0751C49A2E50008253C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0741C49A2E50008253C /* Background.swift */; };
 		C545A0761C49A2E50008253C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0741C49A2E50008253C /* Background.swift */; };
 		C545A0781C49A58A0008253C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0771C49A58A0008253C /* Platform.swift */; };
@@ -101,6 +103,7 @@
 /* Begin PBXFileReference section */
 		C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 		C544CE751C4FD7CF00F24338 /* Scene.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Scene.xcassets; sourceTree = "<group>"; };
+		C544CE771C4FD9E800F24338 /* CreditsLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsLogo.swift; sourceTree = "<group>"; };
 		C545A0741C49A2E50008253C /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		C545A0771C49A58A0008253C /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphic.swift; sourceTree = "<group>"; };
@@ -313,6 +316,7 @@
 				C545A0771C49A58A0008253C /* Platform.swift */,
 				FBFEFA241C4B29F300E0B2AF /* Mountain.swift */,
 				C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */,
+				C544CE771C4FD9E800F24338 /* CreditsLogo.swift */,
 			);
 			path = GameElements;
 			sourceTree = "<group>";
@@ -529,6 +533,7 @@
 				FB0BBBAF1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */,
 				FBFC27701BBE26360012C1AA /* SKNode+Extensions.swift in Sources */,
 				FBEBAB821BB7660D004D455D /* Player.swift in Sources */,
+				C544CE791C4FD9E800F24338 /* CreditsLogo.swift in Sources */,
 				FBFC27641BBE26360012C1AA /* CGPoint+Extensions.swift in Sources */,
 				FBFC27681BBE26360012C1AA /* Int+Extensions.swift in Sources */,
 				FBFC27761BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */,
@@ -572,6 +577,7 @@
 				FBFC27671BBE26360012C1AA /* Int+Extensions.swift in Sources */,
 				FBFC27751BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */,
 				FBFC27651BBE26360012C1AA /* CGVector+Extensions.swift in Sources */,
+				C544CE781C4FD9E800F24338 /* CreditsLogo.swift in Sources */,
 				FBFC276D1BBE26360012C1AA /* SKColor+Extensions.swift in Sources */,
 				C5D382C71C470454006E6394 /* ControlPadPaintCodeImage.swift in Sources */,
 				FBFC27711BBE26360012C1AA /* SKTAudio.swift in Sources */,

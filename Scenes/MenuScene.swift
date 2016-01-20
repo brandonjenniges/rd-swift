@@ -18,6 +18,7 @@ class MenuScene: SKScene {
         
         createBackground()
         createLogo()
+        createCreditsLogo()
         addPlayButton()
         setupDragons(view)
     }
@@ -70,6 +71,10 @@ class MenuScene: SKScene {
     
     func createLogo() {
         Logo.create(self)
+    }
+    
+    func createCreditsLogo() {
+        CreditsLogo.create(self)
     }
     
     func addPlayButton() {
