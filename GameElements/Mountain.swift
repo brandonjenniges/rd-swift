@@ -11,7 +11,7 @@ struct Mountain {
         
         guard let view = scene.view else { return nil }
         
-        let mountain = SKSpriteNode(texture: TextureAtlasManager.playerAtlas.textureNamed("mountain"))
+        let mountain = SKSpriteNode(texture: TextureAtlasManager.sceneAtlas.textureNamed("mountain"))
         mountain.position = CGPointMake(view.frame.width / 2, platform.position.y + mountain.size.height / 2 + platform.size.height / 2)
         mountain.zPosition = GameScene.Layer.Foreground.rawValue
         

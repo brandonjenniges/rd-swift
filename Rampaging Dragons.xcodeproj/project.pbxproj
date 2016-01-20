@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */; };
 		C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */; };
+		C544CE761C4FD7CF00F24338 /* Scene.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C544CE751C4FD7CF00F24338 /* Scene.xcassets */; };
 		C545A0751C49A2E50008253C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0741C49A2E50008253C /* Background.swift */; };
 		C545A0761C49A2E50008253C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0741C49A2E50008253C /* Background.swift */; };
 		C545A0781C49A58A0008253C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0771C49A58A0008253C /* Platform.swift */; };
@@ -99,6 +100,7 @@
 
 /* Begin PBXFileReference section */
 		C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
+		C544CE751C4FD7CF00F24338 /* Scene.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Scene.xcassets; sourceTree = "<group>"; };
 		C545A0741C49A2E50008253C /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		C545A0771C49A58A0008253C /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphic.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C544CE741C4FD7CF00F24338 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				C544CE751C4FD7CF00F24338 /* Scene.xcassets */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
 		C5D382C31C470454006E6394 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		FBA743D61BB7212B00AC4B44 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C544CE741C4FD7CF00F24338 /* Scene */,
 				FBCD32A21BBA3B9D00FAB2D1 /* spark.png */,
 				FBCD329B1BBA19B000FAB2D1 /* Sounds */,
 				FBEBAB8F1BB783FB004D455D /* Fire */,
@@ -484,6 +495,7 @@
 				FB8D27061BB717A1000B548E /* Main.storyboard in Resources */,
 				FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */,
 				FB7BDEF51BC4D33100CCAD52 /* PauseScene.sks in Resources */,
+				C544CE761C4FD7CF00F24338 /* Scene.xcassets in Resources */,
 				FBEBAB8E1BB78350004D455D /* Intro.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

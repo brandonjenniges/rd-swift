@@ -16,6 +16,7 @@ class TextureAtlasManager: NSObject {
     static let fireTextureAtlas = SKTextureAtlas(named: "Fire")
     static let introAtlas = SKTextureAtlas(named: "Intro")
     static let gameOverAtlas = SKTextureAtlas(named: "GameOver")
+    static let sceneAtlas = SKTextureAtlas(named: "Scene")
     
     //MARK: playerAtlas textures
     static let player_looking_left = TextureAtlasManager.playerAtlas.textureNamed("looking_left")
