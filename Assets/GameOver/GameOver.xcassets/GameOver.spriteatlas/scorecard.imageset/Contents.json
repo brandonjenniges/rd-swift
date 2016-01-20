@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "scorecard-1.png",
+      "filename" : "scorecard.png",
       "scale" : "1x"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "idiom" : "tv",
-      "filename" : "scorecard.png",
+      "filename" : "scorecard@3x.png",
       "scale" : "1x"
     }
   ],

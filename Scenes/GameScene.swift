@@ -213,7 +213,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     
     func switchToGameOver() {
         
-        let overlay = SKSpriteNode(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5), size: view!.frame.size)
+        let overlayColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5)
+        let overlay = SKSpriteNode(color: .clearColor(), size: view!.frame.size)
         overlay.name = "GameOverOverlay"
         overlay.zPosition = Layer.GameOver.rawValue
         background.addChild(overlay)
