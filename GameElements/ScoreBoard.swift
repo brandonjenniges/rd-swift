@@ -16,14 +16,14 @@ class ScoreBoard: SKSpriteNode {
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         self.zPosition = GameScene.Layer.GameOver.rawValue
         
-        currentScoreLabel.position = CGPointMake(-111, -22)
         currentScoreLabel.text = "\(score)"
         setupLabel(currentScoreLabel)
+        currentScoreLabel.position = CGPointMake(-self.size.width * 0.25, -22)
         addChild(currentScoreLabel)
         
-        bestScoreLabel.position = CGPointMake(100, -22)
         bestScoreLabel.text = "\(ScoreManager.getHighScore())"
         setupLabel(bestScoreLabel)
+        bestScoreLabel.position = CGPointMake(self.size.width * 0.25, -22)
         addChild(bestScoreLabel)
     }
     
@@ -34,7 +34,7 @@ class ScoreBoard: SKSpriteNode {
     func setupLabel(label:SKLabelNode) {
         let fontName = "SanFranciscoDisplay-Bold"
         label.fontName = fontName
-        
+        label.horizontalAlignmentMode = .Center
         #if os(tvOS)
             label.fontSize = 55.0
         #else
