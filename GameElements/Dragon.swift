@@ -7,7 +7,7 @@ import GameKit
 
 class Dragon: SKSpriteNode {
     
-    let DragonCategoryName = "dragon"
+    static let nodeName = "dragon"
     let dragonID:Int
     
     init(dragonID: Int) {
@@ -15,7 +15,7 @@ class Dragon: SKSpriteNode {
         let textureName = "dragon\(dragonID)_\(0)"
         let texture = TextureAtlasManager.dragonAtlas.textureNamed(textureName)
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
-        self.name = DragonCategoryName
+        self.name = Dragon.nodeName
         self.zPosition = 1
     }
     

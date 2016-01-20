@@ -195,7 +195,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     func switchToIntro() {
         gameState = .Intro
         addTapToStart()
-        //resetPlayer()
     }
     
     func switchToPlay() {
@@ -210,17 +209,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         #endif
         
         self.gameState = .Play
-        
-        /*
-        let intro = worldNode.childNodeWithName("intro")
-        let removeIntroAction = SKAction.fadeAlphaTo(0, duration: 2.0)
-        intro?.runAction(removeIntroAction, completion: { () -> Void in
-           // let moveRightAction = SKAction.moveToX(700, duration: 2.0)
-           // self.player.runAction(moveRightAction)
-        })
-        */
-        
-        
     }
     
     func switchToGameOver() {
@@ -253,6 +241,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         let gameOverNode = background.childNodeWithName("GameOverOverlay")
         gameOverNode!.removeFromParent()
         resetScore()
+        resetPlayer()
+        resetControlPad()
+        resetDragons()
         switchToIntro()
     }
     
@@ -286,12 +277,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         }
     }
     
+    func resetDragons() {
+        scene!.enumerateChildNodesWithName(Dragon.nodeName) {
+            node, stop in
+            node.removeFromParent()
+        }
+    }
+    
     func setupControlPad() {
         control = ControlPad(texture: nil, size: CGSizeMake(CGRectGetWidth(self.frame), 80.0))
         control.delegate = self
         control.anchorPoint = .zero
         control.position = .zero
         addChild(control)
+    }
+    
+    func resetControlPad() {
+        control.removeFromParent()
     }
     
     func setupGaps() {
