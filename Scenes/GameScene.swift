@@ -159,6 +159,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         GameKitHelper.sharedGameKitHelper.reportScore(score, leaderboardId: "846237154.gamecenter_leaderboard_main1")
     }
     
+    func showLeaderboard() {
+        GameKitHelper.sharedGameKitHelper.showGKGameCenterViewController(viewController)
+    }
+    
     // MARK: - Collision
     
     func didBeginContact(contact: SKPhysicsContact) {
