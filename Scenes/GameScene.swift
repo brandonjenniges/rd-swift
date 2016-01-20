@@ -142,7 +142,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         }
     }
     
-    // MARK: - Scoreing
+    // MARK: - Scoring
     
     func increaseScore() {
         score++
@@ -152,6 +152,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     func resetScore() {
         score = 0
         scoreLabel.removeFromParent()
+    }
+    
+    func reportScoreToGameCenter() {
+        print("Reported score to gamecenter")
+        GameKitHelper.sharedGameKitHelper.reportScore(score, leaderboardId: "846237154.gamecenter_leaderboard_main1")
     }
     
     // MARK: - Collision
@@ -235,6 +240,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         overlay.addChild(playButton)
         
         player.die()
+        
+        reportScoreToGameCenter()
     }
     
     func startNewGame() {
