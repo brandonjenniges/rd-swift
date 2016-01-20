@@ -46,7 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
-        self.physicsWorld.gravity = CGVectorMake(0, 0)
+        self.physicsWorld.gravity = .zero
         
         #if DEBUG
             self.view!.showsPhysics = true
@@ -152,7 +152,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     
     func resetScore() {
         score = 0
-        scoreLabel.text = "\(score)"
+        scoreLabel.removeFromParent()
     }
     
     // MARK: - Collision

@@ -12,10 +12,20 @@ struct IntroGraphic {
         
         guard let view = scene.view else { return nil }
         
-        let intro = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("tap"))
+        
+        let tap = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("tap"))
+        let point = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("point"))
+        
+        let intro = SKSpriteNode(color: .clearColor(), size: CGSizeMake(max(tap.size.width, point.size.width), tap.size.height + point.size.height))
         intro.name = nodeName
         intro.position = CGPointMake(view.frame.width / 2, view.frame.height / 2)
         intro.zPosition = GameScene.Layer.Hud.rawValue
+        
+        point.position = CGPointMake(0, 0)
+        tap.position = CGPointMake(0, point.size.height)
+        
+        intro.addChild(tap)
+        intro.addChild(point)
         
         return intro
     }
