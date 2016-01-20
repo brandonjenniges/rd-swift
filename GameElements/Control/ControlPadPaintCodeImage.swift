@@ -19,14 +19,14 @@ class ControlPadPaintCodeImage: UIImageView {
         let context = UIGraphicsGetCurrentContext()
         
         //// Color Declarations
-        let color = UIColor(red: 0.000, green: 0.477, blue: 0.969, alpha: 1.000)
+        let color = UIColor(red: 0.282, green: 0.636, blue: 1.000, alpha: 1.000)
         let color3 = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
         
         //// Shadow Declarations
         let shadow = NSShadow()
         shadow.shadowColor = UIColor.grayColor()
         shadow.shadowOffset = CGSizeMake(0.1, 1.1)
-        shadow.shadowBlurRadius = 5
+        shadow.shadowBlurRadius = 7
         
         
         //// Subframes
@@ -48,9 +48,12 @@ class ControlPadPaintCodeImage: UIImageView {
         
         //// Border Drawing
         let borderPath = UIBezierPath(rect: CGRectMake(borderGroup.minX + floor(borderGroup.width * 0.00000 + 0.5), borderGroup.minY + floor(borderGroup.height * 0.00000 + 0.5), floor(borderGroup.width * 1.00000 + 0.5) - floor(borderGroup.width * 0.00000 + 0.5), floor(borderGroup.height * 1.00000 + 0.5) - floor(borderGroup.height * 0.00000 + 0.5)))
+        CGContextSaveGState(context)
+        CGContextSetShadowWithColor(context, shadow.shadowOffset, shadow.shadowBlurRadius, (shadow.shadowColor as! UIColor).CGColor)
         UIColor.whiteColor().setStroke()
         borderPath.lineWidth = 4
         borderPath.stroke()
+        CGContextRestoreGState(context)
         
         
         CGContextEndTransparencyLayer(context)
@@ -67,8 +70,12 @@ class ControlPadPaintCodeImage: UIImageView {
         polygonPath.addLineToPoint(CGPointMake(27.99, 22.5))
         polygonPath.addLineToPoint(CGPointMake(2.01, 22.5))
         polygonPath.closePath()
+        CGContextSaveGState(context)
+        CGContextSetShadowWithColor(context, shadow.shadowOffset, shadow.shadowBlurRadius, (shadow.shadowColor as! UIColor).CGColor)
         color3.setFill()
         polygonPath.fill()
+        CGContextRestoreGState(context)
+        
         
         CGContextRestoreGState(context)
     }
