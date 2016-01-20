@@ -17,10 +17,24 @@ class GameViewController: UIViewController {
         let scene = MenuScene(size: skView.frame.size)
         scene.viewController = self
         
+        //startGameCenter()
+        
         skView.presentScene(scene)
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func startGameCenter() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showAuthenticationViewController", name: PresentAuthenticationViewController, object: nil)
+        GameKitHelper.sharedGameKitHelper.authenticateLocalPlayer()
+    }
+    
+    func showAuthenticationViewController() {
+        let gameKitHelper = GameKitHelper.sharedGameKitHelper
+        if let authenitcationViewController = gameKitHelper.authenitcationViewController {
+            self.presentViewController(authenitcationViewController, animated: true, completion: nil)
+        }
     }
 }
