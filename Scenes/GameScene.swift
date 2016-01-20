@@ -36,7 +36,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     override init(size: CGSize) {
         super.init(size: size)
         gameHandler = GameLogic(scene: self)
-        gameHandler.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {

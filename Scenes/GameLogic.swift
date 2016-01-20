@@ -21,6 +21,7 @@ class GameLogic: NSObject {
     
     init(scene: GameScene) {
         self.scene = scene
+        delegate = self.scene
     }
     
     func update(currentTime: CFTimeInterval) {

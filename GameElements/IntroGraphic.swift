@@ -12,7 +12,6 @@ struct IntroGraphic {
         
         guard let view = scene.view else { return nil }
         
-        
         let tap = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("tap"))
         let point = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("point"))
         
@@ -21,7 +20,7 @@ struct IntroGraphic {
         intro.position = CGPointMake(view.frame.width / 2, view.frame.height / 2)
         intro.zPosition = GameScene.Layer.Hud.rawValue
         
-        point.position = CGPointMake(0, 0)
+        point.position = .zero
         tap.position = CGPointMake(0, point.size.height)
         
         intro.addChild(tap)
