@@ -62,7 +62,7 @@ class Player: SKSpriteNode {
     
     func runPlayerLookingAnimation() {
         let delayAction = SKAction.waitForDuration(3.0)
-        self.runAction(delayAction) { () -> Void in
+        self.runAction(delayAction) {
             let lookAction = SKAction.animateWithTextures(self.setupLookingFrames(), timePerFrame: 1.0, resize: false, restore: true)
             let sequence = SKAction.sequence([lookAction])
             sequence.timingMode = .EaseInEaseOut
@@ -186,7 +186,7 @@ class Player: SKSpriteNode {
     }
     
     func getRunningCompletionAction() -> SKAction {
-        return SKAction.runBlock({ () -> Void in
+        return SKAction.runBlock({
             #if os(iOS)
                 if (self.scene! as! GameScene).gameState == .Play {
                     self.stopRunning()

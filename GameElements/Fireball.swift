@@ -69,7 +69,7 @@ class Fireball: SKSpriteNode {
         let actualDruation = Double(arc4random_uniform(rangeDuration)) + minDuration
         
         let actionMove = SKAction.moveTo(CGPointMake(self.position.x, toYPos - self.size.height), duration: actualDruation)
-        let scoreAction = SKAction.runBlock { () -> Void in
+        let scoreAction = SKAction.runBlock {
             if let delegate = self.delegate {
                 delegate.fireballDidReachDestination()
             }

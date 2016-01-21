@@ -207,8 +207,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     
     func switchToPlay() {
         
-        IntroGraphic.remove(self)
-        
         addScoreLabel()
         setupDragons()
         
@@ -216,6 +214,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
             setupControlPad()
         #endif
         
+        IntroGraphic.remove(self)
         self.gameState = .Play
     }
     
@@ -229,7 +228,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         scorecard.position = CGPointMake(0, -view!.frame.size.height + -scorecard.frame.size.height)
         overlay.addChild(scorecard)
         let moveAction = SKAction.moveToY(0, duration: 0.4)
-        scorecard.runAction(moveAction) { () -> Void in
+        scorecard.runAction(moveAction) {
             self.gameState = .GameOver
         }
         
