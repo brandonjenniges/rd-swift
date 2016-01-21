@@ -10,7 +10,7 @@ struct Background {
         
         guard let view = scene.view else { return nil }
         
-        let background = SKSpriteNode(color: UIColor(red: 126/255.0, green: 200/255.0, blue: 219/255.0, alpha: 1.0), size: view.frame.size)
+        let background = SKSpriteNode(color: .backgroundColor(), size: view.frame.size)
         
         let cloud = SKSpriteNode(texture:TextureAtlasManager.introAtlas.textureNamed("cloud"))
         let numberOfClouds = Int(ceil(view.frame.size.width / cloud.size.width))
@@ -29,7 +29,7 @@ struct Background {
         clouds.position = .zero
         background.addChild(clouds)
         
-        let bottomClouds = SKSpriteNode(color: UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.4), size: CGSizeMake(view.frame.size.width, view.frame.size.height / 2 - clouds.frame.origin.y))
+        let bottomClouds = SKSpriteNode(color: .cloudColor(), size: CGSizeMake(view.frame.size.width, view.frame.size.height / 2 - clouds.frame.origin.y))
         bottomClouds.position = CGPointMake(0, -(clouds.frame.size.height / 2) - bottomClouds.frame.size.height / 2)
         background.addChild(bottomClouds)
         

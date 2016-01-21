@@ -14,7 +14,7 @@ class Dragon: SKSpriteNode {
         self.dragonID = dragonID
         let textureName = "dragon\(dragonID)_\(0)"
         let texture = TextureAtlasManager.dragonAtlas.textureNamed(textureName)
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        super.init(texture: texture, color: .clearColor(), size: texture.size())
         self.name = Dragon.nodeName
         self.zPosition = 1
     }

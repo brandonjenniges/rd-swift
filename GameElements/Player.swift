@@ -18,7 +18,7 @@ class Player: SKSpriteNode {
     init() {
         self.movement = .Neutral
         let texture = TextureAtlasManager.player_0
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        super.init(texture: texture, color: .clearColor(), size: texture.size())
         name = PlayerCategoryName
         zPosition = GameScene.Layer.Game.rawValue
         setupPhysics()

@@ -13,7 +13,7 @@ class ScoreBoard: SKSpriteNode {
         ScoreManager.saveHighScore(score)
         
         let texture = TextureAtlasManager.gameOverAtlas.textureNamed("scorecard")
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        super.init(texture: texture, color: .clearColor(), size: texture.size())
         self.zPosition = GameScene.Layer.GameOver.rawValue
         
         currentScoreLabel.text = "\(score)"
