@@ -38,6 +38,10 @@
 		FB4910D81BBB88900094EC7E /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4910D61BBB88900094EC7E /* ScoreManager.swift */; };
 		FB4910DC1BBB92520094EC7E /* titlesong.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB4910DB1BBB92520094EC7E /* titlesong.wav */; };
 		FB4910DD1BBB92520094EC7E /* titlesong.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB4910DB1BBB92520094EC7E /* titlesong.wav */; };
+		FB6F9C761C5079D400F1040A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C741C5079D400F1040A /* Fabric.framework */; };
+		FB6F9C771C5079D400F1040A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C741C5079D400F1040A /* Fabric.framework */; };
+		FB6F9C781C5079D400F1040A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C751C5079D400F1040A /* Crashlytics.framework */; };
+		FB6F9C791C5079D400F1040A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C751C5079D400F1040A /* Crashlytics.framework */; };
 		FB7BDEF51BC4D33100CCAD52 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */; };
 		FB7BDEF61BC4D33100CCAD52 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */; };
 		FB8D26E41BB71773000B548E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D26E31BB71773000B548E /* AppDelegate.swift */; };
@@ -121,6 +125,8 @@
 		FB4910D91BBB8B6C0094EC7E /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOS.entitlements; sourceTree = "<group>"; };
 		FB4910DA1BBB8C1C0094EC7E /* RampagingDragons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RampagingDragons.entitlements; sourceTree = "<group>"; };
 		FB4910DB1BBB92520094EC7E /* titlesong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = titlesong.wav; sourceTree = "<group>"; };
+		FB6F9C741C5079D400F1040A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		FB6F9C751C5079D400F1040A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseScene.sks; sourceTree = "<group>"; };
 		FB8D26E11BB71772000B548E /* RampagingDragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RampagingDragons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8D26E31BB71773000B548E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +176,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */,
+				FB6F9C791C5079D400F1040A /* Crashlytics.framework in Frameworks */,
+				FB6F9C771C5079D400F1040A /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */,
+				FB6F9C781C5079D400F1040A /* Crashlytics.framework in Frameworks */,
+				FB6F9C761C5079D400F1040A /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +361,8 @@
 		FBFC272C1BBE244B0012C1AA /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				FB6F9C741C5079D400F1040A /* Fabric.framework */,
+				FB6F9C751C5079D400F1040A /* Crashlytics.framework */,
 				FBFC272D1BBE244B0012C1AA /* SKTUtils */,
 				C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */,
 				C56DA5171C50349900D50218 /* GameKitHelper.swift */,
@@ -404,6 +416,7 @@
 				FB8D26F61BB717A1000B548E /* Sources */,
 				FB8D26F71BB717A1000B548E /* Frameworks */,
 				FB8D26F81BB717A1000B548E /* Resources */,
+				FB6F9C731C5079B500F1040A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -509,6 +522,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FB6F9C731C5079B500F1040A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2bc1b233cfb91d29789e264b53638dbf1b62bdf9 173b6fc40afbe5bde847cbebe082eaab44e284cfc0dcbc2c4d9f7916df5472d9";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FB8D26DD1BB71772000B548E /* Sources */ = {
@@ -704,6 +733,10 @@
 				CODE_SIGN_ENTITLEMENTS = tvOS/RampagingDragons.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
@@ -724,6 +757,10 @@
 				CODE_SIGN_ENTITLEMENTS = tvOS/RampagingDragons.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
@@ -743,6 +780,10 @@
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -763,6 +804,10 @@
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
