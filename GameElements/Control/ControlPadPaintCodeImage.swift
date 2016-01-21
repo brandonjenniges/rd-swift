@@ -51,7 +51,7 @@ class ControlPadPaintCodeImage: UIImageView {
         CGContextSaveGState(context)
         CGContextSetShadowWithColor(context, shadow.shadowOffset, shadow.shadowBlurRadius, (shadow.shadowColor as! UIColor).CGColor)
         UIColor.whiteColor().setStroke()
-        borderPath.lineWidth = 4
+        borderPath.lineWidth = 6
         borderPath.stroke()
         CGContextRestoreGState(context)
         
@@ -76,7 +76,11 @@ class ControlPadPaintCodeImage: UIImageView {
         polygonPath.fill()
         CGContextRestoreGState(context)
         
+        UIColor.whiteColor().setStroke()
+        polygonPath.lineWidth = 1
+        polygonPath.stroke()
         
         CGContextRestoreGState(context)
     }
+
 }
