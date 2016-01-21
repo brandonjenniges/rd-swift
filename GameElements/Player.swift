@@ -19,11 +19,11 @@ class Player: SKSpriteNode {
         self.movement = .Neutral
         let texture = TextureAtlasManager.player_0
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
-        self.name = PlayerCategoryName
-        self.zPosition = GameScene.Layer.Game.rawValue
+        name = PlayerCategoryName
+        zPosition = GameScene.Layer.Game.rawValue
         setupPhysics()
-        self.runPlayerLookingAnimation()
-        self.setupPhysics()
+        runPlayerLookingAnimation()
+        setupPhysics()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -78,6 +78,7 @@ class Player: SKSpriteNode {
     }
     
     func stopRunning() {
+        movement = .Neutral
         self.removeAllActions()
         self.texture = TextureAtlasManager.player_0
         self.runPlayerLookingAnimation()
