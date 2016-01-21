@@ -269,7 +269,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     }
     
     func resetPlayer() {
-        player.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.size.height / 2) - 10)
+        player.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.size.height / 2) - 5)
     }
     
     func setupDragons() {
