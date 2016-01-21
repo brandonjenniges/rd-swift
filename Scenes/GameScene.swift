@@ -219,10 +219,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     }
     
     func switchToGameOver() {
-        let overlay = SKSpriteNode(color: .clearColor(), size: view!.frame.size)
-        overlay.name = "GameOverOverlay"
-        overlay.zPosition = Layer.GameOver.rawValue
-        background.addChild(overlay)
+        
+        resetControlPad()
+        
+        let overlay = OverlayNode.create(self)!
+        addChild(overlay)
         
         let scorecard = ScoreBoard(score: score)
         scorecard.position = CGPointMake(0, -view!.frame.size.height + -scorecard.frame.size.height)
@@ -250,7 +251,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         gameOverNode!.removeFromParent()
         resetScore()
         resetPlayer()
-        resetControlPad()
         resetDragons()
         switchToIntro()
     }

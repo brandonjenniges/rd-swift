@@ -20,6 +20,8 @@
 		C56DA5191C50349900D50218 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DA5171C50349900D50218 /* GameKitHelper.swift */; };
 		C56DA51B1C512A4B00D50218 /* UIColor+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DA51A1C512A4B00D50218 /* UIColor+Extra.swift */; };
 		C56DA51C1C512A4B00D50218 /* UIColor+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DA51A1C512A4B00D50218 /* UIColor+Extra.swift */; };
+		C56DA51E1C512FBE00D50218 /* OverlayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DA51D1C512FBE00D50218 /* OverlayNode.swift */; };
+		C56DA51F1C512FBE00D50218 /* OverlayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DA51D1C512FBE00D50218 /* OverlayNode.swift */; };
 		C58C08C21C4D9B13000E4A29 /* IntroGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */; };
 		C58C08C31C4D9B13000E4A29 /* IntroGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */; };
 		C59E3A4B1BC808020037F3B3 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4A1BC808020037F3B3 /* Logo.swift */; };
@@ -30,6 +32,8 @@
 		C5D382C71C470454006E6394 /* ControlPadPaintCodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */; };
 		C5D382C91C470B95006E6394 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C81C470B95006E6394 /* GameLogic.swift */; };
 		C5D382CA1C470B95006E6394 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C81C470B95006E6394 /* GameLogic.swift */; };
+		C5D548481C5130EB00F64B0C /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D548471C5130EB00F64B0C /* PlayButton.swift */; };
+		C5D548491C5130EB00F64B0C /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D548471C5130EB00F64B0C /* PlayButton.swift */; };
 		C5DE514B1BB9811B0049C321 /* GameOver.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB871BB782FD004D455D /* GameOver.xcassets */; };
 		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
@@ -116,12 +120,14 @@
 		C545A0771C49A58A0008253C /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		C56DA5171C50349900D50218 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
 		C56DA51A1C512A4B00D50218 /* UIColor+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extra.swift"; sourceTree = "<group>"; };
+		C56DA51D1C512FBE00D50218 /* OverlayNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayNode.swift; sourceTree = "<group>"; };
 		C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphic.swift; sourceTree = "<group>"; };
 		C59E3A4A1BC808020037F3B3 /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		C5D382C41C470454006E6394 /* ControlPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPad.swift; sourceTree = "<group>"; };
 		C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadPaintCodeImage.swift; sourceTree = "<group>"; };
 		C5D382C81C470B95006E6394 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		C5D548471C5130EB00F64B0C /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		FB4910D61BBB88900094EC7E /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
@@ -324,17 +330,19 @@
 			children = (
 				C545A0741C49A2E50008253C /* Background.swift */,
 				C5D382C31C470454006E6394 /* Control */,
+				C544CE771C4FD9E800F24338 /* CreditsLogo.swift */,
 				FBEBAB7F1BB765B6004D455D /* Dragon.swift */,
 				FBEBAB9B1BB89E6C004D455D /* Fireball.swift */,
+				C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */,
 				C59E3A4A1BC808020037F3B3 /* Logo.swift */,
+				FBFEFA241C4B29F300E0B2AF /* Mountain.swift */,
+				C56DA51D1C512FBE00D50218 /* OverlayNode.swift */,
+				C545A0771C49A58A0008253C /* Platform.swift */,
 				FBEBAB7D1BB765AB004D455D /* Player.swift */,
 				FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */,
 				FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */,
 				FB4910D61BBB88900094EC7E /* ScoreManager.swift */,
-				C545A0771C49A58A0008253C /* Platform.swift */,
-				FBFEFA241C4B29F300E0B2AF /* Mountain.swift */,
-				C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */,
-				C544CE771C4FD9E800F24338 /* CreditsLogo.swift */,
+				C5D548471C5130EB00F64B0C /* PlayButton.swift */,
 			);
 			path = GameElements;
 			sourceTree = "<group>";
@@ -551,9 +559,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFC27781BBE26360012C1AA /* Vector3.swift in Sources */,
+				C5D548491C5130EB00F64B0C /* PlayButton.swift in Sources */,
 				FBFC276C1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
 				FBFC27741BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
+				C56DA51F1C512FBE00D50218 /* OverlayNode.swift in Sources */,
 				FBFC27621BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				C59E3A4C1BC808020037F3B3 /* Logo.swift in Sources */,
 				FBA743D41BB71E7900AC4B44 /* GameScene.swift in Sources */,
@@ -615,9 +625,11 @@
 				C56DA51B1C512A4B00D50218 /* UIColor+Extra.swift in Sources */,
 				C545A0751C49A2E50008253C /* Background.swift in Sources */,
 				C58C08C21C4D9B13000E4A29 /* IntroGraphic.swift in Sources */,
+				C5D548481C5130EB00F64B0C /* PlayButton.swift in Sources */,
 				FBFC27631BBE26360012C1AA /* CGPoint+Extensions.swift in Sources */,
 				FBFC27671BBE26360012C1AA /* Int+Extensions.swift in Sources */,
 				FBFC27751BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */,
+				C56DA51E1C512FBE00D50218 /* OverlayNode.swift in Sources */,
 				FBFC27651BBE26360012C1AA /* CGVector+Extensions.swift in Sources */,
 				C544CE781C4FD9E800F24338 /* CreditsLogo.swift in Sources */,
 				FBFC276D1BBE26360012C1AA /* SKColor+Extensions.swift in Sources */,
