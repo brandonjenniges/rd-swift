@@ -61,6 +61,8 @@
 		FBCD329F1BBA19B000FAB2D1 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329C1BBA19B000FAB2D1 /* pop.wav */; };
 		FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329D1BBA19B000FAB2D1 /* roar.wav */; };
 		FBCD32A31BBA3B9D00FAB2D1 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCD32A21BBA3B9D00FAB2D1 /* spark.png */; };
+		FBE8878E1C50829700D1F92B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8878D1C50829700D1F92B /* MenuScene.swift */; };
+		FBE887901C5082A000D1F92B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8878F1C5082A000D1F92B /* MenuScene.swift */; };
 		FBEAB7151BCCA4BE00054888 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */; };
 		FBEAB7161BCCA4BE00054888 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */; };
 		FBEBAB7A1BB763FF004D455D /* Player.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB791BB763FF004D455D /* Player.xcassets */; };
@@ -73,8 +75,6 @@
 		FBEBAB8E1BB78350004D455D /* Intro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB8D1BB78350004D455D /* Intro.xcassets */; };
 		FBEBAB921BB784C7004D455D /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
 		FBEBAB931BB784CA004D455D /* Intro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB8D1BB78350004D455D /* Intro.xcassets */; };
-		FBEBAB961BB78572004D455D /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB951BB78572004D455D /* MenuScene.swift */; };
-		FBEBAB971BB78572004D455D /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB951BB78572004D455D /* MenuScene.swift */; };
 		FBEBAB9C1BB89E6C004D455D /* Fireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB9B1BB89E6C004D455D /* Fireball.swift */; };
 		FBEBAB9D1BB89E6C004D455D /* Fireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB9B1BB89E6C004D455D /* Fireball.swift */; };
 		FBED7D021BBA3BCB001C73FE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCD32A21BBA3B9D00FAB2D1 /* spark.png */; };
@@ -146,6 +146,8 @@
 		FBCD329C1BBA19B000FAB2D1 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		FBCD329D1BBA19B000FAB2D1 /* roar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = roar.wav; sourceTree = "<group>"; };
 		FBCD32A21BBA3B9D00FAB2D1 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		FBE8878D1C50829700D1F92B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		FBE8878F1C5082A000D1F92B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		FBEBAB791BB763FF004D455D /* Player.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Player.xcassets; sourceTree = "<group>"; };
 		FBEBAB7D1BB765AB004D455D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -153,7 +155,6 @@
 		FBEBAB871BB782FD004D455D /* GameOver.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GameOver.xcassets; sourceTree = "<group>"; };
 		FBEBAB8D1BB78350004D455D /* Intro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Intro.xcassets; sourceTree = "<group>"; };
 		FBEBAB901BB783FB004D455D /* Fire.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Fire.xcassets; sourceTree = "<group>"; };
-		FBEBAB951BB78572004D455D /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FBEBAB9B1BB89E6C004D455D /* Fireball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fireball.swift; sourceTree = "<group>"; };
 		FBFC27551BBE26360012C1AA /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		FBFC27561BBE26360012C1AA /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
@@ -237,6 +238,7 @@
 		FB8D26E21BB71773000B548E /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				FBE8878D1C50829700D1F92B /* MenuScene.swift */,
 				FB4910DA1BBB8C1C0094EC7E /* RampagingDragons.entitlements */,
 				FB8D26E31BB71773000B548E /* AppDelegate.swift */,
 				FB8D26E91BB71773000B548E /* GameViewController.swift */,
@@ -250,6 +252,7 @@
 		FB8D26FB1BB717A1000B548E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FBE8878F1C5082A000D1F92B /* MenuScene.swift */,
 				FB4910D91BBB8B6C0094EC7E /* iOS.entitlements */,
 				FB8D26FC1BB717A1000B548E /* AppDelegate.swift */,
 				FB8D27021BB717A1000B548E /* GameViewController.swift */,
@@ -265,7 +268,6 @@
 			children = (
 				FBA743D01BB71E5200AC4B44 /* GameScene.sks */,
 				FBA743D11BB71E5200AC4B44 /* GameScene.swift */,
-				FBEBAB951BB78572004D455D /* MenuScene.swift */,
 				FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */,
 				C5D382C81C470B95006E6394 /* GameLogic.swift */,
 			);
@@ -557,11 +559,11 @@
 				C5D382CA1C470B95006E6394 /* GameLogic.swift in Sources */,
 				FBEBAB9D1BB89E6C004D455D /* Fireball.swift in Sources */,
 				FB4910D81BBB88900094EC7E /* ScoreManager.swift in Sources */,
+				FBE8878E1C50829700D1F92B /* MenuScene.swift in Sources */,
 				FBEBAB811BB7660B004D455D /* Dragon.swift in Sources */,
 				C545A0791C49A58A0008253C /* Platform.swift in Sources */,
 				FBFC276A1BBE26360012C1AA /* SKAction+Extensions.swift in Sources */,
 				C56DA5191C50349900D50218 /* GameKitHelper.swift in Sources */,
-				FBEBAB971BB78572004D455D /* MenuScene.swift in Sources */,
 				C58C08C31C4D9B13000E4A29 /* IntroGraphic.swift in Sources */,
 				FBFEFA261C4B29F300E0B2AF /* Mountain.swift in Sources */,
 				FB0BBBAF1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */,
@@ -600,8 +602,8 @@
 				FBEBAB9C1BB89E6C004D455D /* Fireball.swift in Sources */,
 				FB4910D71BBB88900094EC7E /* ScoreManager.swift in Sources */,
 				FBA743D31BB71E5200AC4B44 /* GameScene.swift in Sources */,
+				FBE887901C5082A000D1F92B /* MenuScene.swift in Sources */,
 				FBFC27691BBE26360012C1AA /* SKAction+Extensions.swift in Sources */,
-				FBEBAB961BB78572004D455D /* MenuScene.swift in Sources */,
 				FB0BBBAE1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */,
 				FBFC276F1BBE26360012C1AA /* SKNode+Extensions.swift in Sources */,
 				FBEBAB801BB765B6004D455D /* Dragon.swift in Sources */,

@@ -12,9 +12,7 @@ class MenuScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         
-        #if os(tvOS)
         viewController.controllerUserInteractionEnabled = true
-        #endif
         
         createBackground()
         createLogo()
@@ -26,33 +24,12 @@ class MenuScene: SKScene {
     // MARK: - Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        #if os(tvOS)
-            playButton.alpha = 0.5
-        #elseif os(iOS)
-            for touch in touches {
-                let location = touch.locationInNode(self)
-                if playButton.containsPoint(location) {
-                    playButton.alpha = 0.5
-                }
-            }
-        #endif
-        
-        
+        playButton.alpha = 0.5
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         playButton.alpha = 1.0
-        
-        #if os(tvOS)
-            handlePlayButtonPress()
-        #elseif os(iOS)
-            for touch in touches {
-                let location = touch.locationInNode(self)
-                if playButton.containsPoint(location) {
-                    handlePlayButtonPress()
-                }
-            }
-        #endif
+        handlePlayButtonPress()
     }
     
     func handlePlayButtonPress() {

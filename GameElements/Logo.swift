@@ -14,7 +14,7 @@ struct Logo {
         
         let logo = SKSpriteNode(texture:TextureAtlasManager.introAtlas.textureNamed("logo"))
         logo.name = nodeName
-        logo.position = CGPointMake(view.frame.width / 2, view.frame.height * 0.6)
+        logo.position = CGPointMake(view.frame.width / 2, view.frame.height * 0.75)
         logo.zPosition = 2
         
         scene.addChild(logo)
