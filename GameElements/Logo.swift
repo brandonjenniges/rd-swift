@@ -6,7 +6,7 @@ import SpriteKit
 
 struct Logo {
     
-    static let nodeName = "logo"
+    static let nodeName = String(Logo)
     
     static func create(scene: SKScene) -> SKSpriteNode? {
         

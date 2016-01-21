@@ -6,7 +6,7 @@ import SpriteKit
 
 class Player: SKSpriteNode {
     
-    let PlayerCategoryName = "player"
+    static let nodeName = String(Player)
     
     enum PlayerMovement { case Neutral; case Left; case Right }
     
@@ -19,7 +19,7 @@ class Player: SKSpriteNode {
         self.movement = .Neutral
         let texture = TextureAtlasManager.player_0
         super.init(texture: texture, color: .clearColor(), size: texture.size())
-        name = PlayerCategoryName
+        name = Player.nodeName
         zPosition = GameScene.Layer.Game.rawValue
         setupPhysics()
         runPlayerLookingAnimation()

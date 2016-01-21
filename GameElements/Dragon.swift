@@ -7,7 +7,7 @@ import GameKit
 
 class Dragon: SKSpriteNode {
     
-    static let nodeName = "dragon"
+    static let nodeName = String(Dragon)
     let dragonID:Int
     
     init(dragonID: Int) {

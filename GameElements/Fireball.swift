@@ -76,7 +76,6 @@ class Fireball: SKSpriteNode {
         }
         let doneAction = SKAction.removeFromParent()
         self.runAction(SKAction.sequence([actionMove, scoreAction, doneAction]))
-        
     }
     
 }
