@@ -223,7 +223,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         resetControlPad()
         
         let overlay = OverlayNode.create(self)!
-        addChild(overlay)
+        background.addChild(overlay)
         
         let scorecard = ScoreBoard(score: score)
         scorecard.position = CGPointMake(0, -view!.frame.size.height + -scorecard.frame.size.height)
@@ -247,7 +247,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     }
     
     func startNewGame() {
-        let gameOverNode = background.childNodeWithName("GameOverOverlay")
+        let gameOverNode = background.childNodeWithName(String(OverlayNode))
         gameOverNode!.removeFromParent()
         resetScore()
         resetPlayer()
