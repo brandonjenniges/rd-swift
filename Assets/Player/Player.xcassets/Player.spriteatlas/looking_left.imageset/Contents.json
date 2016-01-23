@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "looking_left-1.png",
+      "filename" : "looking_left.png",
       "scale" : "1x"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "idiom" : "tv",
-      "filename" : "looking_left.png",
+      "filename" : "looking_left-tv.png",
       "scale" : "1x"
     }
   ],

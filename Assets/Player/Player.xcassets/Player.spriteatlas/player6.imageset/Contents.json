@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "player6-1.png",
+      "filename" : "player6.png",
       "scale" : "1x"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "idiom" : "tv",
-      "filename" : "player6.png",
+      "filename" : "player6-tv.png",
       "scale" : "1x"
     }
   ],
