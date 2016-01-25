@@ -222,24 +222,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         
         resetControlPad()
         
-        let overlay = OverlayNode.create(self)!
+        self.gameState = .GameOver
+        
+        let overlay = OverlayNode.create(self, score: score)!
         background.addChild(overlay)
-        
-        let scorecard = ScoreBoard(score: score)
-        scorecard.position = CGPointMake(0, -view!.frame.size.height + -scorecard.frame.size.height)
-        overlay.addChild(scorecard)
-        let moveAction = SKAction.moveToY(0, duration: 0.4)
-        scorecard.runAction(moveAction) {
-            self.gameState = .GameOver
-        }
-        
-        let gameover = SKSpriteNode(texture: TextureAtlasManager.gameOverAtlas.textureNamed("gameover"))
-        gameover.position = CGPointMake(0, view!.frame.size.height / 4)
-        overlay.addChild(gameover)
-        
-        let playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
-        playButton.position = CGPointMake(0, -(view!.frame.size.height / 4))
-        overlay.addChild(playButton)
         
         player.die()
         
