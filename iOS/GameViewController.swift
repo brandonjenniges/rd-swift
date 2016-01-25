@@ -7,18 +7,23 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
         
         let skView = self.view as! SKView
         
         #if DEBUG
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+            skView.showsPhysics = true
         #endif
         
-        let scene = MenuScene(size: skView.frame.size)
+        let aspectRatio = skView.bounds.size.height / skView.bounds.size.width
+        let scene = MenuScene(size: CGSize(width: 320, height: 320 * aspectRatio))
+        
         scene.viewController = self
+        scene.scaleMode = .AspectFill
         
         //startGameCenter()
         
