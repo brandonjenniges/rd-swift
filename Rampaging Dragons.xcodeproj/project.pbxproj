@@ -16,6 +16,22 @@
 		C545A0761C49A2E50008253C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0741C49A2E50008253C /* Background.swift */; };
 		C545A0781C49A58A0008253C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0771C49A58A0008253C /* Platform.swift */; };
 		C545A0791C49A58A0008253C /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C545A0771C49A58A0008253C /* Platform.swift */; };
+		C56080EC1C56DBBF00C167FD /* TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080EB1C56DBBF00C167FD /* TestUtil.swift */; };
+		C56080F21C56E16600C167FD /* BackgroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080F01C56E16600C167FD /* BackgroundTests.swift */; };
+		C56080F31C56E16600C167FD /* CreditsLogoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080F11C56E16600C167FD /* CreditsLogoTests.swift */; };
+		C56081021C56E1F400C167FD /* ControlPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080F51C56E1F400C167FD /* ControlPadTests.swift */; };
+		C56081031C56E1F400C167FD /* DragonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080F61C56E1F400C167FD /* DragonTests.swift */; };
+		C56081041C56E1F400C167FD /* FireballTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080F71C56E1F400C167FD /* FireballTests.swift */; };
+		C56081051C56E1F400C167FD /* IntroGraphicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080F81C56E1F400C167FD /* IntroGraphicTests.swift */; };
+		C56081061C56E1F400C167FD /* LogoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080F91C56E1F400C167FD /* LogoTests.swift */; };
+		C56081071C56E1F400C167FD /* MountainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080FA1C56E1F400C167FD /* MountainTests.swift */; };
+		C56081081C56E1F400C167FD /* OverlayNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080FB1C56E1F400C167FD /* OverlayNodeTests.swift */; };
+		C56081091C56E1F400C167FD /* PlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080FC1C56E1F400C167FD /* PlatformTests.swift */; };
+		C560810A1C56E1F400C167FD /* PlayButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080FD1C56E1F400C167FD /* PlayButtonTests.swift */; };
+		C560810B1C56E1F400C167FD /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080FE1C56E1F400C167FD /* PlayerTests.swift */; };
+		C560810C1C56E1F400C167FD /* ScoreBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56080FF1C56E1F400C167FD /* ScoreBoardTests.swift */; };
+		C560810D1C56E1F400C167FD /* ScoreLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56081001C56E1F400C167FD /* ScoreLabelTests.swift */; };
+		C560810E1C56E1F400C167FD /* ScoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56081011C56E1F400C167FD /* ScoreManagerTests.swift */; };
 		C56DA5181C50349900D50218 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DA5171C50349900D50218 /* GameKitHelper.swift */; };
 		C56DA5191C50349900D50218 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DA5171C50349900D50218 /* GameKitHelper.swift */; };
 		C56DA51B1C512A4B00D50218 /* UIColor+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DA51A1C512A4B00D50218 /* UIColor+Extra.swift */; };
@@ -112,12 +128,40 @@
 		FBFEFA261C4B29F300E0B2AF /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFEFA241C4B29F300E0B2AF /* Mountain.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C56080E61C56DA4C00C167FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB8D268C1BB71620000B548E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB8D26F91BB717A1000B548E;
+			remoteInfo = iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		C52F0A951BCD42DD009C59B2 /* PulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 		C544CE751C4FD7CF00F24338 /* Scene.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Scene.xcassets; sourceTree = "<group>"; };
 		C544CE771C4FD9E800F24338 /* CreditsLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsLogo.swift; sourceTree = "<group>"; };
 		C545A0741C49A2E50008253C /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		C545A0771C49A58A0008253C /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		C56080E11C56DA4B00C167FD /* RampagingDragonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RampagingDragonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C56080E51C56DA4C00C167FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C56080EB1C56DBBF00C167FD /* TestUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtil.swift; sourceTree = "<group>"; };
+		C56080F01C56E16600C167FD /* BackgroundTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTests.swift; sourceTree = "<group>"; };
+		C56080F11C56E16600C167FD /* CreditsLogoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsLogoTests.swift; sourceTree = "<group>"; };
+		C56080F51C56E1F400C167FD /* ControlPadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadTests.swift; sourceTree = "<group>"; };
+		C56080F61C56E1F400C167FD /* DragonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonTests.swift; sourceTree = "<group>"; };
+		C56080F71C56E1F400C167FD /* FireballTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireballTests.swift; sourceTree = "<group>"; };
+		C56080F81C56E1F400C167FD /* IntroGraphicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphicTests.swift; sourceTree = "<group>"; };
+		C56080F91C56E1F400C167FD /* LogoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoTests.swift; sourceTree = "<group>"; };
+		C56080FA1C56E1F400C167FD /* MountainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountainTests.swift; sourceTree = "<group>"; };
+		C56080FB1C56E1F400C167FD /* OverlayNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayNodeTests.swift; sourceTree = "<group>"; };
+		C56080FC1C56E1F400C167FD /* PlatformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformTests.swift; sourceTree = "<group>"; };
+		C56080FD1C56E1F400C167FD /* PlayButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButtonTests.swift; sourceTree = "<group>"; };
+		C56080FE1C56E1F400C167FD /* PlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
+		C56080FF1C56E1F400C167FD /* ScoreBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardTests.swift; sourceTree = "<group>"; };
+		C56081001C56E1F400C167FD /* ScoreLabelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabelTests.swift; sourceTree = "<group>"; };
+		C56081011C56E1F400C167FD /* ScoreManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManagerTests.swift; sourceTree = "<group>"; };
 		C56DA5171C50349900D50218 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
 		C56DA51A1C512A4B00D50218 /* UIColor+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extra.swift"; sourceTree = "<group>"; };
 		C56DA51D1C512FBE00D50218 /* OverlayNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayNode.swift; sourceTree = "<group>"; };
@@ -181,6 +225,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C56080DE1C56DA4B00C167FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB8D26DE1BB71772000B548E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,6 +263,46 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		C56080E21C56DA4B00C167FD /* RampagingDragonsTests */ = {
+			isa = PBXGroup;
+			children = (
+				C56080EF1C56E16600C167FD /* GameElements */,
+				C56080E51C56DA4C00C167FD /* Info.plist */,
+				C56080EB1C56DBBF00C167FD /* TestUtil.swift */,
+			);
+			path = RampagingDragonsTests;
+			sourceTree = "<group>";
+		};
+		C56080EF1C56E16600C167FD /* GameElements */ = {
+			isa = PBXGroup;
+			children = (
+				C56080F41C56E1F400C167FD /* Control */,
+				C56080F61C56E1F400C167FD /* DragonTests.swift */,
+				C56080F71C56E1F400C167FD /* FireballTests.swift */,
+				C56080F81C56E1F400C167FD /* IntroGraphicTests.swift */,
+				C56080F91C56E1F400C167FD /* LogoTests.swift */,
+				C56080FA1C56E1F400C167FD /* MountainTests.swift */,
+				C56080FB1C56E1F400C167FD /* OverlayNodeTests.swift */,
+				C56080FC1C56E1F400C167FD /* PlatformTests.swift */,
+				C56080FD1C56E1F400C167FD /* PlayButtonTests.swift */,
+				C56080FE1C56E1F400C167FD /* PlayerTests.swift */,
+				C56080FF1C56E1F400C167FD /* ScoreBoardTests.swift */,
+				C56081001C56E1F400C167FD /* ScoreLabelTests.swift */,
+				C56081011C56E1F400C167FD /* ScoreManagerTests.swift */,
+				C56080F01C56E16600C167FD /* BackgroundTests.swift */,
+				C56080F11C56E16600C167FD /* CreditsLogoTests.swift */,
+			);
+			path = GameElements;
+			sourceTree = "<group>";
+		};
+		C56080F41C56E1F400C167FD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				C56080F51C56E1F400C167FD /* ControlPadTests.swift */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
 		C5D382C31C470454006E6394 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +319,7 @@
 				FBEBAB7C1BB7658C004D455D /* GameElements */,
 				FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */,
 				FB8D26FB1BB717A1000B548E /* iOS */,
+				C56080E21C56DA4B00C167FD /* RampagingDragonsTests */,
 				FB8D26951BB71620000B548E /* Products */,
 				FBA743CF1BB71DE000AC4B44 /* Scenes */,
 				FB8D26E21BB71773000B548E /* tvOS */,
@@ -240,6 +332,7 @@
 			children = (
 				FB8D26E11BB71772000B548E /* RampagingDragons.app */,
 				FB8D26FA1BB717A1000B548E /* RampagingDragons.app */,
+				C56080E11C56DA4B00C167FD /* RampagingDragonsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -406,6 +499,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C56080E01C56DA4B00C167FD /* RampagingDragonsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C56080EA1C56DA4C00C167FD /* Build configuration list for PBXNativeTarget "RampagingDragonsTests" */;
+			buildPhases = (
+				C56080DD1C56DA4B00C167FD /* Sources */,
+				C56080DE1C56DA4B00C167FD /* Frameworks */,
+				C56080DF1C56DA4B00C167FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C56080E71C56DA4C00C167FD /* PBXTargetDependency */,
+			);
+			name = RampagingDragonsTests;
+			productName = RampagingDragonsTests;
+			productReference = C56080E11C56DA4B00C167FD /* RampagingDragonsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FB8D26E01BB71772000B548E /* tvOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB8D26F31BB71773000B548E /* Build configuration list for PBXNativeTarget "tvOS" */;
@@ -450,9 +561,14 @@
 				KnownAssetTags = (
 					GroundBot,
 				);
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Brandon Jenniges";
 				TargetAttributes = {
+					C56080E01C56DA4B00C167FD = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = FB8D26F91BB717A1000B548E;
+					};
 					FB8D26E01BB71772000B548E = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = C4RFALAB5D;
@@ -491,11 +607,19 @@
 			targets = (
 				FB8D26F91BB717A1000B548E /* iOS */,
 				FB8D26E01BB71772000B548E /* tvOS */,
+				C56080E01C56DA4B00C167FD /* RampagingDragonsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C56080DF1C56DA4B00C167FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB8D26DF1BB71772000B548E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,6 +678,29 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C56080DD1C56DA4B00C167FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C56080F31C56E16600C167FD /* CreditsLogoTests.swift in Sources */,
+				C560810C1C56E1F400C167FD /* ScoreBoardTests.swift in Sources */,
+				C56081021C56E1F400C167FD /* ControlPadTests.swift in Sources */,
+				C56081081C56E1F400C167FD /* OverlayNodeTests.swift in Sources */,
+				C56081091C56E1F400C167FD /* PlatformTests.swift in Sources */,
+				C56081031C56E1F400C167FD /* DragonTests.swift in Sources */,
+				C56081071C56E1F400C167FD /* MountainTests.swift in Sources */,
+				C560810B1C56E1F400C167FD /* PlayerTests.swift in Sources */,
+				C56081051C56E1F400C167FD /* IntroGraphicTests.swift in Sources */,
+				C56080EC1C56DBBF00C167FD /* TestUtil.swift in Sources */,
+				C56081041C56E1F400C167FD /* FireballTests.swift in Sources */,
+				C560810A1C56E1F400C167FD /* PlayButtonTests.swift in Sources */,
+				C560810E1C56E1F400C167FD /* ScoreManagerTests.swift in Sources */,
+				C56081061C56E1F400C167FD /* LogoTests.swift in Sources */,
+				C560810D1C56E1F400C167FD /* ScoreLabelTests.swift in Sources */,
+				C56080F21C56E16600C167FD /* BackgroundTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB8D26DD1BB71772000B548E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -642,6 +789,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C56080E71C56DA4C00C167FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB8D26F91BB717A1000B548E /* iOS */;
+			targetProxy = C56080E61C56DA4C00C167FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		FB8D26ED1BB71773000B548E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -662,6 +817,33 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C56080E81C56DA4C00C167FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = RampagingDragonsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brandonjenniges.RampagingDragonsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RampagingDragons.app/RampagingDragons";
+			};
+			name = Debug;
+		};
+		C56080E91C56DA4C00C167FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RampagingDragonsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brandonjenniges.RampagingDragonsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RampagingDragons.app/RampagingDragons";
+			};
+			name = Release;
+		};
 		FB8D26A81BB71620000B548E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -800,6 +982,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -824,6 +1007,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOS/iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -841,6 +1025,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C56080EA1C56DA4C00C167FD /* Build configuration list for PBXNativeTarget "RampagingDragonsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C56080E81C56DA4C00C167FD /* Debug */,
+				C56080E91C56DA4C00C167FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		FB8D268F1BB71620000B548E /* Build configuration list for PBXProject "Rampaging Dragons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
