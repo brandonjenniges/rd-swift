@@ -32,7 +32,7 @@ class ScoreBoard: SKSpriteNode {
     }
     
     func setupLabel(label:SKLabelNode) {
-        let fontName = "SanFranciscoDisplay-Bold"
+        let fontName = "DINAlternate-Bold"
         label.fontName = fontName
         label.horizontalAlignmentMode = .Center
         #if os(tvOS)
