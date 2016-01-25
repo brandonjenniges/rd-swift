@@ -6,7 +6,7 @@ import SpriteKit
 
 struct ScoreLabel {
     
-    static let fontName = "SanFranciscoDisplay-Bold"
+    static let fontName = "DINAlternate-Bold"
     
     static func create(scene: SKScene) -> SKLabelNode? {
         
