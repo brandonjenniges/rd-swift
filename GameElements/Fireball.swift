@@ -4,13 +4,7 @@
 
 import SpriteKit
 
-protocol FireballDelegate {
-    func fireballDidReachDestination()
-}
-
 class Fireball: SKSpriteNode {
-    
-    var delegate: FireballDelegate?
     
     // MARK: - Initializers
     
@@ -30,9 +24,9 @@ class Fireball: SKSpriteNode {
     private func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.frame.width / 2)
         if let physicsBody = self.physicsBody {
-            physicsBody.categoryBitMask = GameScene.fireballCategory
-            physicsBody.contactTestBitMask = GameScene.playerCategory
-            physicsBody.collisionBitMask = 0
+            physicsBody.categoryBitMask = PhysicsCategory.Fireball
+            physicsBody.contactTestBitMask = PhysicsCategory.Player
+            physicsBody.collisionBitMask = PhysicsCategory.None
             physicsBody.affectedByGravity = false
             physicsBody.restitution = 0
         }
@@ -48,6 +42,8 @@ class Fireball: SKSpriteNode {
     // MARK: - Animation
     
     private func setupFireball() {
+        self.name = String(Fireball)
+        self.userData = NSMutableDictionary()
         self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(setupFireballFrames(), timePerFrame: 0.10)))
     }
     
@@ -69,13 +65,8 @@ class Fireball: SKSpriteNode {
         let actualDruation = Double(arc4random_uniform(rangeDuration)) + minDuration
         
         let actionMove = SKAction.moveTo(CGPointMake(self.position.x, toYPos - self.size.height), duration: actualDruation)
-        let scoreAction = SKAction.runBlock {
-            if let delegate = self.delegate {
-                delegate.fireballDidReachDestination()
-            }
-        }
         let doneAction = SKAction.removeFromParent()
-        self.runAction(SKAction.sequence([actionMove, scoreAction, doneAction]))
+        self.runAction(SKAction.sequence([actionMove, doneAction]))
     }
     
 }

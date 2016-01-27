@@ -17,9 +17,9 @@ class MenuScene: SKScene {
         addPlayButton()
         
         let platform = Platform.create(self)
-        let player = Player()
-        addChild(player)
-        player.position = CGPointMake(platform!.position.x, platform!.position.y + (platform!.size.height / 2) + (player.size.height / 2) - 5)
+        let player = PlayerEntity()
+        addChild(player.spriteComponent.node)
+        player.spriteComponent.node.position = CGPointMake(platform!.position.x, platform!.position.y + (platform!.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
         //setupDragons(view)
     }
     

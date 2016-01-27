@@ -3,31 +3,39 @@
 //
 
 import SpriteKit
+import GameplayKit
 
-class Player: SKSpriteNode {
+class PlayerEntity: GKEntity {
     
-    static let nodeName = String(Player)
+    static let nodeName = String(PlayerEntity)
     
     enum PlayerMovement { case Neutral; case Left; case Right }
+    
+    var spriteComponent: SpriteComponent!
+    var movementComponent: MovementComponent!
     
     var movement:PlayerMovement
     var maxRight:CGFloat?
     var maxLeft:CGFloat?
     var previousPlayerTouch:CGFloat?
     
-    init() {
+    override init() {
         self.movement = .Neutral
+        super.init()
+        
         let texture = TextureAtlasManager.player_0
-        super.init(texture: texture, color: .clearColor(), size: texture.size())
-        name = Player.nodeName
-        zPosition = GameScene.Layer.Game.rawValue
-        setupPhysics()
+        
+        spriteComponent = SpriteComponent(entity: self, texture: texture, size: texture.size())
+        addComponent(spriteComponent)
+        
+        movementComponent = MovementComponent(entity: self)
+        addComponent(movementComponent)
+        
+        spriteComponent.node.zPosition = GameScene.Layer.Game.rawValue
+        
+        // Setup
         runPlayerLookingAnimation()
         setupPhysics()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Animation frames
@@ -62,11 +70,11 @@ class Player: SKSpriteNode {
     
     func runPlayerLookingAnimation() {
         let delayAction = SKAction.waitForDuration(3.0)
-        self.runAction(delayAction) {
+        self.spriteComponent.node.runAction(delayAction) {
             let lookAction = SKAction.animateWithTextures(self.setupLookingFrames(), timePerFrame: 1.0, resize: false, restore: true)
             let sequence = SKAction.sequence([lookAction])
             sequence.timingMode = .EaseInEaseOut
-            self.runAction(SKAction.repeatActionForever(sequence))
+            self.spriteComponent.node.runAction(SKAction.repeatActionForever(sequence))
         }
     }
     
@@ -74,35 +82,35 @@ class Player: SKSpriteNode {
         let runAction = SKAction.animateWithTextures(self.setupRunningFrames(), timePerFrame: 0.1, resize: false, restore: true)
         let sequence = SKAction.sequence([runAction])
         sequence.timingMode = .EaseInEaseOut
-        self.runAction(SKAction.repeatActionForever(sequence))
+        self.spriteComponent.node.runAction(SKAction.repeatActionForever(sequence))
     }
     
     func stopRunning() {
         movement = .Neutral
-        self.removeAllActions()
-        self.texture = TextureAtlasManager.player_0
+        self.spriteComponent.node.removeAllActions()
+        self.spriteComponent.node.texture = TextureAtlasManager.player_0
         self.runPlayerLookingAnimation()
     }
     
     // MARK: - Physics
     
     func setupPhysics() {
-        self.physicsBody = SKPhysicsBody(circleOfRadius: self.frame.width / 2)
-        self.physicsBody!.categoryBitMask = GameScene.playerCategory
-        self.physicsBody!.contactTestBitMask = GameScene.fireballCategory
-        self.physicsBody!.collisionBitMask = 0
+        self.spriteComponent.node.physicsBody = SKPhysicsBody(circleOfRadius: self.spriteComponent.node.frame.width / 2)
+        self.spriteComponent.node.physicsBody!.categoryBitMask = PhysicsCategory.Player
+        self.spriteComponent.node.physicsBody!.contactTestBitMask = PhysicsCategory.Fireball
+        self.spriteComponent.node.physicsBody!.collisionBitMask = PhysicsCategory.None
         
-        self.physicsBody!.angularVelocity = 0
-        self.physicsBody!.restitution = 0
-        self.physicsBody!.allowsRotation = false
-        self.physicsBody!.affectedByGravity = false
+        self.spriteComponent.node.physicsBody!.angularVelocity = 0
+        self.spriteComponent.node.physicsBody!.restitution = 0
+        self.spriteComponent.node.physicsBody!.allowsRotation = false
+        self.spriteComponent.node.physicsBody!.affectedByGravity = false
     }
     
     // MARK: - Movement
     
     func movePlayer(touches: Set<UITouch>) {
         for touch in touches {
-            let touchPoint = touch.locationInNode(self.scene!)
+            let touchPoint = touch.locationInNode(self.spriteComponent.node.scene!)
             if movement == .Neutral {
                 if touchPoint.x > previousPlayerTouch {
                     moveRight()
@@ -149,9 +157,9 @@ class Player: SKSpriteNode {
             let completionAction = getRunningCompletionAction()
             let sequenceAction = SKAction.sequence([moveAction, completionAction])
             movement = .Left
-            self.removeAllActions()
-            self.runAction(sequenceAction)
-            self.xScale = abs(self.xScale)
+            self.spriteComponent.node.removeAllActions()
+            self.spriteComponent.node.runAction(sequenceAction)
+            self.spriteComponent.node.xScale = abs(self.spriteComponent.node.xScale)
             self.performRunAnimation()
         }
     }
@@ -162,9 +170,9 @@ class Player: SKSpriteNode {
             let completionAction = getRunningCompletionAction()
             let sequenceAction = SKAction.sequence([moveAction, completionAction])
             movement = .Right
-            self.removeAllActions()
-            self.runAction(sequenceAction)
-            self.xScale = -abs(self.xScale)
+            self.spriteComponent.node.removeAllActions()
+            self.spriteComponent.node.runAction(sequenceAction)
+            self.spriteComponent.node.xScale = -abs(self.spriteComponent.node.xScale)
             self.performRunAnimation()
         }
     }
@@ -177,8 +185,8 @@ class Player: SKSpriteNode {
     }
     
     func getSpeed(moveTo:CGFloat) -> Double {
-        let moveDiff = CGPointMake(moveTo - self.position.x, 0.0)
-        return Double(sqrtf(Float(moveDiff.x) * Float(moveDiff.x)) / Float(scene!.frame.size.width / 3))
+        let moveDiff = CGPointMake(moveTo - self.spriteComponent.node.position.x, 0.0)
+        return Double(sqrtf(Float(moveDiff.x) * Float(moveDiff.x)) / Float(self.spriteComponent.node.scene!.frame.size.width / 3))
     }
     
     func die() {
@@ -188,7 +196,7 @@ class Player: SKSpriteNode {
     func getRunningCompletionAction() -> SKAction {
         return SKAction.runBlock({
             #if os(iOS)
-                if (self.scene! as! GameScene).gameState == .Play {
+                if (self.spriteComponent.node.scene! as! GameScene).gameState.currentState is PlayingState {
                     self.stopRunning()
                     self.movement = .Neutral
                 }

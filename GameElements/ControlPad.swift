@@ -50,6 +50,10 @@ class ControlPad: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func remove() {
+        removeFromParent()
+    }
+    
     // MARK: - Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

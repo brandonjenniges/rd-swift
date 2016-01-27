@@ -5,37 +5,37 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogicProtocol, FireballDelegate {
-    
-    static let fireballCategory:UInt32 = 0x1 << 0
-    static let playerCategory:UInt32 = 0x1 << 1
-    static let floorCategory:UInt32 = 0x1 << 2
+class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     var scenePaused = false
     
-    enum GameState { case Intro; case Play; case ShowingScore; case GameOver }
     enum Layer: CGFloat { case Background = 0; case Foreground = 1; case Game = 2; case Hud = 3; case GameOver = 4 }
     
     var viewController:GameViewController!
     
-    var player:Player!
+    var player:PlayerEntity!
     var platform:SKSpriteNode!
     var background:SKSpriteNode!
     var scoreLabel:SKLabelNode!
     var control: ControlPad!
     
-    var gameState:GameState?
     var gapPositions = [CGFloat]()
     
     var score = 0
     
     var pauseNode: SKSpriteNode!
     
-    var gameHandler:GameLogic!
+    lazy var gameState: GKStateMachine = GKStateMachine(states: [
+        IntroState(scene: self),
+        PlayingState(scene: self),
+        GameOverState(scene: self)
+    ])
+    
+    var deltaTime: NSTimeInterval = 0
+    var lastUpdatedTimeInterval: NSTimeInterval = 0
     
     override init(size: CGSize) {
         super.init(size: size)
-        gameHandler = GameLogic(scene: self)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -55,13 +55,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
             viewController.controllerUserInteractionEnabled = false
         #endif
         
-        switchToIntro()
-        
-        createBackground()
-        createPlatform()
-        setupGaps()
-        setupPlayer()
-        
+        gameState.enterState(IntroState)
     }
     
     // MARK: - Touches
@@ -73,30 +67,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
             unPauseScene()
         }
         
-        if let gameState = gameState {
-            switch gameState {
-            case .Intro:
-                switchToPlay()
-                break
-            case .Play:
-                #if os(iOS)
-                    self.control.touchesBegan(touches, withEvent: event)
-                #endif
-                break
-            case .ShowingScore:
-                break
-            case .GameOver:
-                startNewGame()
-                break
-            }
-        }
+        gameState.currentState?.handleTouches(touches, withEvent: event)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
         
         #if os(tvOS)
-        if gameState == .Play {
+        if gameState.currentState is PlayingState {
             player.movePlayer(touches)
         }
         #endif
@@ -111,7 +89,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         #endif
 
         #if os(tvOS)
-        if gameState == .Play {
+        if gameState.currentState is PlayingState {
             player.stopRunning()
             player.movement = .Neutral
         }
@@ -121,32 +99,45 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     // MARK: - Game Logic
     
     override func update(currentTime: CFTimeInterval) {
-        gameHandler.update(currentTime)
+        if lastUpdatedTimeInterval == 0 {
+            lastUpdatedTimeInterval = currentTime
+        }
+        
+        deltaTime = currentTime - lastUpdatedTimeInterval
+        lastUpdatedTimeInterval = currentTime
+        
+        gameState.updateWithDeltaTime(deltaTime)
     }
     
     // MARK: - Fireballs
     
     func addFireball() {
         let fire = Fireball(texture: TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
-        fire.delegate = self
         fire.setInitialPosition(gapPositions, background: background)
-        background.addChild(fire)
+        addChild(fire)
         fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
-    }
-    
-    // MARK: - Fireball Delegate
-    
-    func fireballDidReachDestination() {
-        if gameState == .Play {
-            increaseScore()
-        }
     }
     
     // MARK: - Scoring
     
-    func increaseScore() {
-        score++
-        scoreLabel.text = "\(score)"
+    func updateScore() {
+        enumerateChildNodesWithName(String(Fireball), usingBlock: { node, stop in
+            if let fireball = node as? Fireball {
+                if let passed = fireball.userData?["Passed"] as? NSNumber {
+                    if passed.boolValue {
+                        return
+                    }
+                }
+                
+                let playerNode = self.player.spriteComponent.node
+                
+                if playerNode.position.y - playerNode.size.height / 2 > fireball.position.y + fireball.size.height / 2 {
+                    self.score++
+                    self.scoreLabel.text = "\(self.score)"
+                    fireball.userData?["Passed"] = NSNumber(bool: true)
+                }
+            }
+        })
     }
     
     func resetScore() {
@@ -166,16 +157,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     // MARK: - Collision
     
     func didBeginContact(contact: SKPhysicsContact) {
-        if gameState == .Play {
-            gameState = .ShowingScore
-            switchToGameOver()
-        }
+        gameState.enterState(GameOverState)
     }
     
     // MARK - Game Logic Protocol
     
     func gameEventShouldUpdate() {
-        if gameState == .Play {
+        if gameState.currentState is PlayingState {
             addFireball()
         }
     }
@@ -198,61 +186,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         addChild(IntroGraphic.create(self)!)
     }
     
-    // MARK: - Game states
-    
-    func switchToIntro() {
-        gameState = .Intro
-        addTapToStart()
-    }
-    
-    func switchToPlay() {
-        
-        addScoreLabel()
-        setupDragons()
-        
-        #if os(iOS)
-            setupControlPad()
-        #endif
-        
-        IntroGraphic.remove(self)
-        self.gameState = .Play
-    }
-    
-    func switchToGameOver() {
-        
-        resetControlPad()
-        
-        self.gameState = .GameOver
-        
-        let overlay = OverlayNode.create(self, score: score)!
-        background.addChild(overlay)
-        
-        player.die()
-        
-        reportScoreToGameCenter()
-    }
-    
-    func startNewGame() {
-        let gameOverNode = background.childNodeWithName(String(OverlayNode))
-        gameOverNode!.removeFromParent()
-        resetScore()
-        resetPlayer()
-        resetDragons()
-        switchToIntro()
+    func restartGame() {
+        let newScene = GameScene(size: size)
+        let transition = SKTransition.fadeWithColor(.blackColor(), duration: 0.02)
+        view?.presentScene(newScene, transition: transition)
     }
     
     // MARK: - Element setup
     
     func setupPlayer() {
-        player = Player()
-        player.setPlayerMovementXConstraints((self.platform.position.x + self.platform.frame.width / 2) - player.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.frame.width / 2)
+        player = PlayerEntity()
+        player.setPlayerMovementXConstraints((self.platform.position.x + self.platform.frame.width / 2) - player.spriteComponent.node.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.spriteComponent.node.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
         resetPlayer()
-        addChild(player)
+        addChild(player.spriteComponent.node)
     }
     
     func resetPlayer() {
-        player.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.size.height / 2) - 5)
+        player.spriteComponent.node.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
     }
     
     func setupDragons() {
@@ -284,10 +235,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
         control.anchorPoint = .zero
         control.position = .zero
         addChild(control)
-    }
-    
-    func resetControlPad() {
-        control.removeFromParent()
     }
     
     func setupGaps() {
@@ -337,13 +284,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches, GameLogic
     
     func controlPadDidBeginTouch(direction: ControlPadTouchDirection) {
         #if os(iOS)
-            if gameState == .Play {
+            if gameState.currentState is PlayingState {
                 player.movePlayer(direction)
             }
         #endif
     }
     
     func controlPadDidEndTouch() {
+        
     }
     
 }

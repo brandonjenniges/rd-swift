@@ -44,10 +44,6 @@
 		C59E3A4C1BC808020037F3B3 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4A1BC808020037F3B3 /* Logo.swift */; };
 		C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
 		C59E3A4F1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
-		C5D382C61C470454006E6394 /* ControlPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C41C470454006E6394 /* ControlPad.swift */; };
-		C5D382C71C470454006E6394 /* ControlPadPaintCodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */; };
-		C5D382C91C470B95006E6394 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C81C470B95006E6394 /* GameLogic.swift */; };
-		C5D382CA1C470B95006E6394 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D382C81C470B95006E6394 /* GameLogic.swift */; };
 		C5D548481C5130EB00F64B0C /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D548471C5130EB00F64B0C /* PlayButton.swift */; };
 		C5D548491C5130EB00F64B0C /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D548471C5130EB00F64B0C /* PlayButton.swift */; };
 		C5DE514B1BB9811B0049C321 /* GameOver.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB871BB782FD004D455D /* GameOver.xcassets */; };
@@ -83,16 +79,34 @@
 		FBCD329F1BBA19B000FAB2D1 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329C1BBA19B000FAB2D1 /* pop.wav */; };
 		FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329D1BBA19B000FAB2D1 /* roar.wav */; };
 		FBCD32A31BBA3B9D00FAB2D1 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCD32A21BBA3B9D00FAB2D1 /* spark.png */; };
+		FBD20A351C58544000AF7E73 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A341C58544000AF7E73 /* PhysicsCategory.swift */; };
+		FBD20A361C58544000AF7E73 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A341C58544000AF7E73 /* PhysicsCategory.swift */; };
+		FBD20A3F1C58555B00AF7E73 /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A381C58555B00AF7E73 /* MovementComponent.swift */; };
+		FBD20A401C58555B00AF7E73 /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A381C58555B00AF7E73 /* MovementComponent.swift */; };
+		FBD20A411C58555B00AF7E73 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A391C58555B00AF7E73 /* SpriteComponent.swift */; };
+		FBD20A421C58555B00AF7E73 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A391C58555B00AF7E73 /* SpriteComponent.swift */; };
+		FBD20A431C58555B00AF7E73 /* ControlPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A3A1C58555B00AF7E73 /* ControlPad.swift */; };
+		FBD20A441C58555B00AF7E73 /* ControlPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A3A1C58555B00AF7E73 /* ControlPad.swift */; };
+		FBD20A451C58555B00AF7E73 /* ControlPadPaintCodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A3B1C58555B00AF7E73 /* ControlPadPaintCodeImage.swift */; };
+		FBD20A461C58555B00AF7E73 /* ControlPadPaintCodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A3B1C58555B00AF7E73 /* ControlPadPaintCodeImage.swift */; };
+		FBD20A471C58555B00AF7E73 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A3D1C58555B00AF7E73 /* PlayerEntity.swift */; };
+		FBD20A481C58555B00AF7E73 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A3D1C58555B00AF7E73 /* PlayerEntity.swift */; };
+		FBD20A4A1C58568500AF7E73 /* IntroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A491C58568500AF7E73 /* IntroState.swift */; };
+		FBD20A4B1C58568500AF7E73 /* IntroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A491C58568500AF7E73 /* IntroState.swift */; };
+		FBD20A4D1C58568E00AF7E73 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A4C1C58568E00AF7E73 /* PlayingState.swift */; };
+		FBD20A4E1C58568E00AF7E73 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A4C1C58568E00AF7E73 /* PlayingState.swift */; };
+		FBD20A501C58569700AF7E73 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A4F1C58569700AF7E73 /* GameOverState.swift */; };
+		FBD20A511C58569700AF7E73 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A4F1C58569700AF7E73 /* GameOverState.swift */; };
+		FBD20A531C5874B400AF7E73 /* GameStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A521C5874B400AF7E73 /* GameStateProtocol.swift */; };
+		FBD20A541C5874B400AF7E73 /* GameStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A521C5874B400AF7E73 /* GameStateProtocol.swift */; };
 		FBE8878E1C50829700D1F92B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8878D1C50829700D1F92B /* MenuScene.swift */; };
 		FBE887901C5082A000D1F92B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8878F1C5082A000D1F92B /* MenuScene.swift */; };
 		FBEAB7151BCCA4BE00054888 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */; };
 		FBEAB7161BCCA4BE00054888 /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */; };
 		FBEBAB7A1BB763FF004D455D /* Player.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB791BB763FF004D455D /* Player.xcassets */; };
 		FBEBAB7B1BB764A8004D455D /* Player.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB791BB763FF004D455D /* Player.xcassets */; };
-		FBEBAB7E1BB765AB004D455D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB7D1BB765AB004D455D /* Player.swift */; };
 		FBEBAB801BB765B6004D455D /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB7F1BB765B6004D455D /* Dragon.swift */; };
 		FBEBAB811BB7660B004D455D /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB7F1BB765B6004D455D /* Dragon.swift */; };
-		FBEBAB821BB7660D004D455D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEBAB7D1BB765AB004D455D /* Player.swift */; };
 		FBEBAB8A1BB782FD004D455D /* GameOver.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB871BB782FD004D455D /* GameOver.xcassets */; };
 		FBEBAB8E1BB78350004D455D /* Intro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB8D1BB78350004D455D /* Intro.xcassets */; };
 		FBEBAB921BB784C7004D455D /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
@@ -168,9 +182,6 @@
 		C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphic.swift; sourceTree = "<group>"; };
 		C59E3A4A1BC808020037F3B3 /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
-		C5D382C41C470454006E6394 /* ControlPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPad.swift; sourceTree = "<group>"; };
-		C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadPaintCodeImage.swift; sourceTree = "<group>"; };
-		C5D382C81C470B95006E6394 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		C5D548471C5130EB00F64B0C /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
@@ -199,11 +210,20 @@
 		FBCD329C1BBA19B000FAB2D1 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		FBCD329D1BBA19B000FAB2D1 /* roar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = roar.wav; sourceTree = "<group>"; };
 		FBCD32A21BBA3B9D00FAB2D1 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		FBD20A341C58544000AF7E73 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		FBD20A381C58555B00AF7E73 /* MovementComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
+		FBD20A391C58555B00AF7E73 /* SpriteComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
+		FBD20A3A1C58555B00AF7E73 /* ControlPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPad.swift; sourceTree = "<group>"; };
+		FBD20A3B1C58555B00AF7E73 /* ControlPadPaintCodeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadPaintCodeImage.swift; sourceTree = "<group>"; };
+		FBD20A3D1C58555B00AF7E73 /* PlayerEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
+		FBD20A491C58568500AF7E73 /* IntroState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroState.swift; sourceTree = "<group>"; };
+		FBD20A4C1C58568E00AF7E73 /* PlayingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingState.swift; sourceTree = "<group>"; };
+		FBD20A4F1C58569700AF7E73 /* GameOverState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
+		FBD20A521C5874B400AF7E73 /* GameStateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateProtocol.swift; sourceTree = "<group>"; };
 		FBE8878D1C50829700D1F92B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FBE8878F1C5082A000D1F92B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		FBEBAB791BB763FF004D455D /* Player.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Player.xcassets; sourceTree = "<group>"; };
-		FBEBAB7D1BB765AB004D455D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FBEBAB7F1BB765B6004D455D /* Dragon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
 		FBEBAB871BB782FD004D455D /* GameOver.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GameOver.xcassets; sourceTree = "<group>"; };
 		FBEBAB8D1BB78350004D455D /* Intro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Intro.xcassets; sourceTree = "<group>"; };
@@ -303,15 +323,6 @@
 			path = Control;
 			sourceTree = "<group>";
 		};
-		C5D382C31C470454006E6394 /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				C5D382C41C470454006E6394 /* ControlPad.swift */,
-				C5D382C51C470454006E6394 /* ControlPadPaintCodeImage.swift */,
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
 		FB8D268B1BB71620000B548E = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +382,6 @@
 				FBA743D01BB71E5200AC4B44 /* GameScene.sks */,
 				FBA743D11BB71E5200AC4B44 /* GameScene.swift */,
 				FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */,
-				C5D382C81C470B95006E6394 /* GameLogic.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -410,6 +420,34 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		FBD20A371C58555B00AF7E73 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FBD20A381C58555B00AF7E73 /* MovementComponent.swift */,
+				FBD20A391C58555B00AF7E73 /* SpriteComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FBD20A3C1C58555B00AF7E73 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FBD20A3D1C58555B00AF7E73 /* PlayerEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FBD20A3E1C58555B00AF7E73 /* Game States */ = {
+			isa = PBXGroup;
+			children = (
+				FBD20A491C58568500AF7E73 /* IntroState.swift */,
+				FBD20A4C1C58568E00AF7E73 /* PlayingState.swift */,
+				FBD20A4F1C58569700AF7E73 /* GameOverState.swift */,
+				FBD20A521C5874B400AF7E73 /* GameStateProtocol.swift */,
+			);
+			path = "Game States";
+			sourceTree = "<group>";
+		};
 		FBEBAB781BB763FF004D455D /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,20 +460,24 @@
 			isa = PBXGroup;
 			children = (
 				C545A0741C49A2E50008253C /* Background.swift */,
-				C5D382C31C470454006E6394 /* Control */,
+				FBD20A371C58555B00AF7E73 /* Components */,
+				FBD20A3A1C58555B00AF7E73 /* ControlPad.swift */,
+				FBD20A3B1C58555B00AF7E73 /* ControlPadPaintCodeImage.swift */,
 				C544CE771C4FD9E800F24338 /* CreditsLogo.swift */,
 				FBEBAB7F1BB765B6004D455D /* Dragon.swift */,
+				FBD20A3C1C58555B00AF7E73 /* Entities */,
 				FBEBAB9B1BB89E6C004D455D /* Fireball.swift */,
+				FBD20A3E1C58555B00AF7E73 /* Game States */,
 				C58C08C11C4D9B13000E4A29 /* IntroGraphic.swift */,
 				C59E3A4A1BC808020037F3B3 /* Logo.swift */,
 				FBFEFA241C4B29F300E0B2AF /* Mountain.swift */,
 				C56DA51D1C512FBE00D50218 /* OverlayNode.swift */,
+				FBD20A341C58544000AF7E73 /* PhysicsCategory.swift */,
 				C545A0771C49A58A0008253C /* Platform.swift */,
-				FBEBAB7D1BB765AB004D455D /* Player.swift */,
+				C5D548471C5130EB00F64B0C /* PlayButton.swift */,
 				FB0BBBAD1BBCCDEF00A0BB53 /* ScoreBoard.swift */,
 				FBEAB7141BCCA4BE00054888 /* ScoreLabel.swift */,
 				FB4910D61BBB88900094EC7E /* ScoreManager.swift */,
-				C5D548471C5130EB00F64B0C /* PlayButton.swift */,
 			);
 			path = GameElements;
 			sourceTree = "<group>";
@@ -705,10 +747,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD20A461C58555B00AF7E73 /* ControlPadPaintCodeImage.swift in Sources */,
 				FBFC27781BBE26360012C1AA /* Vector3.swift in Sources */,
 				C5D548491C5130EB00F64B0C /* PlayButton.swift in Sources */,
 				FBFC276C1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
 				FBFC27741BBE26360012C1AA /* SKTEffects.swift in Sources */,
+				FBD20A421C58555B00AF7E73 /* SpriteComponent.swift in Sources */,
+				FBD20A4B1C58568500AF7E73 /* IntroState.swift in Sources */,
+				FBD20A441C58555B00AF7E73 /* ControlPad.swift in Sources */,
 				C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
 				C56DA51F1C512FBE00D50218 /* OverlayNode.swift in Sources */,
 				FBFC27621BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
@@ -717,28 +763,32 @@
 				C59E3A4F1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */,
 				FBEAB7161BCCA4BE00054888 /* ScoreLabel.swift in Sources */,
 				FB8D26EA1BB71773000B548E /* GameViewController.swift in Sources */,
-				C5D382CA1C470B95006E6394 /* GameLogic.swift in Sources */,
 				FBEBAB9D1BB89E6C004D455D /* Fireball.swift in Sources */,
 				FB4910D81BBB88900094EC7E /* ScoreManager.swift in Sources */,
 				FBE8878E1C50829700D1F92B /* MenuScene.swift in Sources */,
+				FBD20A401C58555B00AF7E73 /* MovementComponent.swift in Sources */,
 				FBEBAB811BB7660B004D455D /* Dragon.swift in Sources */,
 				C545A0791C49A58A0008253C /* Platform.swift in Sources */,
 				FBFC276A1BBE26360012C1AA /* SKAction+Extensions.swift in Sources */,
 				C56DA5191C50349900D50218 /* GameKitHelper.swift in Sources */,
 				C58C08C31C4D9B13000E4A29 /* IntroGraphic.swift in Sources */,
 				C56DA51C1C512A4B00D50218 /* UIColor+Extra.swift in Sources */,
+				FBD20A361C58544000AF7E73 /* PhysicsCategory.swift in Sources */,
+				FBD20A4E1C58568E00AF7E73 /* PlayingState.swift in Sources */,
 				FBFEFA261C4B29F300E0B2AF /* Mountain.swift in Sources */,
+				FBD20A481C58555B00AF7E73 /* PlayerEntity.swift in Sources */,
 				FB0BBBAF1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */,
 				FBFC27701BBE26360012C1AA /* SKNode+Extensions.swift in Sources */,
-				FBEBAB821BB7660D004D455D /* Player.swift in Sources */,
 				C544CE791C4FD9E800F24338 /* CreditsLogo.swift in Sources */,
 				FBFC27641BBE26360012C1AA /* CGPoint+Extensions.swift in Sources */,
 				FBFC27681BBE26360012C1AA /* Int+Extensions.swift in Sources */,
 				FBFC27761BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */,
 				FBFC27661BBE26360012C1AA /* CGVector+Extensions.swift in Sources */,
 				C545A0761C49A2E50008253C /* Background.swift in Sources */,
+				FBD20A541C5874B400AF7E73 /* GameStateProtocol.swift in Sources */,
 				FBFC276E1BBE26360012C1AA /* SKColor+Extensions.swift in Sources */,
 				FBFC27721BBE26360012C1AA /* SKTAudio.swift in Sources */,
+				FBD20A511C58569700AF7E73 /* GameOverState.swift in Sources */,
 				FB8D26E41BB71773000B548E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -747,23 +797,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD20A451C58555B00AF7E73 /* ControlPadPaintCodeImage.swift in Sources */,
 				C545A0781C49A58A0008253C /* Platform.swift in Sources */,
 				FBFC27771BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBFEFA251C4B29F300E0B2AF /* Mountain.swift in Sources */,
-				C5D382C61C470454006E6394 /* ControlPad.swift in Sources */,
 				FBFC276B1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
+				FBD20A411C58555B00AF7E73 /* SpriteComponent.swift in Sources */,
+				FBD20A4A1C58568500AF7E73 /* IntroState.swift in Sources */,
+				FBD20A431C58555B00AF7E73 /* ControlPad.swift in Sources */,
 				FBFC27731BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
 				FBFC27611BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
-				C5D382C91C470B95006E6394 /* GameLogic.swift in Sources */,
 				C59E3A4B1BC808020037F3B3 /* Logo.swift in Sources */,
-				FBEBAB7E1BB765AB004D455D /* Player.swift in Sources */,
 				C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */,
 				FBEAB7151BCCA4BE00054888 /* ScoreLabel.swift in Sources */,
 				FB8D27031BB717A1000B548E /* GameViewController.swift in Sources */,
 				FBEBAB9C1BB89E6C004D455D /* Fireball.swift in Sources */,
 				FB4910D71BBB88900094EC7E /* ScoreManager.swift in Sources */,
 				FBA743D31BB71E5200AC4B44 /* GameScene.swift in Sources */,
+				FBD20A351C58544000AF7E73 /* PhysicsCategory.swift in Sources */,
+				FBD20A3F1C58555B00AF7E73 /* MovementComponent.swift in Sources */,
 				FBE887901C5082A000D1F92B /* MenuScene.swift in Sources */,
 				FBFC27691BBE26360012C1AA /* SKAction+Extensions.swift in Sources */,
 				FB0BBBAE1BBCCDEF00A0BB53 /* ScoreBoard.swift in Sources */,
@@ -771,7 +824,9 @@
 				FBEBAB801BB765B6004D455D /* Dragon.swift in Sources */,
 				C56DA51B1C512A4B00D50218 /* UIColor+Extra.swift in Sources */,
 				C545A0751C49A2E50008253C /* Background.swift in Sources */,
+				FBD20A4D1C58568E00AF7E73 /* PlayingState.swift in Sources */,
 				C58C08C21C4D9B13000E4A29 /* IntroGraphic.swift in Sources */,
+				FBD20A471C58555B00AF7E73 /* PlayerEntity.swift in Sources */,
 				C5D548481C5130EB00F64B0C /* PlayButton.swift in Sources */,
 				FBFC27631BBE26360012C1AA /* CGPoint+Extensions.swift in Sources */,
 				FBFC27671BBE26360012C1AA /* Int+Extensions.swift in Sources */,
@@ -780,9 +835,10 @@
 				FBFC27651BBE26360012C1AA /* CGVector+Extensions.swift in Sources */,
 				C544CE781C4FD9E800F24338 /* CreditsLogo.swift in Sources */,
 				FBFC276D1BBE26360012C1AA /* SKColor+Extensions.swift in Sources */,
-				C5D382C71C470454006E6394 /* ControlPadPaintCodeImage.swift in Sources */,
+				FBD20A531C5874B400AF7E73 /* GameStateProtocol.swift in Sources */,
 				FBFC27711BBE26360012C1AA /* SKTAudio.swift in Sources */,
 				C56DA5181C50349900D50218 /* GameKitHelper.swift in Sources */,
+				FBD20A501C58569700AF7E73 /* GameOverState.swift in Sources */,
 				FB8D26FD1BB717A1000B548E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -988,7 +1044,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
@@ -1013,7 +1069,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
 				PRODUCT_NAME = RampagingDragons;
@@ -1032,6 +1088,7 @@
 				C56080E91C56DA4C00C167FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB8D268F1BB71620000B548E /* Build configuration list for PBXProject "Rampaging Dragons" */ = {
 			isa = XCConfigurationList;
