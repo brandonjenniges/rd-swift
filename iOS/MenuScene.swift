@@ -78,7 +78,7 @@ class MenuScene: SKScene {
     
     func setupDragons(view: SKView) {
         
-        let dragonArray = Dragon.getDragonArray()
+        let dragonArray = DragonEntity.getDragonArray()
         
         var index = 0
         let gapSize = view.frame.width / CGFloat(dragonArray.count)
@@ -91,9 +91,10 @@ class MenuScene: SKScene {
         let yPositions = [topYPos, topYPos, bottomYPos, bottomYPos]
         let xPositions = [leftXPos, rightXPos, leftXPos, rightXPos]
         for dragon in dragonArray {
+            let dragonNode = dragon.spriteComponent.node
             dragon.setUpDragonAnimations()
-            dragon.position = CGPointMake(xPositions[index], yPositions[index])
-            addChild(dragon)
+            dragonNode.position = CGPointMake(xPositions[index], yPositions[index])
+            addChild(dragonNode)
             index++
         }
     }

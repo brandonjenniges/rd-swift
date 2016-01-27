@@ -6,7 +6,7 @@ import XCTest
 import SpriteKit
 @testable import RampagingDragons
 
-class PlayerTests: XCTestCase {
+class FireballEntityTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -17,8 +17,8 @@ class IntroState: GKState {
         scene.addTapToStart()
         scene.createBackground()
         scene.createPlatform()
-        scene.setupGaps()
         scene.setupPlayer()
+        FireballEntity.setupGaps(scene.size.width)
     }
     
     override func isValidNextState(stateClass: AnyClass) -> Bool {

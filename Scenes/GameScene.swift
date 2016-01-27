@@ -9,8 +9,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     var scenePaused = false
     
-    enum Layer: CGFloat { case Background = 0; case Foreground = 1; case Game = 2; case Hud = 3; case GameOver = 4 }
-    
     var viewController:GameViewController!
     
     var player:PlayerEntity!
@@ -18,8 +16,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     var background:SKSpriteNode!
     var scoreLabel:SKLabelNode!
     var control: ControlPad!
-    
-    var gapPositions = [CGFloat]()
     
     var score = 0
     
@@ -33,14 +29,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     var deltaTime: NSTimeInterval = 0
     var lastUpdatedTimeInterval: NSTimeInterval = 0
-    
-    override init(size: CGSize) {
-        super.init(size: size)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func didMoveToView(view: SKView) {
         
@@ -113,9 +101,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     func addFireball() {
         let fire = FireballEntity()
-        fire.setInitialPosition(gapPositions, background: background)
+        fire.setInitialPosition(background.frame.size.height + background.frame.size.height / 2.0)
         addChild(fire.spriteComponent.node)
-        fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
+        fire.send(0)
     }
     
     // MARK: - Scoring
@@ -138,11 +126,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
                 }
             }
         })
-    }
-    
-    func resetScore() {
-        score = 0
-        scoreLabel.removeFromParent()
     }
     
     func reportScoreToGameCenter() {
@@ -198,17 +181,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         player = PlayerEntity()
         player.setPlayerMovementXConstraints((self.platform.position.x + self.platform.frame.width / 2) - player.spriteComponent.node.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.spriteComponent.node.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
-        resetPlayer()
-        addChild(player.spriteComponent.node)
-    }
-    
-    func resetPlayer() {
         player.spriteComponent.node.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
+        addChild(player.spriteComponent.node)
     }
     
     func setupDragons() {
         
-        let dragonArray = Dragon.getDragonArray()
+        let dragonArray = DragonEntity.getDragonArray()
         
         let gapSize = view!.frame.width / CGFloat(2)
         let topYPos = view!.frame.size.height * 0.75
@@ -217,15 +196,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
             let xPos = gapSize * CGFloat($0 * 1) + gapSize / 2
             let dragon = dragonArray[$0]
             dragon.setUpDragonAnimations()
-            dragon.position = CGPointMake(xPos, topYPos)
-            addChild(dragon)
-        }
-    }
-    
-    func resetDragons() {
-        scene!.enumerateChildNodesWithName(Dragon.nodeName) {
-            node, stop in
-            node.removeFromParent()
+            dragon.spriteComponent.node.position = CGPointMake(xPos, topYPos)
+            addChild(dragon.spriteComponent.node)
         }
     }
     
@@ -235,16 +207,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         control.anchorPoint = .zero
         control.position = .zero
         addChild(control)
-    }
-    
-    func setupGaps() {
-        var tempArray = [CGFloat]()
-        
-        let groundStart = platform.position.x - platform.frame.size.width / 2
-        (0...12).forEach {
-            tempArray.append(groundStart + CGFloat(($0 * Int(platform.frame.size.width / 12))))
-        }
-        gapPositions = tempArray
     }
     
     // MARK: - Scene pausing

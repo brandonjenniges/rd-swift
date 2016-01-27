@@ -14,7 +14,7 @@ class ScoreBoard: SKSpriteNode {
         
         let texture = TextureAtlasManager.gameOverAtlas.textureNamed("scorecard")
         super.init(texture: texture, color: .clearColor(), size: texture.size())
-        self.zPosition = GameScene.Layer.GameOver.rawValue
+        self.zPosition = GameLayer.Layer.GameOver.rawValue
         
         currentScoreLabel.text = "\(score)"
         setupLabel(currentScoreLabel)
@@ -40,7 +40,7 @@ class ScoreBoard: SKSpriteNode {
         #else
             label.fontSize = 30.0
         #endif
-        label.zPosition = GameScene.Layer.GameOver.rawValue
+        label.zPosition = GameLayer.Layer.GameOver.rawValue
     }
     
 }

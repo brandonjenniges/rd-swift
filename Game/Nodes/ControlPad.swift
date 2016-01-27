@@ -40,7 +40,7 @@ class ControlPad: SKSpriteNode {
         addChild(left)
         addChild(right)
         
-        zPosition = GameScene.Layer.Hud.rawValue
+        zPosition = GameLayer.Layer.Hud.rawValue
         
         animateInto(.zero, node: left)
         animateInto(CGPointMake(size.width, 0), node: right)

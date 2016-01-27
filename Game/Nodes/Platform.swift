@@ -12,7 +12,7 @@ struct Platform {
         
         let platform = SKSpriteNode(texture: TextureAtlasManager.sceneAtlas.textureNamed("ground"))
         platform.position = CGPointMake(view.frame.width / 2, view.frame.height / 4)
-        platform.zPosition = GameScene.Layer.Foreground.rawValue
+        platform.zPosition = GameLayer.Layer.Foreground.rawValue
         
         scene.addChild(platform)
         

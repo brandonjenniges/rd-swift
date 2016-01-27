@@ -31,7 +31,7 @@ class PlayerEntity: GKEntity {
         movementComponent = MovementComponent(entity: self)
         addComponent(movementComponent)
         
-        spriteComponent.node.zPosition = GameScene.Layer.Game.rawValue
+        spriteComponent.node.zPosition = GameLayer.Layer.Game.rawValue
         
         // Setup
         runPlayerLookingAnimation()

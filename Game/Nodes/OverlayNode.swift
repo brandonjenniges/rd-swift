@@ -14,7 +14,7 @@ struct OverlayNode {
         
         let overlay = SKSpriteNode(color: .clearColor(), size: view.frame.size)
         overlay.name = nodeName
-        overlay.zPosition = GameScene.Layer.GameOver.rawValue
+        overlay.zPosition = GameLayer.Layer.GameOver.rawValue
         
         // Scorecard
         

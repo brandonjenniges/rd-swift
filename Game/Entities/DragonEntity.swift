@@ -5,37 +5,37 @@
 import SpriteKit
 import GameKit
 
-class Dragon: SKSpriteNode {
+class DragonEntity: GKEntity {
     
-    static let nodeName = String(Dragon)
+    static let nodeName = String(DragonEntity)
     let dragonID:Int
+    
+    var spriteComponent: SpriteComponent!
     
     init(dragonID: Int) {
         self.dragonID = dragonID
+        super.init()
+        
         let textureName = "dragon\(dragonID)_\(0)"
         let texture = TextureAtlasManager.dragonAtlas.textureNamed(textureName)
-        super.init(texture: texture, color: .clearColor(), size: texture.size())
-        self.name = Dragon.nodeName
-        self.zPosition = 1
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        spriteComponent = SpriteComponent(entity: self, texture: texture, size: texture.size())
+        spriteComponent.node.name = DragonEntity.nodeName
+        spriteComponent.node.zPosition = GameLayer.Layer.Foreground.rawValue
     }
     
     // MARK: - Animation
     
     func setUpDragonAnimations() {
-        self.runAction(getWobbleAnimation(), withKey: "wobble")
-        self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(getFlyingAnimationTextures(), timePerFrame: 0.10)), withKey: "flying")
-        self.runAction(getFadeInAnimation(), withKey: "enter")
+        spriteComponent.node.runAction(getWobbleAnimation(), withKey: "wobble")
+        spriteComponent.node.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(getFlyingAnimationTextures(), timePerFrame: 0.10)), withKey: "flying")
+        spriteComponent.node.runAction(getFadeInAnimation(), withKey: "enter")
     }
     
     func getFadeInAnimation() -> SKAction {
-        let scaleXTo:CGFloat = self.xScale
-        let group = SKAction.group([SKAction.scaleXTo(scaleXTo, duration: 5.0),SKAction.scaleYTo(self.yScale, duration: 5.0)])
+        let scaleXTo:CGFloat = spriteComponent.node.xScale
+        let group = SKAction.group([SKAction.scaleXTo(scaleXTo, duration: 5.0),SKAction.scaleYTo(spriteComponent.node.yScale, duration: 5.0)])
         group.timingMode = .EaseInEaseOut
-        self.setScale(0)
+        spriteComponent.node.setScale(0)
         return SKAction.sequence([SKAction.waitForDuration(0.3), group])
     }
     
@@ -73,16 +73,16 @@ class Dragon: SKSpriteNode {
     
     // MARK: - Utility
     
-    static func getDragonArray() -> [Dragon] {
-        let dragons = [Dragon(dragonID: 0), Dragon(dragonID: 1), Dragon(dragonID: 2), Dragon(dragonID: 3)]
-        let shuffledArray:[Dragon] = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(dragons.map { $0 }) as! [Dragon]
+    static func getDragonArray() -> [DragonEntity] {
+        let dragons = [DragonEntity(dragonID: 0), DragonEntity(dragonID: 1), DragonEntity(dragonID: 2), DragonEntity(dragonID: 3)]
+        let shuffledArray:[DragonEntity] = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(dragons.map { $0 }) as! [DragonEntity]
             
         #if os(tvOS)
-            shuffledArray[1].xScale = -1
-            shuffledArray[3].xScale = -1
+            shuffledArray[1].spriteComponent.node.xScale = -1
+            shuffledArray[3].spriteComponent.node.xScale = -1
         #else
-            shuffledArray[1].xScale = -1
-            shuffledArray[3].xScale = -1
+            shuffledArray[1].spriteComponent.node.xScale = -1
+            shuffledArray[3].spriteComponent.node.xScale = -1
         #endif
         
         return shuffledArray
