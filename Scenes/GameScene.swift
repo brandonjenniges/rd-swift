@@ -187,7 +187,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     func setupDragons() {
         
-        let dragonArray = Dragon.getDragonArray()
+        let dragonArray = DragonEntity.getDragonArray()
         
         let gapSize = view!.frame.width / CGFloat(2)
         let topYPos = view!.frame.size.height * 0.75
@@ -196,8 +196,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
             let xPos = gapSize * CGFloat($0 * 1) + gapSize / 2
             let dragon = dragonArray[$0]
             dragon.setUpDragonAnimations()
-            dragon.position = CGPointMake(xPos, topYPos)
-            addChild(dragon)
+            dragon.spriteComponent.node.position = CGPointMake(xPos, topYPos)
+            addChild(dragon.spriteComponent.node)
         }
     }
     

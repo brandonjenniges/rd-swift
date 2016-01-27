@@ -33,6 +33,7 @@
 		C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
 		C59E3A4F1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */; };
 		C5DE514B1BB9811B0049C321 /* GameOver.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB871BB782FD004D455D /* GameOver.xcassets */; };
+		C5DED2FC1C590F96006594AB /* DragonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED2FB1C590F96006594AB /* DragonEntity.swift */; };
 		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
@@ -85,8 +86,6 @@
 		FBD20A8C1C58806B00AF7E73 /* ControlPadPaintCodeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A681C58806B00AF7E73 /* ControlPadPaintCodeImage.swift */; };
 		FBD20A8D1C58806B00AF7E73 /* CreditsLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A691C58806B00AF7E73 /* CreditsLogo.swift */; };
 		FBD20A8E1C58806B00AF7E73 /* CreditsLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A691C58806B00AF7E73 /* CreditsLogo.swift */; };
-		FBD20A8F1C58806B00AF7E73 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6A1C58806B00AF7E73 /* Dragon.swift */; };
-		FBD20A901C58806B00AF7E73 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6A1C58806B00AF7E73 /* Dragon.swift */; };
 		FBD20A911C58806B00AF7E73 /* IntroGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6B1C58806B00AF7E73 /* IntroGraphic.swift */; };
 		FBD20A921C58806B00AF7E73 /* IntroGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6B1C58806B00AF7E73 /* IntroGraphic.swift */; };
 		FBD20A931C58806B00AF7E73 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6C1C58806B00AF7E73 /* Logo.swift */; };
@@ -178,6 +177,7 @@
 		C56DA5171C50349900D50218 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
 		C56DA51A1C512A4B00D50218 /* UIColor+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extra.swift"; sourceTree = "<group>"; };
 		C59E3A4D1BC8082D0037F3B3 /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
+		C5DED2FB1C590F96006594AB /* DragonEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonEntity.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB4910D91BBB8B6C0094EC7E /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOS.entitlements; sourceTree = "<group>"; };
 		FB4910DA1BBB8C1C0094EC7E /* RampagingDragons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RampagingDragons.entitlements; sourceTree = "<group>"; };
@@ -215,7 +215,6 @@
 		FBD20A671C58806B00AF7E73 /* ControlPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPad.swift; sourceTree = "<group>"; };
 		FBD20A681C58806B00AF7E73 /* ControlPadPaintCodeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadPaintCodeImage.swift; sourceTree = "<group>"; };
 		FBD20A691C58806B00AF7E73 /* CreditsLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsLogo.swift; sourceTree = "<group>"; };
-		FBD20A6A1C58806B00AF7E73 /* Dragon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
 		FBD20A6B1C58806B00AF7E73 /* IntroGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphic.swift; sourceTree = "<group>"; };
 		FBD20A6C1C58806B00AF7E73 /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		FBD20A6D1C58806B00AF7E73 /* Mountain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
@@ -449,6 +448,7 @@
 		FBD20A5C1C58806B00AF7E73 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				C5DED2FB1C590F96006594AB /* DragonEntity.swift */,
 				FBD20A5D1C58806B00AF7E73 /* FireballEntity.swift */,
 				FBD20A5E1C58806B00AF7E73 /* PlayerEntity.swift */,
 			);
@@ -473,7 +473,6 @@
 				FBD20A671C58806B00AF7E73 /* ControlPad.swift */,
 				FBD20A681C58806B00AF7E73 /* ControlPadPaintCodeImage.swift */,
 				FBD20A691C58806B00AF7E73 /* CreditsLogo.swift */,
-				FBD20A6A1C58806B00AF7E73 /* Dragon.swift */,
 				FBD20A6B1C58806B00AF7E73 /* IntroGraphic.swift */,
 				FBD20A6C1C58806B00AF7E73 /* Logo.swift */,
 				FBD20A6D1C58806B00AF7E73 /* Mountain.swift */,
@@ -762,7 +761,6 @@
 				FBFC27781BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBD20A941C58806B00AF7E73 /* Logo.swift in Sources */,
 				FBD20A761C58806B00AF7E73 /* MovementComponent.swift in Sources */,
-				FBD20A901C58806B00AF7E73 /* Dragon.swift in Sources */,
 				FBFC276C1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
 				FBFC27741BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				FBD20A921C58806B00AF7E73 /* IntroGraphic.swift in Sources */,
@@ -812,8 +810,8 @@
 			files = (
 				FBFC27771BBE26360012C1AA /* Vector3.swift in Sources */,
 				FBD20A931C58806B00AF7E73 /* Logo.swift in Sources */,
+				C5DED2FC1C590F96006594AB /* DragonEntity.swift in Sources */,
 				FBD20A751C58806B00AF7E73 /* MovementComponent.swift in Sources */,
-				FBD20A8F1C58806B00AF7E73 /* Dragon.swift in Sources */,
 				FBFC276B1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
 				FBFC27731BBE26360012C1AA /* SKTEffects.swift in Sources */,
 				FBD20A911C58806B00AF7E73 /* IntroGraphic.swift in Sources */,
