@@ -6,7 +6,7 @@ import XCTest
 import SpriteKit
 @testable import RampagingDragons
 
-class PlayerEntityTests: XCTestCase {
+class GameKitHelperTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -14,9 +14,6 @@ class PlayerEntityTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-    }
-    
-    func testCreate() {
     }
     
 }

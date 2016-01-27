@@ -36,6 +36,8 @@
 		C5DED3241C5971FA006594AB /* StateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3231C5971FA006594AB /* StateMachineTests.swift */; };
 		C5DED3261C597225006594AB /* ControlPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3251C597225006594AB /* ControlPadTests.swift */; };
 		C5DED3271C5977F3006594AB /* DragonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED2FB1C590F96006594AB /* DragonEntity.swift */; };
+		C5DED3291C597947006594AB /* PulseAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3281C597947006594AB /* PulseAnimationTests.swift */; };
+		C5DED32B1C597959006594AB /* GameKitHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED32A1C597959006594AB /* GameKitHelperTests.swift */; };
 		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
@@ -181,6 +183,8 @@
 		C5DED3131C5971BA006594AB /* ScoreManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManagerTests.swift; sourceTree = "<group>"; };
 		C5DED3231C5971FA006594AB /* StateMachineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachineTests.swift; sourceTree = "<group>"; };
 		C5DED3251C597225006594AB /* ControlPadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadTests.swift; sourceTree = "<group>"; };
+		C5DED3281C597947006594AB /* PulseAnimationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimationTests.swift; sourceTree = "<group>"; };
+		C5DED32A1C597959006594AB /* GameKitHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelperTests.swift; sourceTree = "<group>"; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB4910D91BBB8B6C0094EC7E /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOS.entitlements; sourceTree = "<group>"; };
 		FB4910DA1BBB8C1C0094EC7E /* RampagingDragons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RampagingDragons.entitlements; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 				C5DED2FF1C5971BA006594AB /* Game */,
 				C56080E51C56DA4C00C167FD /* Info.plist */,
 				C56080EB1C56DBBF00C167FD /* TestUtil.swift */,
+				C5DED3281C597947006594AB /* PulseAnimationTests.swift */,
+				C5DED32A1C597959006594AB /* GameKitHelperTests.swift */,
 			);
 			path = RampagingDragonsTests;
 			sourceTree = "<group>";
@@ -766,6 +772,7 @@
 				C5DED31D1C5971BA006594AB /* OverlayNodeTests.swift in Sources */,
 				C5DED3201C5971BA006594AB /* ScoreBoardTests.swift in Sources */,
 				C5DED3191C5971BA006594AB /* CreditsLogoTests.swift in Sources */,
+				C5DED32B1C597959006594AB /* GameKitHelperTests.swift in Sources */,
 				C5DED3171C5971BA006594AB /* PlayerEntityTests.swift in Sources */,
 				C5DED3181C5971BA006594AB /* BackgroundTests.swift in Sources */,
 				C5DED3241C5971FA006594AB /* StateMachineTests.swift in Sources */,
@@ -775,6 +782,7 @@
 				C5DED31B1C5971BA006594AB /* LogoTests.swift in Sources */,
 				C5DED31C1C5971BA006594AB /* MountainTests.swift in Sources */,
 				C5DED31E1C5971BA006594AB /* PlatformTests.swift in Sources */,
+				C5DED3291C597947006594AB /* PulseAnimationTests.swift in Sources */,
 				C5DED3221C5971BA006594AB /* ScoreManagerTests.swift in Sources */,
 				C5DED31F1C5971BA006594AB /* PlayButtonTests.swift in Sources */,
 				C5DED3261C597225006594AB /* ControlPadTests.swift in Sources */,
