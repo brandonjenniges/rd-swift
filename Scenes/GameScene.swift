@@ -34,14 +34,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     var deltaTime: NSTimeInterval = 0
     var lastUpdatedTimeInterval: NSTimeInterval = 0
     
-    override init(size: CGSize) {
-        super.init(size: size)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
@@ -140,11 +132,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         })
     }
     
-    func resetScore() {
-        score = 0
-        scoreLabel.removeFromParent()
-    }
-    
     func reportScoreToGameCenter() {
         print("Reported score to gamecenter")
         GameKitHelper.sharedGameKitHelper.reportScore(score, leaderboardId: "846237154.gamecenter_leaderboard_main1")
@@ -198,12 +185,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         player = PlayerEntity()
         player.setPlayerMovementXConstraints((self.platform.position.x + self.platform.frame.width / 2) - player.spriteComponent.node.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.spriteComponent.node.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
-        resetPlayer()
-        addChild(player.spriteComponent.node)
-    }
-    
-    func resetPlayer() {
         player.spriteComponent.node.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
+        addChild(player.spriteComponent.node)
     }
     
     func setupDragons() {
@@ -219,13 +202,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
             dragon.setUpDragonAnimations()
             dragon.position = CGPointMake(xPos, topYPos)
             addChild(dragon)
-        }
-    }
-    
-    func resetDragons() {
-        scene!.enumerateChildNodesWithName(Dragon.nodeName) {
-            node, stop in
-            node.removeFromParent()
         }
     }
     
