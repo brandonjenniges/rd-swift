@@ -22,7 +22,7 @@ struct ScoreLabel {
         #endif
         
         label.position = CGPointMake(view.frame.width / 2, view.frame.height * 0.75)
-        label.zPosition = GameScene.Layer.Game.rawValue
+        label.zPosition = GameLayer.Layer.Game.rawValue
         scene.addChild(label)
         
         return label

@@ -8,6 +8,7 @@ import GameplayKit
 class FireballEntity: GKEntity {
     
     var spriteComponent: SpriteComponent!
+    static var gapPositions = [CGFloat]()
     
     // MARK: - Initializers
     
@@ -21,7 +22,7 @@ class FireballEntity: GKEntity {
         
         setupFireball()
         setupPhysicsBody()
-        spriteComponent.node.zPosition = GameScene.Layer.Game.rawValue
+        spriteComponent.node.zPosition = GameLayer.Layer.Game.rawValue
     }
     
     // MARK: - Physics
@@ -39,9 +40,21 @@ class FireballEntity: GKEntity {
     
     // MARK: - Positioning
     
-    func setInitialPosition(gaps:[CGFloat], background: SKSpriteNode) {
-        let x = gaps[Int(arc4random_uniform(UInt32(gaps.count - 1)))] + spriteComponent.node.size.width / 2
-        spriteComponent.node.position = CGPointMake(x - background.frame.size.width / 2, background.frame.size.height + background.frame.size.height / 2.0)
+    func setInitialPosition(yPosition: CGFloat) {
+        let x = FireballEntity.gapPositions[Int(arc4random_uniform(UInt32(FireballEntity.gapPositions.count - 1)))] + spriteComponent.node.size.width / 2
+        spriteComponent.node.position = CGPointMake(x, yPosition)
+    }
+    
+    static func setupGaps(worldWidth: CGFloat) {
+        var tempArray = [CGFloat]()
+        
+        let texture = TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1")
+        let gapCount = Int(worldWidth / texture.size().width)
+        
+        (0...gapCount).forEach {
+            tempArray.append(CGFloat($0) * texture.size().width)
+        }
+        gapPositions = tempArray
     }
     
     // MARK: - Animation

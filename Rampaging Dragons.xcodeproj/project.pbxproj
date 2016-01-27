@@ -71,8 +71,8 @@
 		FBD20A7C1C58806B00AF7E73 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A5E1C58806B00AF7E73 /* PlayerEntity.swift */; };
 		FBD20A7D1C58806B00AF7E73 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A601C58806B00AF7E73 /* GameOverState.swift */; };
 		FBD20A7E1C58806B00AF7E73 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A601C58806B00AF7E73 /* GameOverState.swift */; };
-		FBD20A7F1C58806B00AF7E73 /* GameStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A611C58806B00AF7E73 /* GameStateProtocol.swift */; };
-		FBD20A801C58806B00AF7E73 /* GameStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A611C58806B00AF7E73 /* GameStateProtocol.swift */; };
+		FBD20A7F1C58806B00AF7E73 /* GameStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A611C58806B00AF7E73 /* GameStateExtension.swift */; };
+		FBD20A801C58806B00AF7E73 /* GameStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A611C58806B00AF7E73 /* GameStateExtension.swift */; };
 		FBD20A811C58806B00AF7E73 /* IntroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A621C58806B00AF7E73 /* IntroState.swift */; };
 		FBD20A821C58806B00AF7E73 /* IntroState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A621C58806B00AF7E73 /* IntroState.swift */; };
 		FBD20A831C58806B00AF7E73 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A631C58806B00AF7E73 /* PlayingState.swift */; };
@@ -107,6 +107,8 @@
 		FBD20AA21C58806B00AF7E73 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A731C58806B00AF7E73 /* PhysicsCategory.swift */; };
 		FBD20AA31C58806B00AF7E73 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A741C58806B00AF7E73 /* ScoreManager.swift */; };
 		FBD20AA41C58806B00AF7E73 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A741C58806B00AF7E73 /* ScoreManager.swift */; };
+		FBD20AA61C5884D700AF7E73 /* GameLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20AA51C5884D700AF7E73 /* GameLayer.swift */; };
+		FBD20AA71C5884D700AF7E73 /* GameLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20AA51C5884D700AF7E73 /* GameLayer.swift */; };
 		FBE8878E1C50829700D1F92B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8878D1C50829700D1F92B /* MenuScene.swift */; };
 		FBE887901C5082A000D1F92B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8878F1C5082A000D1F92B /* MenuScene.swift */; };
 		FBEBAB7A1BB763FF004D455D /* Player.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB791BB763FF004D455D /* Player.xcassets */; };
@@ -206,7 +208,7 @@
 		FBD20A5D1C58806B00AF7E73 /* FireballEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireballEntity.swift; sourceTree = "<group>"; };
 		FBD20A5E1C58806B00AF7E73 /* PlayerEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		FBD20A601C58806B00AF7E73 /* GameOverState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
-		FBD20A611C58806B00AF7E73 /* GameStateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateProtocol.swift; sourceTree = "<group>"; };
+		FBD20A611C58806B00AF7E73 /* GameStateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStateExtension.swift; sourceTree = "<group>"; };
 		FBD20A621C58806B00AF7E73 /* IntroState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroState.swift; sourceTree = "<group>"; };
 		FBD20A631C58806B00AF7E73 /* PlayingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingState.swift; sourceTree = "<group>"; };
 		FBD20A651C58806B00AF7E73 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		FBD20A721C58806B00AF7E73 /* ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		FBD20A731C58806B00AF7E73 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		FBD20A741C58806B00AF7E73 /* ScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		FBD20AA51C5884D700AF7E73 /* GameLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLayer.swift; sourceTree = "<group>"; };
 		FBE8878D1C50829700D1F92B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FBE8878F1C5082A000D1F92B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		FBEBAB791BB763FF004D455D /* Player.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Player.xcassets; sourceTree = "<group>"; };
@@ -429,6 +432,7 @@
 				FBD20A641C58806B00AF7E73 /* Nodes */,
 				FBD20A731C58806B00AF7E73 /* PhysicsCategory.swift */,
 				FBD20A741C58806B00AF7E73 /* ScoreManager.swift */,
+				FBD20AA51C5884D700AF7E73 /* GameLayer.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -455,7 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				FBD20A601C58806B00AF7E73 /* GameOverState.swift */,
-				FBD20A611C58806B00AF7E73 /* GameStateProtocol.swift */,
+				FBD20A611C58806B00AF7E73 /* GameStateExtension.swift */,
 				FBD20A621C58806B00AF7E73 /* IntroState.swift */,
 				FBD20A631C58806B00AF7E73 /* PlayingState.swift */,
 			);
@@ -765,7 +769,7 @@
 				FBD20A9E1C58806B00AF7E73 /* ScoreBoard.swift in Sources */,
 				C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
 				FBD20A8A1C58806B00AF7E73 /* ControlPad.swift in Sources */,
-				FBD20A801C58806B00AF7E73 /* GameStateProtocol.swift in Sources */,
+				FBD20A801C58806B00AF7E73 /* GameStateExtension.swift in Sources */,
 				FBD20A7E1C58806B00AF7E73 /* GameOverState.swift in Sources */,
 				FBFC27621BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				FBA743D41BB71E7900AC4B44 /* GameScene.swift in Sources */,
@@ -788,6 +792,7 @@
 				FBFC27641BBE26360012C1AA /* CGPoint+Extensions.swift in Sources */,
 				FBFC27681BBE26360012C1AA /* Int+Extensions.swift in Sources */,
 				FBD20A961C58806B00AF7E73 /* Mountain.swift in Sources */,
+				FBD20AA71C5884D700AF7E73 /* GameLayer.swift in Sources */,
 				FBFC27761BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */,
 				FBD20A9C1C58806B00AF7E73 /* PlayButton.swift in Sources */,
 				FBFC27661BBE26360012C1AA /* CGVector+Extensions.swift in Sources */,
@@ -815,7 +820,7 @@
 				FBD20A9D1C58806B00AF7E73 /* ScoreBoard.swift in Sources */,
 				C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
 				FBD20A891C58806B00AF7E73 /* ControlPad.swift in Sources */,
-				FBD20A7F1C58806B00AF7E73 /* GameStateProtocol.swift in Sources */,
+				FBD20A7F1C58806B00AF7E73 /* GameStateExtension.swift in Sources */,
 				FBD20A7D1C58806B00AF7E73 /* GameOverState.swift in Sources */,
 				FBFC27611BBE26360012C1AA /* CGFloat+Extensions.swift in Sources */,
 				C59E3A4E1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */,
@@ -838,6 +843,7 @@
 				FBFC27671BBE26360012C1AA /* Int+Extensions.swift in Sources */,
 				FBFC27751BBE26360012C1AA /* SKTTimingFunctions.swift in Sources */,
 				FBD20A951C58806B00AF7E73 /* Mountain.swift in Sources */,
+				FBD20AA61C5884D700AF7E73 /* GameLayer.swift in Sources */,
 				FBFC27651BBE26360012C1AA /* CGVector+Extensions.swift in Sources */,
 				FBD20A9B1C58806B00AF7E73 /* PlayButton.swift in Sources */,
 				FBFC276D1BBE26360012C1AA /* SKColor+Extensions.swift in Sources */,

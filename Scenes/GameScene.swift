@@ -9,8 +9,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     var scenePaused = false
     
-    enum Layer: CGFloat { case Background = 0; case Foreground = 1; case Game = 2; case Hud = 3; case GameOver = 4 }
-    
     var viewController:GameViewController!
     
     var player:PlayerEntity!
@@ -18,8 +16,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     var background:SKSpriteNode!
     var scoreLabel:SKLabelNode!
     var control: ControlPad!
-    
-    var gapPositions = [CGFloat]()
     
     var score = 0
     
@@ -105,9 +101,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     func addFireball() {
         let fire = FireballEntity()
-        fire.setInitialPosition(gapPositions, background: background)
+        fire.setInitialPosition(background.frame.size.height + background.frame.size.height / 2.0)
         addChild(fire.spriteComponent.node)
-        fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
+        fire.send(0)
     }
     
     // MARK: - Scoring
@@ -211,16 +207,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         control.anchorPoint = .zero
         control.position = .zero
         addChild(control)
-    }
-    
-    func setupGaps() {
-        var tempArray = [CGFloat]()
-        
-        let groundStart = platform.position.x - platform.frame.size.width / 2
-        (0...12).forEach {
-            tempArray.append(groundStart + CGFloat(($0 * Int(platform.frame.size.width / 12))))
-        }
-        gapPositions = tempArray
     }
     
     // MARK: - Scene pausing
