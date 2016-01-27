@@ -35,6 +35,7 @@
 		C5DED3221C5971BA006594AB /* ScoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3131C5971BA006594AB /* ScoreManagerTests.swift */; };
 		C5DED3241C5971FA006594AB /* StateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3231C5971FA006594AB /* StateMachineTests.swift */; };
 		C5DED3261C597225006594AB /* ControlPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3251C597225006594AB /* ControlPadTests.swift */; };
+		C5DED3271C5977F3006594AB /* DragonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED2FB1C590F96006594AB /* DragonEntity.swift */; };
 		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
@@ -787,6 +788,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBFC27781BBE26360012C1AA /* Vector3.swift in Sources */,
+				C5DED3271C5977F3006594AB /* DragonEntity.swift in Sources */,
 				FBD20A941C58806B00AF7E73 /* Logo.swift in Sources */,
 				FBD20A761C58806B00AF7E73 /* MovementComponent.swift in Sources */,
 				FBFC276C1BBE26360012C1AA /* SKAction+SpecialEffects.swift in Sources */,
