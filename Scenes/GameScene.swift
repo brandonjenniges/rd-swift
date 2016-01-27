@@ -112,17 +112,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     // MARK: - Fireballs
     
     func addFireball() {
-        let fire = Fireball(texture: TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1"))
+        let fire = FireballEntity()
         fire.setInitialPosition(gapPositions, background: background)
-        addChild(fire)
+        addChild(fire.spriteComponent.node)
         fire.send(-background.frame.size.height / 2) //Needs this because of worldNode's anchor point
     }
     
     // MARK: - Scoring
     
     func updateScore() {
-        enumerateChildNodesWithName(String(Fireball), usingBlock: { node, stop in
-            if let fireball = node as? Fireball {
+        enumerateChildNodesWithName(String(FireballEntity), usingBlock: { node, stop in
+            if let fireball = node as? SKSpriteNode {
                 if let passed = fireball.userData?["Passed"] as? NSNumber {
                     if passed.boolValue {
                         return
