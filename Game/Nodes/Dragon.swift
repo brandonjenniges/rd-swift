@@ -75,15 +75,8 @@ class Dragon: SKSpriteNode {
     
     static func getDragonArray() -> [Dragon] {
         let dragons = [Dragon(dragonID: 0), Dragon(dragonID: 1), Dragon(dragonID: 2), Dragon(dragonID: 3)]
-        let shuffledArray:[Dragon]
-        if #available(iOS 9.0, *) {
-            shuffledArray = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(dragons.map { $0 }) as! [Dragon]
+        let shuffledArray:[Dragon] = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(dragons.map { $0 }) as! [Dragon]
             
-          //  shuffedArray = Dragon.dragons.map { $0 }
-        } else {
-            shuffledArray = dragons.map { $0 }
-        }
-        
         #if os(tvOS)
             shuffledArray[1].xScale = -1
             shuffledArray[3].xScale = -1
