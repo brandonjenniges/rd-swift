@@ -8,6 +8,8 @@ import SpriteKit
 
 class ScoreboardTests: XCTestCase {
     
+    var scene = TestUtil.getGameScene()
+    
     override func setUp() {
         super.setUp()
     }
@@ -17,6 +19,8 @@ class ScoreboardTests: XCTestCase {
     }
     
     func testCreate() {
+        let scoreboard = ScoreBoard(score: 100)
+        XCTAssertNotNil(scoreboard, "Unable to create scoreboard")
     }
     
 }

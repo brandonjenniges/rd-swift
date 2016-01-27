@@ -20,7 +20,7 @@ class CreditsLogoTests: XCTestCase {
     
     func testCreate() {
         let logo = CreditsLogo.create(scene)
-        XCTAssert(logo != nil, "Unable to create credits logo")
+        XCTAssertNotNil(logo, "Unable to create credits logo")
     }
     
 }

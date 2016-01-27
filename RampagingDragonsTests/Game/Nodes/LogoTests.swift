@@ -8,6 +8,8 @@ import SpriteKit
 
 class LogoTests: XCTestCase {
     
+    var scene = TestUtil.getMenuScene()
+    
     override func setUp() {
         super.setUp()
     }
@@ -17,6 +19,8 @@ class LogoTests: XCTestCase {
     }
     
     func testCreate() {
+        let logo = Logo.create(scene)
+        XCTAssertNotNil(logo, "Unable to create logo")
     }
     
 }

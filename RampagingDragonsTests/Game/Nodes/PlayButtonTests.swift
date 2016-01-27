@@ -8,6 +8,8 @@ import SpriteKit
 
 class PlayButtonTests: XCTestCase {
     
+    var scene = TestUtil.getMenuScene()
+    
     override func setUp() {
         super.setUp()
     }

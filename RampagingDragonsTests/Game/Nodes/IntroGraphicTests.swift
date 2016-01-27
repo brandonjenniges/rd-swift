@@ -8,6 +8,8 @@ import SpriteKit
 
 class IntroGraphicTests: XCTestCase {
     
+    var scene = TestUtil.getGameScene()
+    
     override func setUp() {
         super.setUp()
     }
@@ -17,6 +19,8 @@ class IntroGraphicTests: XCTestCase {
     }
     
     func testCreate() {
+        let introGraphic = Background.create(scene)
+        XCTAssertNotNil(introGraphic, "Unable to create intro graphic")
     }
     
 }
