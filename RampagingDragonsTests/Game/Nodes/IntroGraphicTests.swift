@@ -23,4 +23,18 @@ class IntroGraphicTests: XCTestCase {
         XCTAssertNotNil(introGraphic, "Unable to create intro graphic")
     }
     
+    func testRemove() {
+        let introGraphic = IntroGraphic.create(scene)!
+        scene.addChild(introGraphic)
+        
+        IntroGraphic.remove(scene)
+        
+        // Delay because IntroGraphic has an animation for removing from scene 
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 2 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            XCTAssertNil(self.scene.childNodeWithName(IntroGraphic.nodeName), "Intro graphic still in scene")
+        }
+        
+    }
+    
 }
