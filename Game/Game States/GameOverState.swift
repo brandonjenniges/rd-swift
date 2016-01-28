@@ -14,7 +14,11 @@ class GameOverState: GKState {
     }
     
     override func didEnterWithPreviousState(previousState: GKState?) {
-        scene.control.remove()
+        
+        #if os(iOS)
+            scene.control.remove()
+        #endif
+        
         let overlay = OverlayNode.create(scene, score: scene.score)!
         scene.background.addChild(overlay)
         scene.player.die()

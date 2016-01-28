@@ -112,6 +112,7 @@
 		FBD20AA41C58806B00AF7E73 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A741C58806B00AF7E73 /* ScoreManager.swift */; };
 		FBD20AA61C5884D700AF7E73 /* GameLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20AA51C5884D700AF7E73 /* GameLayer.swift */; };
 		FBD20AA71C5884D700AF7E73 /* GameLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20AA51C5884D700AF7E73 /* GameLayer.swift */; };
+		FBD20AA81C599AE400AF7E73 /* Scene.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C544CE751C4FD7CF00F24338 /* Scene.xcassets */; };
 		FBE8878E1C50829700D1F92B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8878D1C50829700D1F92B /* MenuScene.swift */; };
 		FBE887901C5082A000D1F92B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8878F1C5082A000D1F92B /* MenuScene.swift */; };
 		FBEBAB7A1BB763FF004D455D /* Player.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB791BB763FF004D455D /* Player.xcassets */; };
@@ -663,6 +664,7 @@
 				FB8D26F11BB71773000B548E /* Assets.xcassets in Resources */,
 				FB4910DD1BBB92520094EC7E /* titlesong.wav in Resources */,
 				FBEBAB7B1BB764A8004D455D /* Player.xcassets in Resources */,
+				FBD20AA81C599AE400AF7E73 /* Scene.xcassets in Resources */,
 				FBEBAB931BB784CA004D455D /* Intro.xcassets in Resources */,
 				FBEBAB921BB784C7004D455D /* Fire.xcassets in Resources */,
 				C5DE514B1BB9811B0049C321 /* GameOver.xcassets in Resources */,
