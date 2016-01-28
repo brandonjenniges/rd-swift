@@ -20,22 +20,23 @@ class ControlPad: SKSpriteNode {
     let left:SKSpriteNode
     let right:SKSpriteNode
     
+    let regularTexture = TextureAtlasManager.sceneAtlas.textureNamed("control")
+    let pressedTexture = TextureAtlasManager.sceneAtlas.textureNamed("control-pressed")
+    
     var delegate:ControlPadTouches?
     
     init(texture: SKTexture?, size: CGSize) {
-        let testImage = ControlPadPaintCodeImage(frame: CGRectMake(0, 0, size.width / 2, size.height))
-        let testTexture = SKTexture(image: testImage.getTestImage())
         
-        left = SKSpriteNode(texture: testTexture)
+        left = SKSpriteNode(texture: texture)
         left.anchorPoint = .zero
         left.position = CGPointMake(-left.size.width, -size.height)
         
-        right = SKSpriteNode(texture: testTexture)
+        right = SKSpriteNode(texture: texture)
         right.anchorPoint = .zero
         right.xScale = -1
         right.position = CGPointMake(size.width + right.size.width, -size.height)
         
-        super.init(texture: texture, color: .clearColor(), size: size)
+        super.init(texture: nil, color: .clearColor(), size: size)
         
         addChild(left)
         addChild(right)
@@ -64,10 +65,10 @@ class ControlPad: SKSpriteNode {
             var currentDirection: ControlPadTouchDirection?
             
             if left.containsPoint(location) {
-                left.alpha = 0.5
+                left.texture = pressedTexture
                 currentDirection = .Left
             } else if right.containsPoint(location) {
-                right.alpha = 0.5
+                right.texture = pressedTexture
                 currentDirection = .Right
             }
             
@@ -78,9 +79,9 @@ class ControlPad: SKSpriteNode {
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        right.alpha = 1
-        left.alpha = 1
-        
+        left.texture = regularTexture
+        right.texture = regularTexture
+
         if let delegate = delegate {
             delegate.controlPadDidEndTouch()
         }

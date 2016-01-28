@@ -203,7 +203,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     }
     
     func setupControlPad() {
-        control = ControlPad(texture: nil, size: CGSizeMake(CGRectGetWidth(self.frame), 80.0))
+        let controlTexture = TextureAtlasManager.sceneAtlas.textureNamed("control")
+        control = ControlPad(texture: controlTexture, size: CGSizeMake(controlTexture.size().width * 2, controlTexture.size().height))
         control.delegate = self
         control.anchorPoint = .zero
         control.position = .zero
