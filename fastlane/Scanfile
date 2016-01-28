@@ -1,0 +1,4 @@
+scheme "iOS"
+clean true
+code_coverage true
+device "iPhone 6s (9.2)"
