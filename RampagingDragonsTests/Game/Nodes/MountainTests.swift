@@ -8,9 +8,10 @@ import SpriteKit
 
 class MountainTests: XCTestCase {
     
+    var scene = TestUtil.getMenuScene()
+    
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -18,6 +19,8 @@ class MountainTests: XCTestCase {
     }
     
     func testCreate() {
+        let mountain = Mountain.create(scene, platform: Platform.create(scene)!)
+        XCTAssertNotNil(mountain, "Unable to create mountain logo")
     }
     
 }

@@ -8,9 +8,10 @@ import SpriteKit
 
 class OverlayNodeTests: XCTestCase {
     
+    var scene = TestUtil.getGameScene()
+    
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -18,6 +19,8 @@ class OverlayNodeTests: XCTestCase {
     }
     
     func testCreate() {
+        let overlayNode = OverlayNode.create(scene, score: 100)
+        XCTAssertNotNil(overlayNode, "Unable to create overlay node")
     }
     
 }

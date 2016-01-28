@@ -8,9 +8,10 @@ import SpriteKit
 
 class ScoreLabelTests: XCTestCase {
     
+    var scene = TestUtil.getGameScene()
+    
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -18,6 +19,8 @@ class ScoreLabelTests: XCTestCase {
     }
     
     func testCreate() {
+        let scoreLabel = ScoreLabel.create(scene)
+        XCTAssertNotNil(scoreLabel, "Unable to create score label")
     }
     
 }

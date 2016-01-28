@@ -8,9 +8,10 @@ import SpriteKit
 
 class PlayerEntityTests: XCTestCase {
     
+    let player = PlayerEntity()
+    
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -18,6 +19,11 @@ class PlayerEntityTests: XCTestCase {
     }
     
     func testCreate() {
+        XCTAssertNotNil(player, "Unable to create player")
     }
     
+    func testRunningCompleteAction() {
+        let action = player.getRunningCompletionAction()
+        XCTAssertNotNil(action, "Unable to create running completion action")
+    }
 }

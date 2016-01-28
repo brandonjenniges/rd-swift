@@ -6,9 +6,7 @@ import XCTest
 import SpriteKit
 @testable import RampagingDragons
 
-class ScoreboardTests: XCTestCase {
-    
-    var scene = TestUtil.getGameScene()
+class GameKitHelperTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -16,11 +14,6 @@ class ScoreboardTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-    }
-    
-    func testCreate() {
-        let scoreboard = ScoreBoard(score: 100)
-        XCTAssertNotNil(scoreboard, "Unable to create scoreboard")
     }
     
 }

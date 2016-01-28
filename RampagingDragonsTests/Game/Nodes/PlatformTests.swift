@@ -8,9 +8,10 @@ import SpriteKit
 
 class PlatformTests: XCTestCase {
     
+    var scene = TestUtil.getMenuScene()
+    
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -18,6 +19,8 @@ class PlatformTests: XCTestCase {
     }
     
     func testCreate() {
+        let platform = Platform.create(scene)
+        XCTAssertNotNil(platform, "Unable to create platform")
     }
     
 }

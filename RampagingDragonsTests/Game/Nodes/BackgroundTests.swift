@@ -12,7 +12,6 @@ class BackgroundTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {
@@ -21,7 +20,7 @@ class BackgroundTests: XCTestCase {
     
     func testCreate() {
         let background = Background.create(scene)
-        XCTAssert(background != nil, "Unable to create background")
+        XCTAssertNotNil(background, "Unable to create background")
     }
     
 }

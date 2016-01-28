@@ -171,6 +171,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     func restartGame() {
         let newScene = GameScene(size: size)
+        newScene.viewController = viewController
         let transition = SKTransition.fadeWithColor(.blackColor(), duration: 0.02)
         view?.presentScene(newScene, transition: transition)
     }

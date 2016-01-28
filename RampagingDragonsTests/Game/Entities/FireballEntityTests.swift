@@ -10,7 +10,6 @@ class FireballEntityTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {

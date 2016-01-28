@@ -62,7 +62,9 @@ class GameKitHelper: NSObject, GKGameCenterControllerDelegate {
         
         let gameCenterViewController = GKGameCenterViewController()
         gameCenterViewController.gameCenterDelegate = self
+        #if os(iOS)
         gameCenterViewController.viewState = .Leaderboards
+        #endif
         viewController.presentViewController(gameCenterViewController, animated: true, completion: nil)
     }
     
