@@ -1,15 +1,26 @@
-fastlane_version "1.47.0"
+fastlane_version "1.53.0"
 
 default_platform :ios
 
 platform :ios do
 
   before_all do
-    ensure_git_status_clean
   end
 
   desc "Run all the tests"
   lane :test do
-    scan(device: "iPhone 6s (9.2)")
+    scan(
+	     scheme: "iOS",
+	     device: "iPhone 6s (9.2)"
+    )    
   end
+
+  after_all do |lane|
+    notify "Fastlane '#{lane}' finished" # Mac OS X Notification
+  end
+
+  error do |lane, exception|
+    notify "Fastlane '#{lane}' errored" # Mac OS X Notification
+  end
+
 end
