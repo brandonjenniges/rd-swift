@@ -32,7 +32,7 @@ struct OverlayNode {
         
         // Play button
         
-        let playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
+        let playButton = PlayButton.create(scene)!
         playButton.position = CGPointMake(0, -(view.frame.size.height / 4))
         overlay.addChild(playButton)
         

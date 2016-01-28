@@ -24,11 +24,11 @@ class MenuScene: SKScene {
     // MARK: - Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        playButton.alpha = 0.5
+        playButton.texture = PlayButton.press()
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        playButton.alpha = 1.0
+        playButton.texture = PlayButton.pressEnded()
         handlePlayButtonPress()
     }
     
@@ -55,10 +55,11 @@ class MenuScene: SKScene {
     }
     
     func addPlayButton() {
-        playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
+        
+        playButton = PlayButton.create(self)
+        
         if let logoNode = Logo.getNode(self) {
             playButton.position = CGPointMake(logoNode.position.x, logoNode.position.y / 2)
-            playButton.zPosition = 2
             addChild(playButton)
         }
     }

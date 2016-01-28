@@ -19,6 +19,8 @@ class PlayButtonTests: XCTestCase {
     }
     
     func testCreate() {
+        let playButton = PlayButton.create(scene)
+        XCTAssertNotNil(playButton, "Unable to create play button")
     }
     
 }

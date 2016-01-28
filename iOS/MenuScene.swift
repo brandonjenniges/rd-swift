@@ -29,13 +29,15 @@ class MenuScene: SKScene {
             for touch in touches {
                 let location = touch.locationInNode(self)
                 if playButton.containsPoint(location) {
-                    playButton.texture = TextureAtlasManager.introAtlas.textureNamed("play-pressed")
+                    //PlayButton.press(playButton)
+                    playButton.texture = PlayButton.press()
                 }
             }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        playButton.texture = TextureAtlasManager.introAtlas.textureNamed("play")
+        
+        playButton.texture = PlayButton.pressEnded()
         
         for touch in touches {
             let location = touch.locationInNode(self)
@@ -67,9 +69,8 @@ class MenuScene: SKScene {
     }
     
     func addPlayButton() {
-        playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
+        playButton = PlayButton.create(self)
         playButton.position = CGPointMake(size.width / 2, size.height / 2)
-        playButton.zPosition = GameLayer.Layer.Hud.rawValue
         addChild(playButton)
     }
     
