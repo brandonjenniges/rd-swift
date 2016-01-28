@@ -23,4 +23,13 @@ class PlayButtonTests: XCTestCase {
         XCTAssertNotNil(playButton, "Unable to create play button")
     }
     
+    func testPresses() {
+        
+        let pressTexture = PlayButton.press()
+        XCTAssertNotNil(pressTexture, "Unable to create press texture")
+        
+        let pressDoneTexture = PlayButton.pressEnded()
+        XCTAssertNotNil(pressDoneTexture, "Unable to create press ended texture")
+    }
+    
 }
