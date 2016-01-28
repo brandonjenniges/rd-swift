@@ -43,15 +43,19 @@ class MenuScene: SKScene {
     // MARK: - Elements
     
     func createBackground() {
-        Background.create(self)
+        let background = Background.create(self)
+        addChild(background)
     }
     
     func createLogo() {
-        Logo.create(self)
+        let logo = Logo.create(self)!
+        addChild(logo)
+        logo.runAction(Logo.pulseAction())
     }
     
     func createCreditsLogo() {
-        CreditsLogo.create(self)
+        let creditsLogo = CreditsLogo.create(self)!
+        addChild(creditsLogo)
     }
     
     func addPlayButton() {

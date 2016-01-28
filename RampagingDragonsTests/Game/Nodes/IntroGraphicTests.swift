@@ -19,7 +19,7 @@ class IntroGraphicTests: XCTestCase {
     }
     
     func testCreate() {
-        let introGraphic = Background.create(scene)
+        let introGraphic = IntroGraphic.create(scene)
         XCTAssertNotNil(introGraphic, "Unable to create intro graphic")
     }
     

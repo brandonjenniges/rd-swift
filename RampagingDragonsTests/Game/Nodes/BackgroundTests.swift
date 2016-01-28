@@ -19,7 +19,8 @@ class BackgroundTests: XCTestCase {
     }
     
     func testCreate() {
-        let background = Background.create(scene)
+        let background = Background.create(scene)!
+        scene.addChild(background)
         XCTAssertNotNil(background, "Unable to create background")
     }
     

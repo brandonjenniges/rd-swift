@@ -14,12 +14,6 @@ struct Platform {
         platform.position = CGPointMake(scene.size.width / 2, scene.size.height / 4)
         platform.zPosition = GameLayer.Layer.Foreground.rawValue
         
-        scene.addChild(platform)
-        
-        if let mountain = Mountain.create(scene, platform: platform) {
-            scene.addChild(mountain)
-        }
-        
         return platform
     }
 }

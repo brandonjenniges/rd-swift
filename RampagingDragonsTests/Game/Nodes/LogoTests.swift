@@ -24,7 +24,8 @@ class LogoTests: XCTestCase {
     }
     
     func testGetNode() {
-        let _ = Logo.create(scene)
+        let logo = Logo.create(scene)!
+        scene.addChild(logo)
         XCTAssertNotNil(Logo.getNode(scene), "Unable to find logo node")
     }
 }

@@ -15,7 +15,6 @@ struct CreditsLogo {
         let logo = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("created_label"))
         logo.position = CGPointMake(view.frame.size.width / 2, logo.frame.size.height)
         logo.name = CreditsLogo.nodeName
-        scene.addChild(logo)
         
         return logo
     }

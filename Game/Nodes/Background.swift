@@ -35,8 +35,6 @@ struct Background {
         
         background.position = CGPointMake(view.frame.width / 2, view.frame.height / 2)
         
-        scene.addChild(background)
-        
         return background
     }
 }

@@ -17,16 +17,16 @@ struct Logo {
         logo.position = CGPointMake(view.frame.width / 2, view.frame.height * 0.75)
         logo.zPosition = 2
         
-        scene.addChild(logo)
-        
-        let pulseAction =  PulseAnimation.pulseAction(0.05)
-        logo.runAction(pulseAction)
-        
         return logo
     }
     
     static func getNode(scene: SKScene) -> SKSpriteNode? {
        return scene.childNodeWithName(Logo.nodeName) as? SKSpriteNode
+    }
+    
+    static func pulseAction() -> SKAction {
+        let pulseAction =  PulseAnimation.pulseAction(0.05)
+        return pulseAction
     }
     
 }

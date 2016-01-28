@@ -154,19 +154,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     // MARK: - Game elements
     
     func createBackground() {
-        background = Background.create(self)
+        background = Background.create(self)!
+        addChild(background)
     }
     
     func createPlatform() {
-        platform = Platform.create(self)
+        platform = Platform.create(self)!
+        addChild(platform)
+        
+        let mountain = Mountain.create(self, platform: platform)!
+        addChild(mountain)
     }
     
     func addScoreLabel() {
         scoreLabel = ScoreLabel.create(self)!
+        addChild(scoreLabel)
     }
     
     func addTapToStart() {
-        addChild(IntroGraphic.create(self)!)
+        let intro = IntroGraphic.create(self)!
+        addChild(intro)
     }
     
     func restartGame() {

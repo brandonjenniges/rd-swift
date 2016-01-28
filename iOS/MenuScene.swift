@@ -16,10 +16,14 @@ class MenuScene: SKScene {
         createCreditsLogo()
         addPlayButton()
         
-        let platform = Platform.create(self)
+        let platform = Platform.create(self)!
+        addChild(platform)
+        
+        let mountain = Mountain.create(self, platform: platform)!
+        addChild(mountain)
         let player = PlayerEntity()
         addChild(player.spriteComponent.node)
-        player.spriteComponent.node.position = CGPointMake(platform!.position.x, platform!.position.y + (platform!.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
+        player.spriteComponent.node.position = CGPointMake(platform.position.x, platform.position.y + (platform.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
         //setupDragons(view)
     }
     
@@ -57,15 +61,19 @@ class MenuScene: SKScene {
     // MARK: - Elements
     
     func createBackground() {
-        Background.create(self)
+        let background = Background.create(self)!
+        addChild(background)
     }
     
     func createLogo() {
-        Logo.create(self)
+        let logo = Logo.create(self)!
+        addChild(logo)
+        logo.runAction(Logo.pulseAction())
     }
     
     func createCreditsLogo() {
-        CreditsLogo.create(self)
+        let creditsLogo = CreditsLogo.create(self)!
+        addChild(creditsLogo)
     }
     
     func addPlayButton() {
