@@ -9,10 +9,10 @@ struct Mountain {
     
     static func create(scene: SKScene, platform: SKSpriteNode) -> SKSpriteNode? {
         
-        guard let view = scene.view else { return nil }
+        guard let _ = scene.view else { return nil }
         
         let mountain = SKSpriteNode(texture: TextureAtlasManager.sceneAtlas.textureNamed("mountain"))
-        mountain.position = CGPointMake(view.frame.width / 2, platform.position.y + mountain.size.height / 2 + platform.size.height / 2)
+        mountain.position = CGPointMake(scene.size.width / 2, platform.position.y + mountain.size.height / 2 + platform.size.height / 2)
         mountain.zPosition = GameLayer.Layer.Foreground.rawValue
         
         return mountain

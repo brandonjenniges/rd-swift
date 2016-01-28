@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "mountain-1.png",
+      "filename" : "mountain.png",
       "scale" : "1x"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "idiom" : "tv",
-      "filename" : "mountain.png",
+      "filename" : "mountain@3x.png",
       "scale" : "1x"
     }
   ],
