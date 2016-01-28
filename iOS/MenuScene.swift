@@ -29,13 +29,13 @@ class MenuScene: SKScene {
             for touch in touches {
                 let location = touch.locationInNode(self)
                 if playButton.containsPoint(location) {
-                    playButton.alpha = 0.5
+                    playButton.texture = TextureAtlasManager.introAtlas.textureNamed("play-pressed")
                 }
             }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        playButton.alpha = 1.0
+        playButton.texture = TextureAtlasManager.introAtlas.textureNamed("play")
         
         for touch in touches {
             let location = touch.locationInNode(self)
@@ -46,7 +46,6 @@ class MenuScene: SKScene {
     }
     
     func handlePlayButtonPress() {
-        
         guard let view = view else { return }
         let scene = GameScene(size: size)
         scene.viewController = viewController
@@ -69,11 +68,9 @@ class MenuScene: SKScene {
     
     func addPlayButton() {
         playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
-        if let logoNode = Logo.getNode(self) {
-            playButton.position = CGPointMake(logoNode.position.x, view!.frame.size.height / 2)
-            playButton.zPosition = 2
-            addChild(playButton)
-        }
+        playButton.position = CGPointMake(size.width / 2, size.height / 2)
+        playButton.zPosition = GameLayer.Layer.Hud.rawValue
+        addChild(playButton)
     }
     
     func setupDragons(view: SKView) {
