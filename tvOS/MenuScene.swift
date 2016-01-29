@@ -43,7 +43,7 @@ class MenuScene: SKScene {
     // MARK: - Elements
     
     func createBackground() {
-        let background = Background.create(self)
+        let background = Background.create(self)!
         addChild(background)
     }
     
