@@ -19,4 +19,14 @@ class FireballEntityTests: XCTestCase {
     func testCreate() {
     }
     
+    func testGaps() {
+        let fireball = FireballEntity()
+        
+        FireballEntity.setupGaps(100, worldWidth: 1000)
+        let gaps = FireballEntity.gapPositions
+        
+        XCTAssert(gaps.count == Int((1000 - 100) / fireball.spriteComponent.node.texture!.size().width), "Unable to create press ended texture")
+        
+    }
+    
 }

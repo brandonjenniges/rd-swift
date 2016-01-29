@@ -45,14 +45,14 @@ class FireballEntity: GKEntity {
         spriteComponent.node.position = CGPointMake(x, yPosition)
     }
     
-    static func setupGaps(worldWidth: CGFloat) {
+    static func setupGaps(xOrigin: CGFloat, worldWidth: CGFloat) {
         var tempArray = [CGFloat]()
         
         let texture = TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1")
         let gapCount = Int(worldWidth / texture.size().width)
         
         (0...gapCount).forEach {
-            tempArray.append(CGFloat($0) * texture.size().width)
+            tempArray.append(CGFloat($0) * texture.size().width + xOrigin)
         }
         gapPositions = tempArray
     }
