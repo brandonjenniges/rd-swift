@@ -12,7 +12,6 @@ class PlayerEntity: GKEntity {
     enum PlayerMovement { case Neutral; case Left; case Right }
     
     var spriteComponent: SpriteComponent!
-    var movementComponent: MovementComponent!
     
     var movement:PlayerMovement
     var maxRight:CGFloat?
@@ -27,9 +26,6 @@ class PlayerEntity: GKEntity {
         
         spriteComponent = SpriteComponent(entity: self, texture: texture, size: texture.size())
         addComponent(spriteComponent)
-        
-        movementComponent = MovementComponent(entity: self)
-        addComponent(movementComponent)
         
         spriteComponent.node.zPosition = GameLayer.Layer.Game.rawValue
         

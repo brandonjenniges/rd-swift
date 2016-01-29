@@ -65,8 +65,6 @@
 		FBCD329F1BBA19B000FAB2D1 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329C1BBA19B000FAB2D1 /* pop.wav */; };
 		FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329D1BBA19B000FAB2D1 /* roar.wav */; };
 		FBCD32A31BBA3B9D00FAB2D1 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCD32A21BBA3B9D00FAB2D1 /* spark.png */; };
-		FBD20A751C58806B00AF7E73 /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A5A1C58806B00AF7E73 /* MovementComponent.swift */; };
-		FBD20A761C58806B00AF7E73 /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A5A1C58806B00AF7E73 /* MovementComponent.swift */; };
 		FBD20A771C58806B00AF7E73 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A5B1C58806B00AF7E73 /* SpriteComponent.swift */; };
 		FBD20A781C58806B00AF7E73 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A5B1C58806B00AF7E73 /* SpriteComponent.swift */; };
 		FBD20A791C58806B00AF7E73 /* FireballEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A5D1C58806B00AF7E73 /* FireballEntity.swift */; };
@@ -185,7 +183,6 @@
 		FBCD329C1BBA19B000FAB2D1 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		FBCD329D1BBA19B000FAB2D1 /* roar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = roar.wav; sourceTree = "<group>"; };
 		FBCD32A21BBA3B9D00FAB2D1 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		FBD20A5A1C58806B00AF7E73 /* MovementComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		FBD20A5B1C58806B00AF7E73 /* SpriteComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FBD20A5D1C58806B00AF7E73 /* FireballEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireballEntity.swift; sourceTree = "<group>"; };
 		FBD20A5E1C58806B00AF7E73 /* PlayerEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
@@ -435,7 +432,6 @@
 		FBD20A591C58806B00AF7E73 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				FBD20A5A1C58806B00AF7E73 /* MovementComponent.swift */,
 				FBD20A5B1C58806B00AF7E73 /* SpriteComponent.swift */,
 			);
 			path = Components;
@@ -742,7 +738,6 @@
 			files = (
 				C5DED3271C5977F3006594AB /* DragonEntity.swift in Sources */,
 				FBD20A941C58806B00AF7E73 /* Logo.swift in Sources */,
-				FBD20A761C58806B00AF7E73 /* MovementComponent.swift in Sources */,
 				FBD20A921C58806B00AF7E73 /* IntroGraphic.swift in Sources */,
 				FBD20A9E1C58806B00AF7E73 /* ScoreBoard.swift in Sources */,
 				C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
@@ -780,7 +775,6 @@
 			files = (
 				FBD20A931C58806B00AF7E73 /* Logo.swift in Sources */,
 				C5DED2FC1C590F96006594AB /* DragonEntity.swift in Sources */,
-				FBD20A751C58806B00AF7E73 /* MovementComponent.swift in Sources */,
 				FBD20A911C58806B00AF7E73 /* IntroGraphic.swift in Sources */,
 				FBD20A9D1C58806B00AF7E73 /* ScoreBoard.swift in Sources */,
 				C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
