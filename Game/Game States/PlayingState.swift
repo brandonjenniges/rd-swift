@@ -15,7 +15,7 @@ class PlayingState: GKState {
     }
     
     override func didEnterWithPreviousState(previousState: GKState?) {
-        scene.addScoreLabel()
+        scene.setupScoreLabel()
         scene.setupDragons()
         
         #if os(iOS)

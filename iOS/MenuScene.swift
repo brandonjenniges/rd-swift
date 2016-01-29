@@ -11,32 +11,63 @@ class MenuScene: SKScene {
     var playButton: SKSpriteNode!
     
     override func didMoveToView(view: SKView) {
-        createBackground()
-        createLogo()
-        createCreditsLogo()
-        addPlayButton()
+        setupBackground()
+        setupLogo()
+        setupCredits()
+        setupPlayButton()
+        setupGround()
+    }
+    
+    // MARK: - Setup Methods
+    
+    func setupBackground() {
+        let background = Background.create(self)!
+        addChild(background)
+    }
+    
+    func setupLogo() {
+        let logo = Logo.create(self)!
+        addChild(logo)
+        logo.runAction(Logo.pulseAction())
+    }
+    
+    func setupCredits() {
+        let creditsLogo = CreditsLogo.create(self)!
+        addChild(creditsLogo)
+    }
+    
+    func setupPlayButton() {
+        playButton = PlayButton.create(self)
+        playButton.position = CGPointMake(size.width / 2, size.height / 2)
+        addChild(playButton)
+    }
+    
+    func setupGround() {
         
+        // Ground
         let platform = Platform.create(self)!
         addChild(platform)
         
+        // Mountain
         let mountain = Mountain.create(self, platform: platform)!
         addChild(mountain)
+        
+        // Player
+        
         let player = PlayerEntity()
         addChild(player.spriteComponent.node)
         player.spriteComponent.node.position = CGPointMake(platform.position.x, platform.position.y + (platform.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
-        //setupDragons(view)
     }
     
     // MARK: - Touches
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-            for touch in touches {
-                let location = touch.locationInNode(self)
-                if playButton.containsPoint(location) {
-                    //PlayButton.press(playButton)
-                    playButton.texture = PlayButton.press()
-                }
+        for touch in touches {
+            let location = touch.locationInNode(self)
+            if playButton.containsPoint(location) {
+                playButton.texture = PlayButton.press()
             }
+        }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -56,52 +87,5 @@ class MenuScene: SKScene {
         let scene = GameScene(size: size)
         scene.viewController = viewController
         view.presentScene(scene, transition: SKTransition.fadeWithDuration(1.0))
-    }
-    
-    // MARK: - Elements
-    
-    func createBackground() {
-        let background = Background.create(self)!
-        addChild(background)
-    }
-    
-    func createLogo() {
-        let logo = Logo.create(self)!
-        addChild(logo)
-        logo.runAction(Logo.pulseAction())
-    }
-    
-    func createCreditsLogo() {
-        let creditsLogo = CreditsLogo.create(self)!
-        addChild(creditsLogo)
-    }
-    
-    func addPlayButton() {
-        playButton = PlayButton.create(self)
-        playButton.position = CGPointMake(size.width / 2, size.height / 2)
-        addChild(playButton)
-    }
-    
-    func setupDragons(view: SKView) {
-        
-        let dragonArray = DragonEntity.getDragonArray()
-        
-        var index = 0
-        let gapSize = view.frame.width / CGFloat(dragonArray.count)
-        
-        let leftXPos = gapSize * CGFloat(0) + gapSize / 2
-        let rightXPos = gapSize * CGFloat(3) + gapSize / 2
-        let topYPos = view.frame.size.height * 0.75
-        let bottomYPos = view.frame.size.height * 0.25
-        
-        let yPositions = [topYPos, topYPos, bottomYPos, bottomYPos]
-        let xPositions = [leftXPos, rightXPos, leftXPos, rightXPos]
-        for dragon in dragonArray {
-            let dragonNode = dragon.spriteComponent.node
-            dragon.setUpDragonAnimations()
-            dragonNode.position = CGPointMake(xPositions[index], yPositions[index])
-            addChild(dragonNode)
-            index++
-        }
     }
 }

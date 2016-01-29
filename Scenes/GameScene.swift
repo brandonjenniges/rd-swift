@@ -35,10 +35,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = .zero
         
-        #if DEBUG
-            self.view!.showsPhysics = true
-        #endif
-        
         #if os(tvOS)
             viewController.controllerUserInteractionEnabled = false
         #endif
@@ -58,16 +54,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         gameState.currentState?.handleTouches(touches, withEvent: event)
     }
     
+    
+    #if os(tvOS)
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        
-        #if os(tvOS)
         if gameState.currentState is PlayingState {
             player.movePlayer(touches)
         }
-        #endif
-        
     }
+    #endif
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
@@ -151,14 +146,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         }
     }
     
-    // MARK: - Game elements
+    // MARK: - Setup Methods
     
-    func createBackground() {
+    func setupBackground() {
         background = Background.create(self)!
         addChild(background)
     }
     
-    func createPlatform() {
+    func setupGround() {
         platform = Platform.create(self)!
         addChild(platform)
         
@@ -166,24 +161,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         addChild(mountain)
     }
     
-    func addScoreLabel() {
+    func setupScoreLabel() {
         scoreLabel = ScoreLabel.create(self)!
         addChild(scoreLabel)
     }
     
-    func addTapToStart() {
+    func setupTutorial() {
         let intro = IntroGraphic.create(self)!
         addChild(intro)
     }
-    
-    func restartGame() {
-        let newScene = GameScene(size: size)
-        newScene.viewController = viewController
-        let transition = SKTransition.fadeWithColor(.blackColor(), duration: 0.02)
-        view?.presentScene(newScene, transition: transition)
-    }
-    
-    // MARK: - Element setup
     
     func setupPlayer() {
         player = PlayerEntity()
@@ -259,10 +245,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
                 player.movePlayer(direction)
             }
         #endif
-    }
-    
-    func controlPadDidEndTouch() {
-        
     }
     
 }

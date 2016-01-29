@@ -16,7 +16,7 @@ class GameOverState: GKState {
     override func didEnterWithPreviousState(previousState: GKState?) {
         
         #if os(iOS)
-            scene.control.remove()
+        scene.control.remove()
         #endif
         
         let overlay = OverlayNode.create(scene, score: scene.score)!
@@ -36,6 +36,15 @@ class GameOverState: GKState {
     // MARK: - State Touches
     
     override func handleTouches(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        scene.restartGame()
+        restartGame()
+    }
+    
+    // MARK: - Restart
+    
+    func restartGame() {
+        let newScene = GameScene(size: scene.size)
+        newScene.viewController = scene.viewController
+        let transition = SKTransition.fadeWithColor(.blackColor(), duration: 0.02)
+        scene.view?.presentScene(newScene, transition: transition)
     }
 }

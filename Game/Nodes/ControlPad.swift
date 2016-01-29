@@ -12,7 +12,6 @@ enum ControlPadTouchDirection {
 
 protocol ControlPadTouches {
     func controlPadDidBeginTouch(direction: ControlPadTouchDirection)
-    func controlPadDidEndTouch()
 }
 
 class ControlPad: SKSpriteNode {
@@ -81,10 +80,6 @@ class ControlPad: SKSpriteNode {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         left.texture = regularTexture
         right.texture = regularTexture
-
-        if let delegate = delegate {
-            delegate.controlPadDidEndTouch()
-        }
     }
     
     // MARK: - Animation

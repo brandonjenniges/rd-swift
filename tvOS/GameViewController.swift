@@ -14,12 +14,15 @@ class GameViewController: GCEventViewController {
         super.viewDidLoad()
             
         let skView = self.view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-            
+        
+        #if DEBUG
+            skView.showsFPS = true
+            skView.showsNodeCount = true
+            skView.showsPhysics = true
+        #endif
+        
         let scene = MenuScene(size: skView.frame.size)
         scene.viewController = self
-        /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .AspectFill
         
         skView.presentScene(scene)

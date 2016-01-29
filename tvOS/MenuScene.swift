@@ -14,51 +14,32 @@ class MenuScene: SKScene {
         
         viewController.controllerUserInteractionEnabled = true
         
-        createBackground()
-        createLogo()
-        createCreditsLogo()
-        addPlayButton()
+        setupBackground()
+        setupLogo()
+        setupCredits()
+        setupPlayButton()
         setupDragons(view)
     }
     
-    // MARK: - Touches
+    // MARK: - Setup Methods
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        playButton.texture = PlayButton.press()
-    }
-    
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        playButton.texture = PlayButton.pressEnded()
-        handlePlayButtonPress()
-    }
-    
-    func handlePlayButtonPress() {
-        
-        guard let view = view else { return }
-        let scene = GameScene(size: view.frame.size)
-        scene.viewController = viewController
-        view.presentScene(scene, transition: SKTransition.fadeWithDuration(1.0))
-    }
-    
-    // MARK: - Elements
-    
-    func createBackground() {
+    func setupBackground() {
         let background = Background.create(self)!
         addChild(background)
     }
     
-    func createLogo() {
+    func setupLogo() {
         let logo = Logo.create(self)!
         addChild(logo)
         logo.runAction(Logo.pulseAction())
     }
     
-    func createCreditsLogo() {
+    func setupCredits() {
         let creditsLogo = CreditsLogo.create(self)!
         addChild(creditsLogo)
     }
     
-    func addPlayButton() {
+    func setupPlayButton() {
         
         playButton = PlayButton.create(self)
         
@@ -89,5 +70,24 @@ class MenuScene: SKScene {
             addChild(dragonNode)
             index++
         }
+    }
+    
+    // MARK: - Touches
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        playButton.texture = PlayButton.press()
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        playButton.texture = PlayButton.pressEnded()
+        handlePlayButtonPress()
+    }
+    
+    func handlePlayButtonPress() {
+        
+        guard let view = view else { return }
+        let scene = GameScene(size: view.frame.size)
+        scene.viewController = viewController
+        view.presentScene(scene, transition: SKTransition.fadeWithDuration(1.0))
     }
 }
