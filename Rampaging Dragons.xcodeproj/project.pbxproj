@@ -39,14 +39,13 @@
 		C5DED3291C597947006594AB /* PulseAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3281C597947006594AB /* PulseAnimationTests.swift */; };
 		C5DED32B1C597959006594AB /* GameKitHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED32A1C597959006594AB /* GameKitHelperTests.swift */; };
 		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
+		FB03EE351C5B222E00B474BE /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB03EE341C5B222E00B474BE /* GameController.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
 		FB4910DC1BBB92520094EC7E /* titlesong.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB4910DB1BBB92520094EC7E /* titlesong.wav */; };
 		FB4910DD1BBB92520094EC7E /* titlesong.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB4910DB1BBB92520094EC7E /* titlesong.wav */; };
 		FB6F9C761C5079D400F1040A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C741C5079D400F1040A /* Fabric.framework */; };
-		FB6F9C771C5079D400F1040A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C741C5079D400F1040A /* Fabric.framework */; };
 		FB6F9C781C5079D400F1040A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C751C5079D400F1040A /* Crashlytics.framework */; };
-		FB6F9C791C5079D400F1040A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C751C5079D400F1040A /* Crashlytics.framework */; };
 		FB7BDEF51BC4D33100CCAD52 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */; };
 		FB7BDEF61BC4D33100CCAD52 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */; };
 		FB8D26E41BB71773000B548E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D26E31BB71773000B548E /* AppDelegate.swift */; };
@@ -160,6 +159,7 @@
 		C5DED3251C597225006594AB /* ControlPadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPadTests.swift; sourceTree = "<group>"; };
 		C5DED3281C597947006594AB /* PulseAnimationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulseAnimationTests.swift; sourceTree = "<group>"; };
 		C5DED32A1C597959006594AB /* GameKitHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelperTests.swift; sourceTree = "<group>"; };
+		FB03EE341C5B222E00B474BE /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		FB4910D91BBB8B6C0094EC7E /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOS.entitlements; sourceTree = "<group>"; };
 		FB4910DA1BBB8C1C0094EC7E /* RampagingDragons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RampagingDragons.entitlements; sourceTree = "<group>"; };
@@ -227,9 +227,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB03EE351C5B222E00B474BE /* GameController.framework in Frameworks */,
 				FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */,
-				FB6F9C791C5079D400F1040A /* Crashlytics.framework in Frameworks */,
-				FB6F9C771C5079D400F1040A /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +323,7 @@
 		FB8D268B1BB71620000B548E = {
 			isa = PBXGroup;
 			children = (
+				FB03EE341C5B222E00B474BE /* GameController.framework */,
 				FBA743D61BB7212B00AC4B44 /* Assets */,
 				FBD20A581C58806B00AF7E73 /* Game */,
 				FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */,
@@ -602,6 +602,9 @@
 						DevelopmentTeam = C4RFALAB5D;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.GameControllers.appletvos = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {
@@ -1017,7 +1020,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
 				PRODUCT_NAME = RampagingDragons;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1040,7 +1043,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
 				PRODUCT_NAME = RampagingDragons;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
