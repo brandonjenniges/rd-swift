@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "gameover-1.png",
+      "filename" : "gameover.png",
       "scale" : "1x"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "idiom" : "tv",
-      "filename" : "gameover.png",
+      "filename" : "gameover@3x.png",
       "scale" : "1x"
     }
   ],
