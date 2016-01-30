@@ -24,7 +24,7 @@ class IntroGraphicTests: XCTestCase {
     }
     
     func testRemove() {
-        let introGraphic = IntroGraphic.create(scene)!
+        let introGraphic = IntroGraphic.create(scene)
         scene.addChild(introGraphic)
         
         IntroGraphic.remove(scene)

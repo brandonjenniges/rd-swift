@@ -19,7 +19,7 @@ class MountainTests: XCTestCase {
     }
     
     func testCreate() {
-        let mountain = Mountain.create(scene, platform: Platform.create(scene)!)
+        let mountain = Mountain.create(scene, platform: Platform.create(scene))
         XCTAssertNotNil(mountain, "Unable to create mountain logo")
     }
     
