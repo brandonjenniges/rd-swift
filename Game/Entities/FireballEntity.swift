@@ -52,7 +52,7 @@ class FireballEntity: GKEntity {
         let gapCount = Int(worldWidth / texture.size().width)
         
         (0...gapCount).forEach {
-            tempArray.append(CGFloat($0) * texture.size().width + xOrigin)
+            tempArray.append(CGFloat($0) * texture.size().width + xOrigin + texture.size().width)
         }
         gapPositions = tempArray
     }

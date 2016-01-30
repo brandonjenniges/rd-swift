@@ -138,14 +138,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         gameState.enterState(GameOverState)
     }
     
-    // MARK - Game Logic Protocol
-    
-    func gameEventShouldUpdate() {
-        if gameState.currentState is PlayingState {
-            addFireball()
-        }
-    }
-    
     // MARK: - Setup Methods
     
     func setupBackground() {
