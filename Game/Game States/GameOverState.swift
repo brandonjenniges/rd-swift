@@ -19,8 +19,15 @@ class GameOverState: GKState {
         scene.control.remove()
         #endif
         
-        let overlay = OverlayNode.create(scene, score: scene.score)
-        scene.worldNode.addChild(overlay)
+        scene.setupScoreCard()
+        scene.setupGameOverLabel()
+        scene.setupPlayButton()
+        
+        #if os(iOS)
+            scene.setupGameCenterButton()
+            scene.setupRateButton()
+        #endif
+        
         scene.player.die()
         scene.reportScoreToGameCenter()
     }
@@ -36,7 +43,21 @@ class GameOverState: GKState {
     // MARK: - State Touches
     
     override func handleTouches(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        restartGame()
+        for touch in touches {
+            let location = touch.locationInNode(scene)
+            if scene.playButton.containsPoint(location) {
+                scene.playButton.texture = PlayButton.press()
+                restartGame()
+            }
+            
+            #if os(iOS)
+            if scene.gameCenterButton.containsPoint(location) {
+                
+            } else if scene.rateButton.containsPoint(location) {
+                
+            }
+            #endif
+        }
     }
     
     // MARK: - Restart

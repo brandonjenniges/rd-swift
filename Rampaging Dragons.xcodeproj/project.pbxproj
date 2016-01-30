@@ -27,7 +27,6 @@
 		C5DED31A1C5971BA006594AB /* IntroGraphicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED30B1C5971BA006594AB /* IntroGraphicTests.swift */; };
 		C5DED31B1C5971BA006594AB /* LogoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED30C1C5971BA006594AB /* LogoTests.swift */; };
 		C5DED31C1C5971BA006594AB /* MountainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED30D1C5971BA006594AB /* MountainTests.swift */; };
-		C5DED31D1C5971BA006594AB /* OverlayNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED30E1C5971BA006594AB /* OverlayNodeTests.swift */; };
 		C5DED31E1C5971BA006594AB /* PlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED30F1C5971BA006594AB /* PlatformTests.swift */; };
 		C5DED31F1C5971BA006594AB /* PlayButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3101C5971BA006594AB /* PlayButtonTests.swift */; };
 		C5DED3201C5971BA006594AB /* ScoreBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DED3111C5971BA006594AB /* ScoreBoardTests.swift */; };
@@ -48,6 +47,12 @@
 		FB6F9C781C5079D400F1040A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C751C5079D400F1040A /* Crashlytics.framework */; };
 		FB7BDEF51BC4D33100CCAD52 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */; };
 		FB7BDEF61BC4D33100CCAD52 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */; };
+		FB8449771C5D48D60067493C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449761C5D48D60067493C /* Button.swift */; };
+		FB8449791C5D48E20067493C /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449781C5D48E20067493C /* RateButton.swift */; };
+		FB84497B1C5D48EA0067493C /* GameCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84497A1C5D48EA0067493C /* GameCenterButton.swift */; };
+		FB84497C1C5D4C870067493C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449761C5D48D60067493C /* Button.swift */; };
+		FB84497D1C5D4C8B0067493C /* GameCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84497A1C5D48EA0067493C /* GameCenterButton.swift */; };
+		FB84497E1C5D4C8D0067493C /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449781C5D48E20067493C /* RateButton.swift */; };
 		FB8D26E41BB71773000B548E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D26E31BB71773000B548E /* AppDelegate.swift */; };
 		FB8D26EA1BB71773000B548E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D26E91BB71773000B548E /* GameViewController.swift */; };
 		FB8D26EF1BB71773000B548E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8D26ED1BB71773000B548E /* Main.storyboard */; };
@@ -91,8 +96,6 @@
 		FBD20A941C58806B00AF7E73 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6C1C58806B00AF7E73 /* Logo.swift */; };
 		FBD20A951C58806B00AF7E73 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6D1C58806B00AF7E73 /* Mountain.swift */; };
 		FBD20A961C58806B00AF7E73 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6D1C58806B00AF7E73 /* Mountain.swift */; };
-		FBD20A971C58806B00AF7E73 /* OverlayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6E1C58806B00AF7E73 /* OverlayNode.swift */; };
-		FBD20A981C58806B00AF7E73 /* OverlayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6E1C58806B00AF7E73 /* OverlayNode.swift */; };
 		FBD20A991C58806B00AF7E73 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6F1C58806B00AF7E73 /* Platform.swift */; };
 		FBD20A9A1C58806B00AF7E73 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A6F1C58806B00AF7E73 /* Platform.swift */; };
 		FBD20A9B1C58806B00AF7E73 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD20A701C58806B00AF7E73 /* PlayButton.swift */; };
@@ -147,7 +150,6 @@
 		C5DED30B1C5971BA006594AB /* IntroGraphicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphicTests.swift; sourceTree = "<group>"; };
 		C5DED30C1C5971BA006594AB /* LogoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoTests.swift; sourceTree = "<group>"; };
 		C5DED30D1C5971BA006594AB /* MountainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountainTests.swift; sourceTree = "<group>"; };
-		C5DED30E1C5971BA006594AB /* OverlayNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayNodeTests.swift; sourceTree = "<group>"; };
 		C5DED30F1C5971BA006594AB /* PlatformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlatformTests.swift; sourceTree = "<group>"; };
 		C5DED3101C5971BA006594AB /* PlayButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButtonTests.swift; sourceTree = "<group>"; };
 		C5DED3111C5971BA006594AB /* ScoreBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoardTests.swift; sourceTree = "<group>"; };
@@ -165,6 +167,9 @@
 		FB6F9C741C5079D400F1040A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		FB6F9C751C5079D400F1040A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseScene.sks; sourceTree = "<group>"; };
+		FB8449761C5D48D60067493C /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		FB8449781C5D48E20067493C /* RateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
+		FB84497A1C5D48EA0067493C /* GameCenterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterButton.swift; sourceTree = "<group>"; };
 		FB8D26E11BB71772000B548E /* RampagingDragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RampagingDragons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8D26E31BB71773000B548E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8D26E91BB71773000B548E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -196,7 +201,6 @@
 		FBD20A6B1C58806B00AF7E73 /* IntroGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroGraphic.swift; sourceTree = "<group>"; };
 		FBD20A6C1C58806B00AF7E73 /* Logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		FBD20A6D1C58806B00AF7E73 /* Mountain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
-		FBD20A6E1C58806B00AF7E73 /* OverlayNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayNode.swift; sourceTree = "<group>"; };
 		FBD20A6F1C58806B00AF7E73 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		FBD20A701C58806B00AF7E73 /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		FBD20A711C58806B00AF7E73 /* ScoreBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
@@ -308,7 +312,6 @@
 				C5DED30B1C5971BA006594AB /* IntroGraphicTests.swift */,
 				C5DED30C1C5971BA006594AB /* LogoTests.swift */,
 				C5DED30D1C5971BA006594AB /* MountainTests.swift */,
-				C5DED30E1C5971BA006594AB /* OverlayNodeTests.swift */,
 				C5DED30F1C5971BA006594AB /* PlatformTests.swift */,
 				C5DED3101C5971BA006594AB /* PlayButtonTests.swift */,
 				C5DED3111C5971BA006594AB /* ScoreBoardTests.swift */,
@@ -462,14 +465,16 @@
 			isa = PBXGroup;
 			children = (
 				FBD20A651C58806B00AF7E73 /* Background.swift */,
+				FB8449761C5D48D60067493C /* Button.swift */,
 				FBD20A671C58806B00AF7E73 /* ControlPad.swift */,
 				FBD20A691C58806B00AF7E73 /* CreditsLogo.swift */,
+				FB84497A1C5D48EA0067493C /* GameCenterButton.swift */,
 				FBD20A6B1C58806B00AF7E73 /* IntroGraphic.swift */,
 				FBD20A6C1C58806B00AF7E73 /* Logo.swift */,
 				FBD20A6D1C58806B00AF7E73 /* Mountain.swift */,
-				FBD20A6E1C58806B00AF7E73 /* OverlayNode.swift */,
 				FBD20A6F1C58806B00AF7E73 /* Platform.swift */,
 				FBD20A701C58806B00AF7E73 /* PlayButton.swift */,
+				FB8449781C5D48E20067493C /* RateButton.swift */,
 				FBD20A711C58806B00AF7E73 /* ScoreBoard.swift */,
 				FBD20A721C58806B00AF7E73 /* ScoreLabel.swift */,
 			);
@@ -710,7 +715,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DED31D1C5971BA006594AB /* OverlayNodeTests.swift in Sources */,
 				C5DED3201C5971BA006594AB /* ScoreBoardTests.swift in Sources */,
 				C5DED3191C5971BA006594AB /* CreditsLogoTests.swift in Sources */,
 				C5DED32B1C597959006594AB /* GameKitHelperTests.swift in Sources */,
@@ -741,15 +745,16 @@
 				FBD20A921C58806B00AF7E73 /* IntroGraphic.swift in Sources */,
 				FBD20A9E1C58806B00AF7E73 /* ScoreBoard.swift in Sources */,
 				C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
+				FB84497C1C5D4C870067493C /* Button.swift in Sources */,
 				FBD20A8A1C58806B00AF7E73 /* ControlPad.swift in Sources */,
 				FBD20A801C58806B00AF7E73 /* GameStateExtension.swift in Sources */,
+				FB84497D1C5D4C8B0067493C /* GameCenterButton.swift in Sources */,
 				FBD20A7E1C58806B00AF7E73 /* GameOverState.swift in Sources */,
 				FBA743D41BB71E7900AC4B44 /* GameScene.swift in Sources */,
 				C59E3A4F1BC8082D0037F3B3 /* TextureAtlasManager.swift in Sources */,
 				FBD20A8E1C58806B00AF7E73 /* CreditsLogo.swift in Sources */,
 				FB8D26EA1BB71773000B548E /* GameViewController.swift in Sources */,
 				FBE8878E1C50829700D1F92B /* MenuScene.swift in Sources */,
-				FBD20A981C58806B00AF7E73 /* OverlayNode.swift in Sources */,
 				FBD20A821C58806B00AF7E73 /* IntroState.swift in Sources */,
 				FBD20A841C58806B00AF7E73 /* PlayingState.swift in Sources */,
 				C56DA5191C50349900D50218 /* GameKitHelper.swift in Sources */,
@@ -760,6 +765,7 @@
 				FBD20A7C1C58806B00AF7E73 /* PlayerEntity.swift in Sources */,
 				FBD20A861C58806B00AF7E73 /* Background.swift in Sources */,
 				FBD20A961C58806B00AF7E73 /* Mountain.swift in Sources */,
+				FB84497E1C5D4C8D0067493C /* RateButton.swift in Sources */,
 				FBD20AA71C5884D700AF7E73 /* GameLayer.swift in Sources */,
 				FBD20A9C1C58806B00AF7E73 /* PlayButton.swift in Sources */,
 				FBD20AA01C58806B00AF7E73 /* ScoreLabel.swift in Sources */,
@@ -774,10 +780,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBD20A931C58806B00AF7E73 /* Logo.swift in Sources */,
+				FB84497B1C5D48EA0067493C /* GameCenterButton.swift in Sources */,
 				C5DED2FC1C590F96006594AB /* DragonEntity.swift in Sources */,
 				FBD20A911C58806B00AF7E73 /* IntroGraphic.swift in Sources */,
 				FBD20A9D1C58806B00AF7E73 /* ScoreBoard.swift in Sources */,
 				C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
+				FB8449771C5D48D60067493C /* Button.swift in Sources */,
 				FBD20A891C58806B00AF7E73 /* ControlPad.swift in Sources */,
 				FBD20A7F1C58806B00AF7E73 /* GameStateExtension.swift in Sources */,
 				FBD20A7D1C58806B00AF7E73 /* GameOverState.swift in Sources */,
@@ -786,11 +794,11 @@
 				FBD20A8D1C58806B00AF7E73 /* CreditsLogo.swift in Sources */,
 				FBA743D31BB71E5200AC4B44 /* GameScene.swift in Sources */,
 				FBE887901C5082A000D1F92B /* MenuScene.swift in Sources */,
-				FBD20A971C58806B00AF7E73 /* OverlayNode.swift in Sources */,
 				FBD20A811C58806B00AF7E73 /* IntroState.swift in Sources */,
 				FBD20A831C58806B00AF7E73 /* PlayingState.swift in Sources */,
 				FBD20A991C58806B00AF7E73 /* Platform.swift in Sources */,
 				FBD20A771C58806B00AF7E73 /* SpriteComponent.swift in Sources */,
+				FB8449791C5D48E20067493C /* RateButton.swift in Sources */,
 				C56DA51B1C512A4B00D50218 /* UIColor+Extra.swift in Sources */,
 				FBD20AA11C58806B00AF7E73 /* PhysicsCategory.swift in Sources */,
 				FBD20A7B1C58806B00AF7E73 /* PlayerEntity.swift in Sources */,

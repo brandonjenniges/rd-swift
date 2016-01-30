@@ -18,6 +18,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     var background:SKSpriteNode!
     var scoreLabel:SKLabelNode!
     var control: ControlPad!
+    var playButton: SKSpriteNode!
+    var gameCenterButton: SKSpriteNode!
+    var rateButton: SKSpriteNode!
     
     var score = 0
     
@@ -198,6 +201,48 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         control.anchorPoint = .zero
         control.position = .zero
         worldNode.addChild(control)
+    }
+    
+    func setupScoreCard() {
+        let scorecard = ScoreBoard(score: score)
+        scorecard.position = CGPointMake(size.width / 2, -size.height + -scorecard.frame.size.height)
+        worldNode.addChild(scorecard)
+        let moveAction = SKAction.moveToY(size.height / 2, duration: 0.4)
+        scorecard.runAction(moveAction)
+    }
+    
+    func setupGameOverLabel() {
+        let gameover = SKSpriteNode(texture: TextureAtlasManager.gameOverAtlas.textureNamed("gameover"))
+        gameover.zPosition = GameLayer.Layer.GameOver.rawValue
+        gameover.position = CGPointMake(size.width / 2, size.height * 0.75)
+        worldNode.addChild(gameover)
+    }
+    
+    func setupPlayButton() {
+        playButton = PlayButton.create(self)
+        playButton.position = CGPointMake(size.width / 2, size.height / 4)
+        worldNode.addChild(playButton)
+    }
+    
+    
+    func setupGameCenterButton() {
+        gameCenterButton = Button.create(self)
+        gameCenterButton.position = CGPointMake(gameCenterButton.size.width, gameCenterButton.size.height)
+        addChild(gameCenterButton)
+        
+        let gameCenterIcon = GameCenterButton.create(self)
+        gameCenterIcon.position = .zero
+        gameCenterButton.addChild(gameCenterIcon)
+    }
+    
+    func setupRateButton() {
+        rateButton = Button.create(self)
+        rateButton.position = CGPointMake(gameCenterButton.position.x + gameCenterButton.size.width * 1.5, gameCenterButton.position.y)
+        addChild(rateButton)
+        
+        let rateIcon = RateButton.create(self)
+        rateIcon.position = .zero
+        rateButton.addChild(rateIcon)
     }
     
     // MARK: - Scene pausing
