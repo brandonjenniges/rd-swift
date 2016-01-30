@@ -6,9 +6,7 @@ import SpriteKit
 
 struct Platform {
     
-    static func create(scene: SKScene) -> SKSpriteNode? {
-        
-        guard let _ = scene.view else { return nil }
+    static func create(scene: SKScene) -> SKSpriteNode {
         
         let platform = SKSpriteNode(texture: TextureAtlasManager.sceneAtlas.textureNamed("ground"))
         platform.position = CGPointMake(scene.size.width / 2, scene.size.height / 4)

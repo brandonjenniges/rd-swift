@@ -21,18 +21,18 @@ class MenuScene: SKScene {
     // MARK: - Setup Methods
     
     func setupBackground() {
-        let background = Background.create(self)!
+        let background = Background.create(self)
         addChild(background)
     }
     
     func setupLogo() {
-        let logo = Logo.create(self)!
+        let logo = Logo.create(self)
         addChild(logo)
         logo.runAction(Logo.pulseAction())
     }
     
     func setupCredits() {
-        let creditsLogo = CreditsLogo.create(self)!
+        let creditsLogo = CreditsLogo.create(self)
         addChild(creditsLogo)
     }
     
@@ -45,11 +45,11 @@ class MenuScene: SKScene {
     func setupGround() {
         
         // Ground
-        let platform = Platform.create(self)!
+        let platform = Platform.create(self)
         addChild(platform)
         
         // Mountain
-        let mountain = Mountain.create(self, platform: platform)!
+        let mountain = Mountain.create(self, platform: platform)
         addChild(mountain)
         
         // Player

@@ -54,12 +54,12 @@ class MenuScene: SKScene {
         let dragonArray = DragonEntity.getDragonArray()
         
         var index = 0
-        let gapSize = view.frame.width / CGFloat(dragonArray.count)
+        let gapSize = scene.size.width / CGFloat(dragonArray.count)
         
         let leftXPos = gapSize * CGFloat(0) + gapSize / 2
         let rightXPos = gapSize * CGFloat(3) + gapSize / 2
-        let topYPos = view.frame.size.height * 0.75
-        let bottomYPos = view.frame.size.height * 0.25
+        let topYPos = scene.size.height * 0.75
+        let bottomYPos = scene.size.height * 0.25
         
         let yPositions = [topYPos, topYPos, bottomYPos, bottomYPos]
         let xPositions = [leftXPos, rightXPos, leftXPos, rightXPos]

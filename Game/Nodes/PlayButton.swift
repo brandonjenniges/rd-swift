@@ -8,9 +8,7 @@ struct PlayButton {
     
     static let nodeName = String(PlayButton)
     
-    static func create(scene: SKScene) -> SKSpriteNode? {
-        
-        guard let _ = scene.view else { return nil }
+    static func create(scene: SKScene) -> SKSpriteNode {
         
         let playButton = SKSpriteNode(texture: TextureAtlasManager.introAtlas.textureNamed("play"))
         playButton.zPosition = GameLayer.Layer.Hud.rawValue

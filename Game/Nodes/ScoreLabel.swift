@@ -10,8 +10,6 @@ struct ScoreLabel {
     
     static func create(scene: SKScene) -> SKLabelNode? {
         
-        guard let view = scene.view else { return nil }
-        
         let label = SKLabelNode(fontNamed: fontName)
         label.text = "0"
         
@@ -21,7 +19,7 @@ struct ScoreLabel {
             label.fontSize = 30.0
         #endif
         
-        label.position = CGPointMake(view.frame.width / 2, view.frame.height * 0.75)
+        label.position = CGPointMake(scene.size.width / 2, scene.size.height * 0.75)
         label.zPosition = GameLayer.Layer.Game.rawValue
         
         return label

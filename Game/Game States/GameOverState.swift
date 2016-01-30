@@ -19,8 +19,8 @@ class GameOverState: GKState {
         scene.control.remove()
         #endif
         
-        let overlay = OverlayNode.create(scene, score: scene.score)!
-        scene.background.addChild(overlay)
+        let overlay = OverlayNode.create(scene, score: scene.score)
+        scene.worldNode.addChild(overlay)
         scene.player.die()
         scene.reportScoreToGameCenter()
     }

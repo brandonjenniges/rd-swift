@@ -14,10 +14,10 @@ class IntroState: GKState {
     }
     
     override func didEnterWithPreviousState(previousState: GKState?) {
-        scene.setupTutorial()
         scene.setupBackground()
         scene.setupGround()
         scene.setupPlayer()
+        scene.setupTutorial()
         FireballEntity.setupGaps(scene.size.width - scene.platform.size.width, worldWidth: scene.platform.size.width)
     }
     

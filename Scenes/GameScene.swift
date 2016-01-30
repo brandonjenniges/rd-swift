@@ -7,6 +7,8 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
+    let worldNode = SKNode()
+    
     var scenePaused = false
     
     var viewController:GameViewController!
@@ -38,6 +40,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         #if os(tvOS)
             viewController.controllerUserInteractionEnabled = false
         #endif
+        
+        addChild(worldNode)
         
         gameState.enterState(IntroState)
     }
@@ -97,14 +101,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     func addFireball() {
         let fire = FireballEntity()
         fire.setInitialPosition(background.frame.size.height + background.frame.size.height / 2.0)
-        addChild(fire.spriteComponent.node)
+        worldNode.addChild(fire.spriteComponent.node)
         fire.send(0)
     }
     
     // MARK: - Scoring
     
     func updateScore() {
-        enumerateChildNodesWithName(String(FireballEntity), usingBlock: { node, stop in
+        worldNode.enumerateChildNodesWithName(String(FireballEntity), usingBlock: { node, stop in
             if let fireball = node as? SKSpriteNode {
                 if let passed = fireball.userData?["Passed"] as? NSNumber {
                     if passed.boolValue {
@@ -141,26 +145,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     // MARK: - Setup Methods
     
     func setupBackground() {
-        background = Background.create(self)!
-        addChild(background)
+        background = Background.create(self)
+        worldNode.addChild(background)
     }
     
     func setupGround() {
-        platform = Platform.create(self)!
-        addChild(platform)
+        platform = Platform.create(self)
+        worldNode.addChild(platform)
         
-        let mountain = Mountain.create(self, platform: platform)!
-        addChild(mountain)
+        let mountain = Mountain.create(self, platform: platform)
+        worldNode.addChild(mountain)
     }
     
     func setupScoreLabel() {
         scoreLabel = ScoreLabel.create(self)!
-        addChild(scoreLabel)
+        worldNode.addChild(scoreLabel)
     }
     
     func setupTutorial() {
-        let intro = IntroGraphic.create(self)!
-        addChild(intro)
+        let intro = IntroGraphic.create(self)
+        worldNode.addChild(intro)
     }
     
     func setupPlayer() {
@@ -168,22 +172,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         player.setPlayerMovementXConstraints((self.platform.position.x + self.platform.frame.width / 2) - player.spriteComponent.node.frame.width / 2, min: (self.platform.position.x - self.platform.frame.size.width / 2) + player.spriteComponent.node.frame.width / 2)
         player.previousPlayerTouch = (self.view?.frame.width)! / 2
         player.spriteComponent.node.position = CGPointMake(self.platform.position.x, self.platform.position.y + (self.platform.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
-        addChild(player.spriteComponent.node)
+        worldNode.addChild(player.spriteComponent.node)
     }
     
     func setupDragons() {
         
         let dragonArray = DragonEntity.getDragonArray()
         
-        let gapSize = view!.frame.width / CGFloat(2)
-        let topYPos = view!.frame.size.height * 0.75
+        let gapSize = scene!.size.width / CGFloat(2)
+        let topYPos = scene!.size.height * 0.75
         
         (0...1).forEach {
             let xPos = gapSize * CGFloat($0 * 1) + gapSize / 2
             let dragon = dragonArray[$0]
             dragon.setUpDragonAnimations()
             dragon.spriteComponent.node.position = CGPointMake(xPos, topYPos)
-            addChild(dragon.spriteComponent.node)
+            worldNode.addChild(dragon.spriteComponent.node)
         }
     }
     
@@ -193,7 +197,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         control.delegate = self
         control.anchorPoint = .zero
         control.position = .zero
-        addChild(control)
+        worldNode.addChild(control)
     }
     
     // MARK: - Scene pausing
@@ -217,7 +221,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
             contentNode.color = .clearColor()
             contentNode.position = .zero
             
-            addChild(pauseNode)
+            worldNode.addChild(pauseNode)
         }
     }
     
