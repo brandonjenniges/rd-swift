@@ -31,6 +31,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     var deltaTime: NSTimeInterval = 0
     var lastUpdatedTimeInterval: NSTimeInterval = 0
     
+    init(size: CGSize, viewController: GameViewController, background: SKSpriteNode?) {
+        self.viewController = viewController
+        self.background = background
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
@@ -80,6 +90,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     // MARK: - Game Logic
     
     override func update(currentTime: CFTimeInterval) {
+        
         if lastUpdatedTimeInterval == 0 {
             lastUpdatedTimeInterval = currentTime
         }
@@ -88,6 +99,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         lastUpdatedTimeInterval = currentTime
         
         gameState.updateWithDeltaTime(deltaTime)
+    }
+    
+    func updateClouds() {
+        background.enumerateChildNodesWithName("cloud", usingBlock: { node, stop in
+            if let cloud = node as? SKSpriteNode {
+                let moveAmount = CGPointMake(-2 * CGFloat(self.deltaTime), 0)
+                cloud.position.x += moveAmount.x
+                
+                if cloud.position.x < -cloud.size.width + -self.size.width / 2 {
+                    let numberOfClouds = Int(self.size.width / cloud.size.width) + 2
+                    cloud.position.x += cloud.size.width * CGFloat(numberOfClouds)
+                }
+            }
+        })
     }
     
     // MARK: - Fireballs
@@ -143,7 +168,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     // MARK: - Setup Methods
     
     func setupBackground() {
-        background = Background.create(self)
+        // This allows us to keep clouds in same position when starting a new game
+        if background == nil {
+            background = Background.create(self)
+        } else {
+            background = background.copy() as! SKSpriteNode
+        }
         worldNode.addChild(background)
     }
     

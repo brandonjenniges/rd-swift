@@ -15,6 +15,8 @@ class MenuScene: SKScene {
     var gameCenterButton: SKSpriteNode!
     var rateButton: SKSpriteNode!
     
+    var background: SKSpriteNode!
+    
     override func didMoveToView(view: SKView) {
         setupBackground()
         setupLogo()
@@ -28,7 +30,7 @@ class MenuScene: SKScene {
     // MARK: - Setup Methods
     
     func setupBackground() {
-        let background = Background.create(self)
+        background = Background.create(self)
         addChild(background)
     }
     
@@ -121,8 +123,7 @@ class MenuScene: SKScene {
     
     func handlePlayButtonPress() {
         guard let view = view else { return }
-        let scene = GameScene(size: size)
-        scene.viewController = viewController
+        let scene = GameScene(size: size, viewController: viewController, background: background)
         view.presentScene(scene, transition: SKTransition.fadeWithDuration(1.0))
     }
     

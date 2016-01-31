@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FB8D26F91BB717A1000B548E"
-               BuildableName = "RampagingDragons.app"
+               BuildableName = "Dragons.app"
                BlueprintName = "iOS"
                ReferencedContainer = "container:Rampaging Dragons.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB8D26F91BB717A1000B548E"
-            BuildableName = "RampagingDragons.app"
+            BuildableName = "Dragons.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:Rampaging Dragons.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB8D26F91BB717A1000B548E"
-            BuildableName = "RampagingDragons.app"
+            BuildableName = "Dragons.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:Rampaging Dragons.xcodeproj">
          </BuildableReference>
@@ -86,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB8D26F91BB717A1000B548E"
-            BuildableName = "RampagingDragons.app"
+            BuildableName = "Dragons.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:Rampaging Dragons.xcodeproj">
          </BuildableReference>

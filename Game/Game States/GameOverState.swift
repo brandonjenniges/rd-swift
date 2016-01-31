@@ -37,7 +37,7 @@ class GameOverState: GKState {
     }
     
     override func updateWithDeltaTime(seconds: NSTimeInterval) {
-        
+        scene.updateClouds()
     }
     
     // MARK: - State Touches
@@ -65,8 +65,7 @@ class GameOverState: GKState {
     // MARK: - Restart
     
     func restartGame() {
-        let newScene = GameScene(size: scene.size)
-        newScene.viewController = scene.viewController
+        let newScene = GameScene(size: scene.size, viewController: scene.viewController, background: scene.background)
         let transition = SKTransition.fadeWithColor(.blackColor(), duration: 0.02)
         scene.view?.presentScene(newScene, transition: transition)
     }

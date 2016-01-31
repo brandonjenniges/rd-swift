@@ -36,6 +36,7 @@ class PlayingState: GKState {
             scene.addFireball()
         }
         scene.updateScore()
+        scene.updateClouds()
     }
     
     // MARK: - State Touches

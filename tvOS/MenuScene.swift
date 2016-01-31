@@ -86,8 +86,7 @@ class MenuScene: SKScene {
     func handlePlayButtonPress() {
         
         guard let view = view else { return }
-        let scene = GameScene(size: view.frame.size)
-        scene.viewController = viewController
+        let scene = GameScene(size: view.frame.size, viewController: viewController, background: nil)
         view.presentScene(scene, transition: SKTransition.fadeWithDuration(1.0))
     }
 }
