@@ -12,6 +12,7 @@ class MenuScene: SKScene {
     var background: SKSpriteNode!
     
     var logo: SKSpriteNode!
+    var platform: SKSpriteNode!
     var player: PlayerEntity!
     
     var playButton: SKSpriteNode!
@@ -26,8 +27,8 @@ class MenuScene: SKScene {
         setupCredits()
         setupGround()
         setupPlayButton()
-        setupGameCenterButton()
         setupRateButton()
+        setupGameCenterButton()
     }
     
     // MARK: - Setup Methods
@@ -57,7 +58,7 @@ class MenuScene: SKScene {
     func setupGround() {
         
         // Ground
-        let platform = Platform.create(self)
+        platform = Platform.create(self)
         addChild(platform)
         
         // Mountain
@@ -71,24 +72,24 @@ class MenuScene: SKScene {
         player.spriteComponent.node.position = CGPointMake(platform.position.x, platform.position.y + (platform.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
     }
     
-    func setupGameCenterButton() {
-        gameCenterButton = Button.create(self)
-        gameCenterButton.position = CGPointMake(gameCenterButton.size.width, creditsLogo.position.y + gameCenterButton.size.height * 2)
-        addChild(gameCenterButton)
-        
-        let gameCenterIcon = GameCenterButton.create(self)
-        gameCenterIcon.position = .zero
-        gameCenterButton.addChild(gameCenterIcon)
-    }
-    
     func setupRateButton() {
         rateButton = Button.create(self)
-        rateButton.position = CGPointMake(gameCenterButton.position.x + gameCenterButton.size.width * 1.5, creditsLogo.position.y + rateButton.size.height * 2)
+        rateButton.position = CGPointMake(rateButton.size.width / 1.5, (platform.position.y + creditsLogo.position.y) / 2)
         addChild(rateButton)
         
         let rateIcon = RateButton.create(self)
         rateIcon.position = .zero
         rateButton.addChild(rateIcon)
+    }
+    
+    func setupGameCenterButton() {
+        gameCenterButton = Button.create(self)
+        gameCenterButton.position = CGPointMake(rateButton.position.x + gameCenterButton.size.width * 1.25, rateButton.position.y)
+        addChild(gameCenterButton)
+        
+        let gameCenterIcon = GameCenterButton.create(self)
+        gameCenterIcon.position = .zero
+        gameCenterButton.addChild(gameCenterIcon)
     }
     
     // MARK: - Touches
