@@ -9,20 +9,23 @@ class MenuScene: SKScene {
     
     var viewController:GameViewController!
     
-    var creditsLogo: SKSpriteNode!
+    var background: SKSpriteNode!
+    
+    var logo: SKSpriteNode!
+    var player: PlayerEntity!
     
     var playButton: SKSpriteNode!
+    
     var gameCenterButton: SKSpriteNode!
     var rateButton: SKSpriteNode!
-    
-    var background: SKSpriteNode!
+    var creditsLogo: SKSpriteNode!
     
     override func didMoveToView(view: SKView) {
         setupBackground()
         setupLogo()
         setupCredits()
-        setupPlayButton()
         setupGround()
+        setupPlayButton()
         setupGameCenterButton()
         setupRateButton()
     }
@@ -35,7 +38,7 @@ class MenuScene: SKScene {
     }
     
     func setupLogo() {
-        let logo = Logo.create(self)
+        logo = Logo.create(self)
         addChild(logo)
         logo.runAction(Logo.pulseAction())
     }
@@ -47,7 +50,7 @@ class MenuScene: SKScene {
     
     func setupPlayButton() {
         playButton = PlayButton.create(self)
-        playButton.position = CGPointMake(size.width / 2, size.height / 2)
+        playButton.position = CGPointMake(size.width / 2, (logo.position.y + player.spriteComponent.node.position.y) / 2)
         addChild(playButton)
     }
     
@@ -63,7 +66,7 @@ class MenuScene: SKScene {
         
         // Player
         
-        let player = PlayerEntity()
+        player = PlayerEntity()
         addChild(player.spriteComponent.node)
         player.spriteComponent.node.position = CGPointMake(platform.position.x, platform.position.y + (platform.size.height / 2) + (player.spriteComponent.node.size.height / 2) - 5)
     }
