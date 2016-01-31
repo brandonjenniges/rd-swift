@@ -75,7 +75,7 @@ class PlayerEntity: GKEntity {
     }
     
     func performRunAnimation() {
-        let runAction = SKAction.animateWithTextures(self.setupRunningFrames(), timePerFrame: 0.1, resize: false, restore: true)
+        let runAction = SKAction.animateWithTextures(self.setupRunningFrames(), timePerFrame: 0.07, resize: false, restore: true)
         let sequence = SKAction.sequence([runAction])
         sequence.timingMode = .EaseInEaseOut
         self.spriteComponent.node.runAction(SKAction.repeatActionForever(sequence))
