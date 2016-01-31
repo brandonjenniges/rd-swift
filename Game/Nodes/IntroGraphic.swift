@@ -18,8 +18,8 @@ struct IntroGraphic {
         intro.position = CGPointMake(scene.size.width / 2, scene.size.height / 2)
         intro.zPosition = GameLayer.Layer.Hud.rawValue
         
-        point.position = .zero
         tap.position = CGPointMake(0, point.size.height)
+        point.position = CGPointMake(0, tap.position.y - tap.size.height - point.size.height / 2)
         
         intro.addChild(tap)
         intro.addChild(point)
