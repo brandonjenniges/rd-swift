@@ -127,10 +127,10 @@ class MenuScene: SKScene {
     }
     
     func handleGameCenterButtonPress() {
-        
+        showLeaderboard(viewController)
     }
     
     func handleRateButtonPress() {
-        
+        rateApp()
     }
 }

@@ -51,6 +51,8 @@
 		FB84497C1C5D4C870067493C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449761C5D48D60067493C /* Button.swift */; };
 		FB84497D1C5D4C8B0067493C /* GameCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84497A1C5D48EA0067493C /* GameCenterButton.swift */; };
 		FB84497E1C5D4C8D0067493C /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449781C5D48E20067493C /* RateButton.swift */; };
+		FB8449801C5DAC6B0067493C /* SceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84497F1C5DAC6B0067493C /* SceneExtension.swift */; };
+		FB8449811C5DAC6B0067493C /* SceneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84497F1C5DAC6B0067493C /* SceneExtension.swift */; };
 		FB8D26E41BB71773000B548E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D26E31BB71773000B548E /* AppDelegate.swift */; };
 		FB8D26EA1BB71773000B548E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8D26E91BB71773000B548E /* GameViewController.swift */; };
 		FB8D26EF1BB71773000B548E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8D26ED1BB71773000B548E /* Main.storyboard */; };
@@ -165,6 +167,7 @@
 		FB8449761C5D48D60067493C /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FB8449781C5D48E20067493C /* RateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
 		FB84497A1C5D48EA0067493C /* GameCenterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterButton.swift; sourceTree = "<group>"; };
+		FB84497F1C5DAC6B0067493C /* SceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneExtension.swift; sourceTree = "<group>"; };
 		FB8D26E11BB71772000B548E /* RampagingDragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RampagingDragons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8D26E31BB71773000B548E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8D26E91BB71773000B548E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -372,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				FBA743D11BB71E5200AC4B44 /* GameScene.swift */,
+				FB84497F1C5DAC6B0067493C /* SceneExtension.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -744,6 +748,7 @@
 				FB8D26EA1BB71773000B548E /* GameViewController.swift in Sources */,
 				FBE8878E1C50829700D1F92B /* MenuScene.swift in Sources */,
 				FBD20A821C58806B00AF7E73 /* IntroState.swift in Sources */,
+				FB8449811C5DAC6B0067493C /* SceneExtension.swift in Sources */,
 				FBD20A841C58806B00AF7E73 /* PlayingState.swift in Sources */,
 				C56DA5191C50349900D50218 /* GameKitHelper.swift in Sources */,
 				FBD20A9A1C58806B00AF7E73 /* Platform.swift in Sources */,
@@ -783,6 +788,7 @@
 				FBA743D31BB71E5200AC4B44 /* GameScene.swift in Sources */,
 				FBE887901C5082A000D1F92B /* MenuScene.swift in Sources */,
 				FBD20A811C58806B00AF7E73 /* IntroState.swift in Sources */,
+				FB8449801C5DAC6B0067493C /* SceneExtension.swift in Sources */,
 				FBD20A831C58806B00AF7E73 /* PlayingState.swift in Sources */,
 				FBD20A991C58806B00AF7E73 /* Platform.swift in Sources */,
 				FBD20A771C58806B00AF7E73 /* SpriteComponent.swift in Sources */,

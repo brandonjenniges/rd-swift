@@ -7,7 +7,7 @@ import SpriteKit
 import GameController
 
 class GameViewController: GCEventViewController {
-
+    
     var keystore: NSUbiquitousKeyValueStore?
     
     override func viewDidLoad() {

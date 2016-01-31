@@ -52,9 +52,9 @@ class GameOverState: GKState {
             }
             
             if scene.gameCenterButton.containsPoint(location) {
-                
+                scene.showLeaderboard()
             } else if scene.rateButton.containsPoint(location) {
-                
+                scene.rateApp()
             }
         }
         #elseif os(tvOS)
