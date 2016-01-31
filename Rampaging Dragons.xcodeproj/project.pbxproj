@@ -168,13 +168,13 @@
 		FB8449781C5D48E20067493C /* RateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
 		FB84497A1C5D48EA0067493C /* GameCenterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterButton.swift; sourceTree = "<group>"; };
 		FB84497F1C5DAC6B0067493C /* SceneExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneExtension.swift; sourceTree = "<group>"; };
-		FB8D26E11BB71772000B548E /* RampagingDragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RampagingDragons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8D26E11BB71772000B548E /* Rampaging Dragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rampaging Dragons.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8D26E31BB71773000B548E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8D26E91BB71773000B548E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FB8D26EE1BB71773000B548E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB8D26F01BB71773000B548E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB8D26F21BB71773000B548E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB8D26FA1BB717A1000B548E /* RampagingDragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RampagingDragons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8D26FA1BB717A1000B548E /* Dragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dragons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8D26FC1BB717A1000B548E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8D27021BB717A1000B548E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FB8D27051BB717A1000B548E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -336,8 +336,8 @@
 		FB8D26951BB71620000B548E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FB8D26E11BB71772000B548E /* RampagingDragons.app */,
-				FB8D26FA1BB717A1000B548E /* RampagingDragons.app */,
+				FB8D26E11BB71772000B548E /* Rampaging Dragons.app */,
+				FB8D26FA1BB717A1000B548E /* Dragons.app */,
 				C56080E11C56DA4B00C167FD /* RampagingDragonsTests.xctest */,
 			);
 			name = Products;
@@ -556,7 +556,7 @@
 			);
 			name = tvOS;
 			productName = tvOS;
-			productReference = FB8D26E11BB71772000B548E /* RampagingDragons.app */;
+			productReference = FB8D26E11BB71772000B548E /* Rampaging Dragons.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FB8D26F91BB717A1000B548E /* iOS */ = {
@@ -574,7 +574,7 @@
 			);
 			name = iOS;
 			productName = iOS;
-			productReference = FB8D26FA1BB717A1000B548E /* RampagingDragons.app */;
+			productReference = FB8D26FA1BB717A1000B548E /* Dragons.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -964,7 +964,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
-				PRODUCT_NAME = RampagingDragons;
+				PRODUCT_NAME = "Rampaging Dragons";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -987,7 +987,7 @@
 				INFOPLIST_FILE = tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
-				PRODUCT_NAME = RampagingDragons;
+				PRODUCT_NAME = "Rampaging Dragons";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1014,7 +1014,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
-				PRODUCT_NAME = RampagingDragons;
+				PRODUCT_NAME = Dragons;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1037,7 +1037,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.holtapps.The-Rampaging-Dragon";
-				PRODUCT_NAME = RampagingDragons;
+				PRODUCT_NAME = Dragons;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
