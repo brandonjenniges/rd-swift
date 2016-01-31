@@ -9,8 +9,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     let worldNode = SKNode()
     
-    var scenePaused = false
-    
     var viewController:GameViewController!
     
     var player:PlayerEntity!
@@ -23,8 +21,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     var rateButton: SKSpriteNode!
     
     var score = 0
-    
-    var pauseNode: SKSpriteNode!
     
     lazy var gameState: GKStateMachine = GKStateMachine(states: [
         IntroState(scene: self),
@@ -53,11 +49,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-        
-        if scenePaused {
-            unPauseScene()
-        }
-        
         gameState.currentState?.handleTouches(touches, withEvent: event)
     }
     
@@ -228,7 +219,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         worldNode.addChild(playButton)
     }
     
-    
     func setupGameCenterButton() {
         gameCenterButton = Button.create(self)
         gameCenterButton.position = CGPointMake(gameCenterButton.size.width, gameCenterButton.size.height)
@@ -247,39 +237,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         let rateIcon = RateButton.create(self)
         rateIcon.position = .zero
         rateButton.addChild(rateIcon)
-    }
-    
-    // MARK: - Scene pausing
-    
-    func pauseScene() {
-        scenePaused = true
-        background.paused = true
-        if let overlayScene = SKScene(fileNamed: "PauseScene") {
-            let contentTemplateNode = overlayScene.childNodeWithName("Overlay") as! SKSpriteNode
-            
-            // Create a background node with the same color as the template.
-            pauseNode = SKSpriteNode(color: contentTemplateNode.color, size: contentTemplateNode.size)
-            pauseNode.zPosition = 10
-            pauseNode.position = CGPointMake(pauseNode.frame.size.width / 2, pauseNode.frame.size.height / 2)
-            
-            // Copy the template node into the background node.
-            let contentNode = contentTemplateNode.copy() as! SKSpriteNode
-            pauseNode.addChild(contentNode)
-            
-            // Set the content node to a clear color to allow the background node to be seen through it.
-            contentNode.color = .clearColor()
-            contentNode.position = .zero
-            
-            worldNode.addChild(pauseNode)
-        }
-    }
-    
-    func unPauseScene() {
-        scenePaused = false
-        background.paused = false
-        if let pauseNode = pauseNode {
-            pauseNode.removeFromParent()
-        }
     }
     
     // MARK: - Control Pad

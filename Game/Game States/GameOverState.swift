@@ -43,6 +43,7 @@ class GameOverState: GKState {
     // MARK: - State Touches
     
     override func handleTouches(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        #if os(iOS)
         for touch in touches {
             let location = touch.locationInNode(scene)
             if scene.playButton.containsPoint(location) {
@@ -50,14 +51,15 @@ class GameOverState: GKState {
                 restartGame()
             }
             
-            #if os(iOS)
             if scene.gameCenterButton.containsPoint(location) {
                 
             } else if scene.rateButton.containsPoint(location) {
                 
             }
-            #endif
         }
+        #elseif os(tvOS)
+        restartGame()
+        #endif
     }
     
     // MARK: - Restart

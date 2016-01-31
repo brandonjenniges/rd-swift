@@ -45,8 +45,6 @@
 		FB4910DD1BBB92520094EC7E /* titlesong.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB4910DB1BBB92520094EC7E /* titlesong.wav */; };
 		FB6F9C761C5079D400F1040A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C741C5079D400F1040A /* Fabric.framework */; };
 		FB6F9C781C5079D400F1040A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F9C751C5079D400F1040A /* Crashlytics.framework */; };
-		FB7BDEF51BC4D33100CCAD52 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */; };
-		FB7BDEF61BC4D33100CCAD52 /* PauseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */; };
 		FB8449771C5D48D60067493C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449761C5D48D60067493C /* Button.swift */; };
 		FB8449791C5D48E20067493C /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8449781C5D48E20067493C /* RateButton.swift */; };
 		FB84497B1C5D48EA0067493C /* GameCenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84497A1C5D48EA0067493C /* GameCenterButton.swift */; };
@@ -63,10 +61,8 @@
 		FB8D27081BB717A1000B548E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8D27071BB717A1000B548E /* Assets.xcassets */; };
 		FB962BBC1BD404310049A6D9 /* Dragons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9FFD841BB726E0004D4119 /* Dragons.xcassets */; };
 		FB9FFD861BB72A73004D4119 /* Dragons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9FFD841BB726E0004D4119 /* Dragons.xcassets */; };
-		FBA743D21BB71E5200AC4B44 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBA743D01BB71E5200AC4B44 /* GameScene.sks */; };
 		FBA743D31BB71E5200AC4B44 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA743D11BB71E5200AC4B44 /* GameScene.swift */; };
 		FBA743D41BB71E7900AC4B44 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA743D11BB71E5200AC4B44 /* GameScene.swift */; };
-		FBA743D51BB71F1000AC4B44 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBA743D01BB71E5200AC4B44 /* GameScene.sks */; };
 		FBCD329F1BBA19B000FAB2D1 /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329C1BBA19B000FAB2D1 /* pop.wav */; };
 		FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBCD329D1BBA19B000FAB2D1 /* roar.wav */; };
 		FBCD32A31BBA3B9D00FAB2D1 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCD32A21BBA3B9D00FAB2D1 /* spark.png */; };
@@ -166,7 +162,6 @@
 		FB4910DB1BBB92520094EC7E /* titlesong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = titlesong.wav; sourceTree = "<group>"; };
 		FB6F9C741C5079D400F1040A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		FB6F9C751C5079D400F1040A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
-		FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PauseScene.sks; sourceTree = "<group>"; };
 		FB8449761C5D48D60067493C /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		FB8449781C5D48E20067493C /* RateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
 		FB84497A1C5D48EA0067493C /* GameCenterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterButton.swift; sourceTree = "<group>"; };
@@ -183,7 +178,6 @@
 		FB8D27071BB717A1000B548E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB8D270C1BB717A1000B548E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB9FFD841BB726E0004D4119 /* Dragons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Dragons.xcassets; sourceTree = "<group>"; };
-		FBA743D01BB71E5200AC4B44 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		FBA743D11BB71E5200AC4B44 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		FBCD329C1BBA19B000FAB2D1 /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		FBCD329D1BBA19B000FAB2D1 /* roar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = roar.wav; sourceTree = "<group>"; };
@@ -377,9 +371,7 @@
 		FBA743CF1BB71DE000AC4B44 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				FBA743D01BB71E5200AC4B44 /* GameScene.sks */,
 				FBA743D11BB71E5200AC4B44 /* GameScene.swift */,
-				FB7BDEF41BC4D33100CCAD52 /* PauseScene.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -657,9 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBED7D021BBA3BCB001C73FE /* spark.png in Resources */,
-				FB7BDEF61BC4D33100CCAD52 /* PauseScene.sks in Resources */,
 				FB9FFD861BB72A73004D4119 /* Dragons.xcassets in Resources */,
-				FBA743D51BB71F1000AC4B44 /* GameScene.sks in Resources */,
 				FB8D26EF1BB71773000B548E /* Main.storyboard in Resources */,
 				FB8D26F11BB71773000B548E /* Assets.xcassets in Resources */,
 				FB4910DD1BBB92520094EC7E /* titlesong.wav in Resources */,
@@ -676,7 +666,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBEBAB8A1BB782FD004D455D /* GameOver.xcassets in Resources */,
-				FBA743D21BB71E5200AC4B44 /* GameScene.sks in Resources */,
 				FB962BBC1BD404310049A6D9 /* Dragons.xcassets in Resources */,
 				FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */,
 				FB8D27081BB717A1000B548E /* Assets.xcassets in Resources */,
@@ -686,7 +675,6 @@
 				FBCD32A31BBA3B9D00FAB2D1 /* spark.png in Resources */,
 				FB8D27061BB717A1000B548E /* Main.storyboard in Resources */,
 				FBCD32A01BBA19B000FAB2D1 /* roar.wav in Resources */,
-				FB7BDEF51BC4D33100CCAD52 /* PauseScene.sks in Resources */,
 				C544CE761C4FD7CF00F24338 /* Scene.xcassets in Resources */,
 				FBEBAB8E1BB78350004D455D /* Intro.xcassets in Resources */,
 			);

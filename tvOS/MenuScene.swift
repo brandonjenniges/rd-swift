@@ -24,18 +24,18 @@ class MenuScene: SKScene {
     // MARK: - Setup Methods
     
     func setupBackground() {
-        let background = Background.create(self)!
+        let background = Background.create(self)
         addChild(background)
     }
     
     func setupLogo() {
-        let logo = Logo.create(self)!
+        let logo = Logo.create(self)
         addChild(logo)
         logo.runAction(Logo.pulseAction())
     }
     
     func setupCredits() {
-        let creditsLogo = CreditsLogo.create(self)!
+        let creditsLogo = CreditsLogo.create(self)
         addChild(creditsLogo)
     }
     
@@ -54,12 +54,12 @@ class MenuScene: SKScene {
         let dragonArray = DragonEntity.getDragonArray()
         
         var index = 0
-        let gapSize = scene.size.width / CGFloat(dragonArray.count)
+        let gapSize = scene!.size.width / CGFloat(dragonArray.count)
         
         let leftXPos = gapSize * CGFloat(0) + gapSize / 2
         let rightXPos = gapSize * CGFloat(3) + gapSize / 2
-        let topYPos = scene.size.height * 0.75
-        let bottomYPos = scene.size.height * 0.25
+        let topYPos = scene!.size.height * 0.75
+        let bottomYPos = scene!.size.height * 0.25
         
         let yPositions = [topYPos, topYPos, bottomYPos, bottomYPos]
         let xPositions = [leftXPos, rightXPos, leftXPos, rightXPos]
