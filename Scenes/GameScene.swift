@@ -142,6 +142,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     // MARK: - Collision
     
     func didBeginContact(contact: SKPhysicsContact) {
+        if let fire = contact.bodyA.categoryBitMask == PhysicsCategory.Fireball ? contact.bodyA.node : contact.bodyB.node {
+            fire.removeFromParent()
+        }
+        
         gameState.enterState(GameOverState)
     }
     
