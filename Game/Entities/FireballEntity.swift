@@ -41,18 +41,19 @@ class FireballEntity: GKEntity {
     // MARK: - Positioning
     
     func setInitialPosition(yPosition: CGFloat) {
-        let x = FireballEntity.gapPositions[Int(arc4random_uniform(UInt32(FireballEntity.gapPositions.count - 1)))] + spriteComponent.node.size.width / 2
+        let x = FireballEntity.gapPositions[Int(arc4random_uniform(UInt32(FireballEntity.gapPositions.count - 1)))]
         spriteComponent.node.position = CGPointMake(x, yPosition)
     }
     
-    static func setupGaps(xOrigin: CGFloat, worldWidth: CGFloat) {
+    static func setupGaps(platform: SKSpriteNode) {
         var tempArray = [CGFloat]()
         
         let texture = TextureAtlasManager.fireTextureAtlas.textureNamed("fireball1")
-        let gapCount = Int(worldWidth / texture.size().width)
+        let gapCount = Int(platform.size.width / texture.size().width)
         
-        (0...gapCount).forEach {
-            tempArray.append(CGFloat($0) * texture.size().width + xOrigin + texture.size().width)
+        (0...gapCount - 1).forEach {
+            tempArray.append(CGFloat($0) * texture.size().width + platform.position.x - platform.size
+                .width / 2 + texture.size().width / 2)
         }
         gapPositions = tempArray
     }
