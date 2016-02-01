@@ -17,7 +17,7 @@ struct IntroGraphic {
         intro.name = nodeName
         
         #if os(tvOS)
-        intro.position = CGPointMake(scene.size.width / 2, (scene.size.height * 0.85) - intro.size.height)
+        intro.position = CGPointMake(scene.size.width / 2, (scene.size.height * 0.80) - intro.size.height)
         #else
         intro.position = CGPointMake(scene.size.width / 2, scene.size.height / 2)
         #endif
