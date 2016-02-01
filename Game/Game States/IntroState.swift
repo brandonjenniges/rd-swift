@@ -17,7 +17,7 @@ class IntroState: GKState {
         scene.setupBackground()
         scene.setupGround()
         scene.setupPlayer()
-        scene.setupTutorial()
+        setupTutorial()
         FireballEntity.setupGaps(scene.size.width - scene.platform.size.width, worldWidth: scene.platform.size.width)
     }
     
@@ -34,4 +34,10 @@ class IntroState: GKState {
     override func handleTouches(touches: Set<UITouch>, withEvent event: UIEvent?) {
         scene.gameState.enterState(PlayingState)
     }
+    
+    func setupTutorial() {
+        let intro = IntroGraphic.create(scene)
+        scene.worldNode.addChild(intro)
+    }
+    
 }

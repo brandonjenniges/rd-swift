@@ -20,4 +20,10 @@ extension SKScene {
     func showLeaderboard(viewController: UIViewController) {
         GameKitHelper.sharedGameKitHelper.showGKGameCenterViewController(viewController)
     }
+    
+    func buttonFadeInAnimation(delay: Double) -> SKAction {
+        let action = SKAction.sequence([SKAction.waitForDuration(0.3 * delay), SKAction.fadeInWithDuration(0.3)])
+        action.timingMode = .EaseInEaseOut
+        return action
+    }
 }

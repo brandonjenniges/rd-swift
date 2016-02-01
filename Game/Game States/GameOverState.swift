@@ -19,7 +19,7 @@ class GameOverState: GKState {
         removeControlPad()
         #endif
         
-        scene.setupGameOver()
+        setupGameOver()
         removeScoreLabel()
         
         scene.player.die()
@@ -68,6 +68,70 @@ class GameOverState: GKState {
         let fadeOutAction = SKAction.fadeAlphaTo(0, duration: 0.3)
         fadeOutAction.timingMode = .EaseInEaseOut
         scene.scoreLabel.runAction(fadeOutAction)
+    }
+    
+    // MARK: - Node
+    
+    
+    func setupGameOver() {
+        
+        //Gameover label
+        let gameover = SKSpriteNode(texture: TextureAtlasManager.gameOverAtlas.textureNamed("gameover"))
+        gameover.zPosition = GameLayer.Layer.GameOver.rawValue
+        gameover.position = CGPointMake(scene.size.width / 2, scene.size.height * 0.80)
+        gameover.setScale(0)
+        gameover.alpha = 0
+        scene.worldNode.addChild(gameover)
+        
+        //Game over animation
+        let gameoverAnimationGroup = SKAction.group([SKAction.fadeInWithDuration(0.3), SKAction.scaleTo(1.0, duration: 0.3)])
+        gameoverAnimationGroup.timingMode = .EaseInEaseOut
+        gameover.runAction(gameoverAnimationGroup)
+        
+        //Play button
+        scene.playButton = PlayButton.create(scene)
+        scene.playButton.position = CGPointMake(scene.size.width / 2, scene.size.height / 4)
+        scene.playButton.alpha = 0
+        scene.worldNode.addChild(scene.playButton)
+        scene.playButton.runAction(scene.buttonFadeInAnimation(2))
+        
+        //Scorecard
+        let scorecard = ScoreBoard(score: scene.score)
+        scorecard.position = CGPointMake(scene.size.width / 2, -scene.size.height + -scorecard.frame.size.height)
+        scene.worldNode.addChild(scorecard)
+        let moveAction = SKAction.moveToY((gameover.position.y + scene.playButton.position.y) / 2, duration: 0.4)
+        moveAction.timingMode = .EaseInEaseOut
+        scorecard.runAction(moveAction)
+        
+        
+        #if os(iOS)
+            setupRateButton()
+            setupGameCenterButton()
+        #endif
+    }
+    
+    func setupRateButton() {
+        scene.rateButton = Button.create(scene)
+        scene.rateButton.position = CGPointMake(scene.rateButton.size.width / 1.5, scene.platform.position.y / 2)
+        scene.rateButton.alpha = 0
+        scene.addChild(scene.rateButton)
+        
+        let rateIcon = RateButton.create(scene)
+        rateIcon.position = .zero
+        scene.rateButton.addChild(rateIcon)
+        scene.rateButton.runAction(scene.buttonFadeInAnimation(3))
+    }
+    
+    func setupGameCenterButton() {
+        scene.gameCenterButton = Button.create(scene)
+        scene.gameCenterButton.position = CGPointMake(scene.rateButton.position.x + scene.gameCenterButton.size.width * 1.25, scene.rateButton.position.y)
+        scene.gameCenterButton.alpha = 0
+        scene.addChild(scene.gameCenterButton)
+        
+        let gameCenterIcon = GameCenterButton.create(scene)
+        gameCenterIcon.position = .zero
+        scene.gameCenterButton.addChild(gameCenterIcon)
+        scene.gameCenterButton.runAction(scene.buttonFadeInAnimation(3))
     }
     
     // MARK: - Restart
