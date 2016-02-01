@@ -62,7 +62,9 @@ class FireballEntity: GKEntity {
     private func setupFireball() {
         spriteComponent.node.name = String(FireballEntity)
         spriteComponent.node.userData = NSMutableDictionary()
-        spriteComponent.node.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(setupFireballFrames(), timePerFrame: 0.10)))
+        let animationAction = SKAction.animateWithTextures(setupFireballFrames(), timePerFrame: 0.10)
+        animationAction.timingMode = .EaseInEaseOut
+        spriteComponent.node.runAction(SKAction.repeatActionForever(animationAction))
     }
     
     private func setupFireballFrames() -> [SKTexture] {

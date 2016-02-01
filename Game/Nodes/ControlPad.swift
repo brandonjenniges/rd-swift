@@ -86,6 +86,13 @@ class ControlPad: SKSpriteNode {
     
     func animateInto(point: CGPoint, node: SKSpriteNode) {
         let animationAction = SKAction.moveTo(point, duration: 0.8)
+        animationAction.timingMode = .EaseInEaseOut
+        node.runAction(animationAction)
+    }
+    
+    func animateOut(point: CGPoint, node: SKSpriteNode) {
+        let animationAction = SKAction.moveTo(point, duration: 0.8)
+        animationAction.timingMode = .EaseInEaseOut
         node.runAction(animationAction)
     }
     

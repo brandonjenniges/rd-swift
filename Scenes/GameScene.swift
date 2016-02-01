@@ -234,18 +234,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         let gameover = SKSpriteNode(texture: TextureAtlasManager.gameOverAtlas.textureNamed("gameover"))
         gameover.zPosition = GameLayer.Layer.GameOver.rawValue
         gameover.position = CGPointMake(size.width / 2, size.height * 0.80)
+        gameover.setScale(0)
+        gameover.alpha = 0
         worldNode.addChild(gameover)
+        
+        //Game over animation 
+        let gameoverAnimationGroup = SKAction.group([SKAction.fadeInWithDuration(0.3), SKAction.scaleTo(1.0, duration: 0.3)])
+        gameoverAnimationGroup.timingMode = .EaseInEaseOut
+        gameover.runAction(gameoverAnimationGroup)
         
         //Play button
         playButton = PlayButton.create(self)
         playButton.position = CGPointMake(size.width / 2, size.height / 4)
+        playButton.alpha = 0
         worldNode.addChild(playButton)
-        
+        playButton.runAction(buttonFadeInAnimation(2))
+
         //Scorecard
         let scorecard = ScoreBoard(score: score)
         scorecard.position = CGPointMake(size.width / 2, -size.height + -scorecard.frame.size.height)
         worldNode.addChild(scorecard)
         let moveAction = SKAction.moveToY((gameover.position.y + playButton.position.y) / 2, duration: 0.4)
+        moveAction.timingMode = .EaseInEaseOut
         scorecard.runAction(moveAction)
         
         
@@ -258,21 +268,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     func setupRateButton() {
         rateButton = Button.create(self)
         rateButton.position = CGPointMake(rateButton.size.width / 1.5, platform.position.y / 2)
+        rateButton.alpha = 0
         addChild(rateButton)
         
         let rateIcon = RateButton.create(self)
         rateIcon.position = .zero
         rateButton.addChild(rateIcon)
+        rateButton.runAction(buttonFadeInAnimation(3))
     }
     
     func setupGameCenterButton() {
         gameCenterButton = Button.create(self)
         gameCenterButton.position = CGPointMake(rateButton.position.x + gameCenterButton.size.width * 1.25, rateButton.position.y)
+        gameCenterButton.alpha = 0
         addChild(gameCenterButton)
         
         let gameCenterIcon = GameCenterButton.create(self)
         gameCenterIcon.position = .zero
         gameCenterButton.addChild(gameCenterIcon)
+        gameCenterButton.runAction(buttonFadeInAnimation(3))
+    }
+    
+    func buttonFadeInAnimation(delay: Double) -> SKAction {
+        let action = SKAction.sequence([SKAction.waitForDuration(0.3 * delay), SKAction.fadeInWithDuration(0.3)])
+        action.timingMode = .EaseInEaseOut
+        return action
     }
     
     // MARK: - Control Pad

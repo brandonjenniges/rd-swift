@@ -16,7 +16,7 @@ class GameOverState: GKState {
     override func didEnterWithPreviousState(previousState: GKState?) {
         
         #if os(iOS)
-        scene.control.remove()
+        removeControlPad()
         #endif
         
         scene.setupGameOver()
@@ -56,8 +56,17 @@ class GameOverState: GKState {
         #endif
     }
     
+    #if os(iOS)
+    func removeControlPad() {
+        scene.control.animateOut(CGPointMake(-scene.control.left.size.width, -scene.control.left.size.height), node: scene.control.left)
+        scene.control.animateOut(CGPointMake(scene.size.width + scene.control.right.size.width, -scene.control.right.size.height), node: scene.control.right)
+    }
+    
+    #endif
+    
     func removeScoreLabel() {
         let fadeOutAction = SKAction.fadeAlphaTo(0, duration: 0.3)
+        fadeOutAction.timingMode = .EaseInEaseOut
         scene.scoreLabel.runAction(fadeOutAction)
     }
     

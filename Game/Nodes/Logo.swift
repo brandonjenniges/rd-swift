@@ -24,6 +24,7 @@ struct Logo {
     
     static func pulseAction() -> SKAction {
         let pulseAction =  PulseAnimation.pulseAction(0.05)
+        pulseAction.timingMode = .EaseInEaseOut
         return pulseAction
     }
     

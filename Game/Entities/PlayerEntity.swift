@@ -68,16 +68,16 @@ class PlayerEntity: GKEntity {
         let delayAction = SKAction.waitForDuration(3.0)
         self.spriteComponent.node.runAction(delayAction) {
             let lookAction = SKAction.animateWithTextures(self.setupLookingFrames(), timePerFrame: 1.0, resize: false, restore: true)
+            lookAction.timingMode = .EaseInEaseOut
             let sequence = SKAction.sequence([lookAction])
-            sequence.timingMode = .EaseInEaseOut
             self.spriteComponent.node.runAction(SKAction.repeatActionForever(sequence))
         }
     }
     
     func performRunAnimation() {
         let runAction = SKAction.animateWithTextures(self.setupRunningFrames(), timePerFrame: 0.07, resize: false, restore: true)
+        runAction.timingMode = .EaseIn
         let sequence = SKAction.sequence([runAction])
-        sequence.timingMode = .EaseInEaseOut
         self.spriteComponent.node.runAction(SKAction.repeatActionForever(sequence))
     }
     

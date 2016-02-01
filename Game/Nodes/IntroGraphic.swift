@@ -30,6 +30,7 @@ struct IntroGraphic {
     static func remove(scene: GameScene) {
         if let node = scene.worldNode.childNodeWithName(nodeName) as? SKSpriteNode {
             let fadeAction = SKAction.fadeAlphaTo(0, duration: 1.0)
+            fadeAction.timingMode = .EaseInEaseOut
             let removeAction = SKAction.runBlock {
                 node.removeFromParent()
             }
