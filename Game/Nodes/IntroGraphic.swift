@@ -15,7 +15,13 @@ struct IntroGraphic {
         
         let intro = SKSpriteNode(color: .clearColor(), size: CGSizeMake(max(tap.size.width, point.size.width), tap.size.height + point.size.height))
         intro.name = nodeName
+        
+        #if os(tvOS)
+        intro.position = CGPointMake(scene.size.width / 2, (scene.size.height * 0.85) - intro.size.height)
+        #else
         intro.position = CGPointMake(scene.size.width / 2, scene.size.height / 2)
+        #endif
+        
         intro.zPosition = GameLayer.Layer.Hud.rawValue
         
         tap.position = CGPointMake(0, point.size.height)
