@@ -5,7 +5,7 @@
 import Foundation
 
 class ScoreManager {
-    static let scoreKey = "HIGH_SCORE_KEY"
+    static let scoreKey = "kBestScoreKey"
     static let keystore = NSUbiquitousKeyValueStore()
     
     static func getHighScore() -> Int{

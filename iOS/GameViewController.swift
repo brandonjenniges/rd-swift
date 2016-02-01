@@ -24,7 +24,9 @@ class GameViewController: UIViewController {
         scene.viewController = self
         scene.scaleMode = .AspectFill
         
-        //startGameCenter()
+        #if RELEASE
+        startGameCenter()
+        #endif
         
         skView.presentScene(scene)
     }

@@ -74,7 +74,6 @@ class GameOverState: GKState {
     
     func restartGame() {
         let newScene = GameScene(size: scene.size, viewController: scene.viewController, background: scene.background)
-        let transition = SKTransition.fadeWithColor(.blackColor(), duration: 0.02)
-        scene.view?.presentScene(newScene, transition: transition)
+        scene.view!.presentScene(newScene, transition: SKTransition.fadeWithDuration(1.0))
     }
 }
