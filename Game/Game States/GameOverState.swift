@@ -19,14 +19,8 @@ class GameOverState: GKState {
         scene.control.remove()
         #endif
         
-        scene.setupScoreCard()
-        scene.setupGameOverLabel()
-        scene.setupPlayButton()
-        
-        #if os(iOS)
-            scene.setupGameCenterButton()
-            scene.setupRateButton()
-        #endif
+        scene.setupGameOver()
+        removeScoreLabel()
         
         scene.player.die()
         scene.reportScoreToGameCenter()
@@ -60,6 +54,11 @@ class GameOverState: GKState {
         #elseif os(tvOS)
         restartGame()
         #endif
+    }
+    
+    func removeScoreLabel() {
+        let fadeOutAction = SKAction.fadeAlphaTo(0, duration: 0.3)
+        scene.scoreLabel.runAction(fadeOutAction)
     }
     
     // MARK: - Restart

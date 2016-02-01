@@ -228,45 +228,51 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         worldNode.addChild(control)
     }
     
-    func setupScoreCard() {
-        let scorecard = ScoreBoard(score: score)
-        scorecard.position = CGPointMake(size.width / 2, -size.height + -scorecard.frame.size.height)
-        worldNode.addChild(scorecard)
-        let moveAction = SKAction.moveToY(size.height / 2, duration: 0.4)
-        scorecard.runAction(moveAction)
-    }
-    
-    func setupGameOverLabel() {
+    func setupGameOver() {
+        
+        //Gameover label
         let gameover = SKSpriteNode(texture: TextureAtlasManager.gameOverAtlas.textureNamed("gameover"))
         gameover.zPosition = GameLayer.Layer.GameOver.rawValue
-        gameover.position = CGPointMake(size.width / 2, size.height * 0.75)
+        gameover.position = CGPointMake(size.width / 2, size.height * 0.80)
         worldNode.addChild(gameover)
-    }
-    
-    func setupPlayButton() {
+        
+        //Play button
         playButton = PlayButton.create(self)
         playButton.position = CGPointMake(size.width / 2, size.height / 4)
         worldNode.addChild(playButton)
-    }
-    
-    func setupGameCenterButton() {
-        gameCenterButton = Button.create(self)
-        gameCenterButton.position = CGPointMake(gameCenterButton.size.width, gameCenterButton.size.height)
-        addChild(gameCenterButton)
         
-        let gameCenterIcon = GameCenterButton.create(self)
-        gameCenterIcon.position = .zero
-        gameCenterButton.addChild(gameCenterIcon)
+        //Scorecard
+        let scorecard = ScoreBoard(score: score)
+        scorecard.position = CGPointMake(size.width / 2, -size.height + -scorecard.frame.size.height)
+        worldNode.addChild(scorecard)
+        let moveAction = SKAction.moveToY((gameover.position.y + playButton.position.y) / 2, duration: 0.4)
+        scorecard.runAction(moveAction)
+        
+        
+        #if os(iOS)
+            setupRateButton()
+            setupGameCenterButton()
+        #endif
     }
     
     func setupRateButton() {
         rateButton = Button.create(self)
-        rateButton.position = CGPointMake(gameCenterButton.position.x + gameCenterButton.size.width * 1.5, gameCenterButton.position.y)
+        rateButton.position = CGPointMake(rateButton.size.width / 1.5, platform.position.y / 2)
         addChild(rateButton)
         
         let rateIcon = RateButton.create(self)
         rateIcon.position = .zero
         rateButton.addChild(rateIcon)
+    }
+    
+    func setupGameCenterButton() {
+        gameCenterButton = Button.create(self)
+        gameCenterButton.position = CGPointMake(rateButton.position.x + gameCenterButton.size.width * 1.25, rateButton.position.y)
+        addChild(gameCenterButton)
+        
+        let gameCenterIcon = GameCenterButton.create(self)
+        gameCenterIcon.position = .zero
+        gameCenterButton.addChild(gameCenterIcon)
     }
     
     // MARK: - Control Pad
