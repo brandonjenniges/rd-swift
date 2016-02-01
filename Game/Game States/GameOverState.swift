@@ -6,7 +6,9 @@ import SpriteKit
 import GameplayKit
 
 class GameOverState: GKState {
+    
     unowned let scene: GameScene
+    var allowInteraction = false
     
     init(scene: SKScene) {
         self.scene = scene as! GameScene
@@ -37,6 +39,10 @@ class GameOverState: GKState {
     // MARK: - State Touches
     
     override func handleTouches(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        // Scene is animating, don't allow touches
+        if !self.allowInteraction { return }
+        
         #if os(iOS)
         for touch in touches {
             let location = touch.locationInNode(scene)
@@ -65,7 +71,7 @@ class GameOverState: GKState {
     #endif
     
     func removeScoreLabel() {
-        let fadeOutAction = SKAction.fadeAlphaTo(0, duration: 0.3)
+        let fadeOutAction = SKAction.fadeAlphaTo(0, duration: scene.animationDuration)
         fadeOutAction.timingMode = .EaseInEaseOut
         scene.scoreLabel.runAction(fadeOutAction)
     }
@@ -84,7 +90,7 @@ class GameOverState: GKState {
         scene.worldNode.addChild(gameover)
         
         //Game over animation
-        let gameoverAnimationGroup = SKAction.group([SKAction.fadeInWithDuration(0.3), SKAction.scaleTo(1.0, duration: 0.3)])
+        let gameoverAnimationGroup = SKAction.group([SKAction.fadeInWithDuration(0.3), SKAction.scaleTo(1.0, duration: scene.animationDuration)])
         gameoverAnimationGroup.timingMode = .EaseInEaseOut
         gameover.runAction(gameoverAnimationGroup)
         
@@ -93,7 +99,7 @@ class GameOverState: GKState {
         scene.playButton.position = CGPointMake(scene.size.width / 2, scene.size.height / 4)
         scene.playButton.alpha = 0
         scene.worldNode.addChild(scene.playButton)
-        scene.playButton.runAction(scene.buttonFadeInAnimation(2))
+        scene.playButton.runAction(scene.buttonFadeInAnimation(3))
         
         //Scorecard
         let scorecard = ScoreBoard(score: scene.score)
@@ -108,6 +114,8 @@ class GameOverState: GKState {
             setupRateButton()
             setupGameCenterButton()
         #endif
+        
+        pauseForScenePress()
     }
     
     func setupRateButton() {
@@ -132,6 +140,14 @@ class GameOverState: GKState {
         gameCenterIcon.position = .zero
         scene.gameCenterButton.addChild(gameCenterIcon)
         scene.gameCenterButton.runAction(scene.buttonFadeInAnimation(3))
+    }
+    
+    func pauseForScenePress() {
+        let delayAction = SKAction.waitForDuration(3 * scene.animationDuration)
+        let block = SKAction.runBlock { () -> Void in
+            self.allowInteraction = true
+        }
+        scene.runAction(SKAction.sequence([delayAction, block]))
     }
     
     // MARK: - Restart

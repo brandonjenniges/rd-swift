@@ -11,6 +11,12 @@ import UIKit
 
 extension SKScene {
     
+    var animationDuration: Double {
+        get {
+            return 0.3
+        }
+    }
+    
     func rateApp() {
         let urlString = "https://itunes.apple.com/app/flappy-felipe/id\(846237154)?mt=8"
         let url = NSURL(string: urlString)
@@ -21,8 +27,8 @@ extension SKScene {
         GameKitHelper.sharedGameKitHelper.showGKGameCenterViewController(viewController)
     }
     
-    func buttonFadeInAnimation(delay: Double) -> SKAction {
-        let action = SKAction.sequence([SKAction.waitForDuration(0.3 * delay), SKAction.fadeInWithDuration(0.3)])
+    func buttonFadeInAnimation(factor: Double) -> SKAction {
+        let action = SKAction.sequence([SKAction.waitForDuration(animationDuration * factor), SKAction.fadeInWithDuration(animationDuration)])
         action.timingMode = .EaseInEaseOut
         return action
     }
