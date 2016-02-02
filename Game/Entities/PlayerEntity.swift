@@ -182,7 +182,7 @@ class PlayerEntity: GKEntity {
     
     func getSpeed(moveTo:CGFloat) -> Double {
         let moveDiff = CGPointMake(moveTo - self.spriteComponent.node.position.x, 0.0)
-        return Double(sqrtf(Float(moveDiff.x) * Float(moveDiff.x)) / Float(self.spriteComponent.node.scene!.frame.size.width / 3))
+        return Double(sqrtf(Float(moveDiff.x) * Float(moveDiff.x)) / Float(self.spriteComponent.node.scene!.frame.size.width / 2))
     }
     
     func die() {
