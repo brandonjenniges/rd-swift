@@ -84,7 +84,7 @@ class PlayerEntity: GKEntity {
     func stopRunning() {
         movement = .Neutral
         self.spriteComponent.node.removeAllActions()
-        self.spriteComponent.node.texture = TextureAtlasManager.player_0
+        self.spriteComponent.node.runAction(SKAction.setTexture(TextureAtlasManager.player_0)) //Tried doing self.spriteComponent.node.texture = TextureAtlasManager.player_0 in Xcode 7.2 but it didn't work.
         self.runPlayerLookingAnimation()
     }
     
@@ -194,7 +194,6 @@ class PlayerEntity: GKEntity {
             #if os(iOS)
                 if (self.spriteComponent.node.scene! as! GameScene).gameState.currentState is PlayingState {
                     self.stopRunning()
-                    self.movement = .Neutral
                 }
             #endif
         })
