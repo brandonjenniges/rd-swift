@@ -75,6 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         
+        player.stopRunning()
         #if os(iOS)
         self.control.touchesEnded(touches, withEvent: event)
         #endif

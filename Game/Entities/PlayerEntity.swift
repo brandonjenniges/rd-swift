@@ -131,9 +131,9 @@ class PlayerEntity: GKEntity {
     
     func movePlayer(direction: ControlPadTouchDirection) {
         if movement == .Neutral {
-            if direction == .Left {
+            if direction == .Left && floor(self.spriteComponent.node.position.x) > maxLeft {
                 moveLeft()
-            } else if direction == .Right {
+            } else if direction == .Right && ceil(self.spriteComponent.node.position.x) < maxRight{
                 moveRight()
             }
         } else if movement == .Left {
