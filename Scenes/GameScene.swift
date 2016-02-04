@@ -75,10 +75,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         
-        player.stopRunning()
         #if os(iOS)
-        self.control.touchesEnded(touches, withEvent: event)
+            self.control.touchesEnded(touches, withEvent: event)
         #endif
+        
+        if touches.count - event!.touchesForView(view!)!.count == 0 {
+            player.stopRunning()
+        } else {
+            if let remainingTouches = getRemainingTouch(touches, existingTouches: event!.touchesForView(view!)!) {
+                self.control.touchesBegan(remainingTouches, withEvent: event)
+            }
+        }
 
         #if os(tvOS)
         if gameState.currentState is PlayingState {
@@ -88,6 +95,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
         #endif
     }
    
+    func getRemainingTouch(remainingTouches: Set<UITouch>, existingTouches: Set<UITouch>) -> Set<UITouch>? {
+        let intersection = remainingTouches.subtract(existingTouches)
+        return intersection
+    }
+    
     // MARK: - Game Logic
     
     override func update(currentTime: CFTimeInterval) {

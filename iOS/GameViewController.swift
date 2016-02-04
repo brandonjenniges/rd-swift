@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
             skView.showsFPS = true
             skView.showsNodeCount = true
             skView.showsPhysics = true
+            skView.multipleTouchEnabled = true
         #endif
         
         let aspectRatio = skView.bounds.size.height / skView.bounds.size.width
@@ -24,9 +25,7 @@ class GameViewController: UIViewController {
         scene.viewController = self
         scene.scaleMode = .AspectFill
         
-        #if RELEASE
         startGameCenter()
-        #endif
         
         skView.presentScene(scene)
     }
