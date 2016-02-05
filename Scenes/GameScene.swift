@@ -9,7 +9,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ControlPadTouches {
     
     let worldNode = SKNode()
     
-    var viewController:GameViewController!
+    unowned let viewController:GameViewController
     
     var player:PlayerEntity!
     var platform:SKSpriteNode!

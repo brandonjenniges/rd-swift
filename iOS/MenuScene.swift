@@ -7,7 +7,7 @@ import GameKit
 
 class MenuScene: SKScene {
     
-    var viewController:GameViewController!
+    unowned let viewController:GameViewController
     
     var background: SKSpriteNode!
     
@@ -20,6 +20,15 @@ class MenuScene: SKScene {
     var gameCenterButton: SKSpriteNode!
     var rateButton: SKSpriteNode!
     var creditsLogo: SKSpriteNode!
+    
+    init(size: CGSize, viewController: GameViewController) {
+        self.viewController = viewController
+        super.init(size: size)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func didMoveToView(view: SKView) {
         setupBackground()

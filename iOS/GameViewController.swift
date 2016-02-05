@@ -19,9 +19,8 @@ class GameViewController: UIViewController {
         #endif
         
         let aspectRatio = skView.bounds.size.height / skView.bounds.size.width
-        let scene = MenuScene(size: CGSize(width: 320, height: 320 * aspectRatio))
+        let scene = MenuScene(size: CGSize(width: 320, height: 320 * aspectRatio), viewController: self)
         
-        scene.viewController = self
         scene.scaleMode = .AspectFill
         
         #if RELEASE
