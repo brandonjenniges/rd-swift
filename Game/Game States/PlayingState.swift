@@ -35,7 +35,6 @@ class PlayingState: GKState {
     override func updateWithDeltaTime(seconds: NSTimeInterval) {
         lastSpawnTimeInterval += seconds
         if lastSpawnTimeInterval > fireSpawnRate {
-            print(fireSpawnRate)
             lastSpawnTimeInterval = 0
             scene.addFireball()
             firesAdded++
