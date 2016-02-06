@@ -16,8 +16,9 @@ class GameViewController: UIViewController {
             skView.showsFPS = true
             skView.showsNodeCount = true
             skView.showsPhysics = true
-            skView.multipleTouchEnabled = true
         #endif
+        
+        skView.multipleTouchEnabled = true
         
         let aspectRatio = skView.bounds.size.height / skView.bounds.size.width
         let scene = MenuScene(size: CGSize(width: 320, height: 320 * aspectRatio), viewController: self)
