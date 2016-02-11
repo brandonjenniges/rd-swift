@@ -40,6 +40,8 @@
 		C5E0B27C1BBF182F0003BBFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
 		FB03EE351C5B222E00B474BE /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB03EE341C5B222E00B474BE /* GameController.framework */; };
 		FB0BBBAC1BBCB11B00A0BB53 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */; };
+		FB47DA3D1C6C373B00E91CEB /* FireSpawnRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DA3C1C6C373B00E91CEB /* FireSpawnRateManager.swift */; };
+		FB47DA3F1C6C374C00E91CEB /* FireSpawnRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47DA3E1C6C374C00E91CEB /* FireSpawnRateManager.swift */; };
 		FB4910D51BBB854B0094EC7E /* Fire.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEBAB901BB783FB004D455D /* Fire.xcassets */; };
 		FB4910DC1BBB92520094EC7E /* titlesong.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB4910DB1BBB92520094EC7E /* titlesong.wav */; };
 		FB4910DD1BBB92520094EC7E /* titlesong.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB4910DB1BBB92520094EC7E /* titlesong.wav */; };
@@ -159,6 +161,8 @@
 		C5DED32A1C597959006594AB /* GameKitHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelperTests.swift; sourceTree = "<group>"; };
 		FB03EE341C5B222E00B474BE /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.1.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		FB0BBBAB1BBCB11B00A0BB53 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		FB47DA3C1C6C373B00E91CEB /* FireSpawnRateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireSpawnRateManager.swift; sourceTree = "<group>"; };
+		FB47DA3E1C6C374C00E91CEB /* FireSpawnRateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireSpawnRateManager.swift; sourceTree = "<group>"; };
 		FB4910D91BBB8B6C0094EC7E /* iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOS.entitlements; sourceTree = "<group>"; };
 		FB4910DA1BBB8C1C0094EC7E /* RampagingDragons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RampagingDragons.entitlements; sourceTree = "<group>"; };
 		FB4910DB1BBB92520094EC7E /* titlesong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = titlesong.wav; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				FB8D26ED1BB71773000B548E /* Main.storyboard */,
 				FB8D26F01BB71773000B548E /* Assets.xcassets */,
 				FB8D26F21BB71773000B548E /* Info.plist */,
+				FB47DA3E1C6C374C00E91CEB /* FireSpawnRateManager.swift */,
 			);
 			path = tvOS;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				FB8D27041BB717A1000B548E /* Main.storyboard */,
 				FB8D27071BB717A1000B548E /* Assets.xcassets */,
 				FB8D270C1BB717A1000B548E /* Info.plist */,
+				FB47DA3C1C6C373B00E91CEB /* FireSpawnRateManager.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -737,6 +743,7 @@
 				FBD20A921C58806B00AF7E73 /* IntroGraphic.swift in Sources */,
 				FBD20A9E1C58806B00AF7E73 /* ScoreBoard.swift in Sources */,
 				C52F0A971BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
+				FB47DA3F1C6C374C00E91CEB /* FireSpawnRateManager.swift in Sources */,
 				FB84497C1C5D4C870067493C /* Button.swift in Sources */,
 				FBD20A8A1C58806B00AF7E73 /* ControlPad.swift in Sources */,
 				FBD20A801C58806B00AF7E73 /* GameStateExtension.swift in Sources */,
@@ -777,6 +784,7 @@
 				C5DED2FC1C590F96006594AB /* DragonEntity.swift in Sources */,
 				FBD20A911C58806B00AF7E73 /* IntroGraphic.swift in Sources */,
 				FBD20A9D1C58806B00AF7E73 /* ScoreBoard.swift in Sources */,
+				FB47DA3D1C6C373B00E91CEB /* FireSpawnRateManager.swift in Sources */,
 				C52F0A961BCD42DD009C59B2 /* PulseAnimation.swift in Sources */,
 				FB8449771C5D48D60067493C /* Button.swift in Sources */,
 				FBD20A891C58806B00AF7E73 /* ControlPad.swift in Sources */,

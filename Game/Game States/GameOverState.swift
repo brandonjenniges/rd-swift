@@ -25,7 +25,9 @@ class GameOverState: GKState {
         removeScoreLabel()
         
         scene.player.die()
+        #if os(iOS)
         scene.reportScoreToGameCenter()
+        #endif
     }
     
     override func isValidNextState(stateClass: AnyClass) -> Bool {
